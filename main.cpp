@@ -1,18 +1,11 @@
 #include<iostream>
 #include<SDL/SDL.h>
-#include<SDL/SDL_image.h>
-#include<SDL/SDL_opengl.h>
+#include<GL/gl.h>
+#include<GL/glu.h>
 
 
 void init()
 {
-  if(SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		std::cout<<"Sorry!";
-		exit(1);
-	}
-  glClearColor(1,0,1,1);  
-  SDL_SetVideoMode(680,460,32,SDL_OPENGL);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
   gluPerspective(45,680.0/460.0,1.0,500.0);
@@ -20,7 +13,7 @@ void init()
   glShadeModel(GL_SMOOTH);
 }
 
-void Draw()
+void draw()
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
 		glBegin(GL_TRIANGLES);
@@ -32,6 +25,16 @@ void Draw()
 
 int main(int argc, char* argv[])
 {
+	if(SDL_Init(SDL_INIT_VIDEO) < 0)
+	{
+		std::cout<<"Sorry!";
+		exit(1);
+	}
+   
+  	if(SDL_SetVideoMode(680,460,32,SDL_OPENGL) < 0)
+	{
+		std::cout<<"hjh";
+	}
   init(); 
 
   bool isRunning = true;
@@ -51,6 +54,9 @@ int main(int argc, char* argv[])
 
   return 0;
 }
+
+
+
 
 
 
