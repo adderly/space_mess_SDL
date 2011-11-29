@@ -3,6 +3,7 @@
 #include<GL/gl.h>
 #include<GL/glu.h>
 
+#pragma -lSDL -lGL -lGLU
 
 void init()
 {

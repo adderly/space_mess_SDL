@@ -8,8 +8,3 @@ define:
 	HandleSimpleCollision
 	HandleSimpleParticles
 	Basic PlayerInput
-
-//Second
-
-define:
-	Threads(audio,TextureProcessing,ScoreTracking)
