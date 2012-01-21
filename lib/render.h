@@ -1,7 +1,9 @@
+#include"..\utils\Window.h"
 
-class render
+
+class render:Window
 {
-    SDL_Surface screen;
+    unsigned int screen;
 
  public:
   render();

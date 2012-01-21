@@ -1,12 +1,13 @@
 #include<iostream>
-#include<string>
+#include<sstream>
+#include"lib/videoutil.h"
 #include<SDL/SDL.h>
 #include<GL/gl.h>
 #include<GL/glu.h>
 
 #pragma -lSDL -lGL -lGLU
 
-
+using namespace std;
 const int FPS = 30;
 Uint32 start;
 
@@ -16,11 +17,15 @@ void init()
   glClearColor(1,0,0,1);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluPerspective(45,680.0/460.0,1.0,500.0);
+  gluPerspective(45,width/height,1.0,500.0);
   glMatrixMode(GL_MODELVIEW);
   //glShadeModel(GL_SMOOTH);
 }
 
+void resize(SDL_Surface *surface = 0)
+{
+
+}
 void draw()
 	{
 		glClear(GL_COLOR_BUFFER_BIT);
@@ -31,20 +36,19 @@ void draw()
 		glEnd();
 	}
 
-void resize(int width, int height)
-    {
-
-    }
 
 int main(int argc, char* argv[])
 {
+    stringstream title;
+
+
     	if(SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		std::cout<<"Sorry!";
 		exit(1);
 	}
 
-  	if(SDL_SetVideoMode(680, 460,32,SDL_SWSURFACE|SDL_OPENGL) < 0)
+  	if(SDL_SetVideoMode(width, height,bpp,SDL_SWSURFACE|SDL_OPENGL) < 0)
 	{
 		std::cout<<"hjh";
 	}
@@ -57,18 +61,27 @@ int main(int argc, char* argv[])
   while(isRunning)
     {
         start = SDL_GetTicks();
-
+        title << 1000/FPS;
              while(SDL_PollEvent(&event))
 			{
 			  if(event.type == SDL_QUIT) isRunning = false;
 			  else if(event.key.keysym.sym == SDLK_ESCAPE) isRunning = false;
+			  if(event.key.keysym.sym == SDLK_RIGHT)
+			  {
+			      width += 30;
+			     SDL_SetVideoMode(width,height,bpp,SDL_SWSURFACE|SDL_OPENGL);
+			  }
 			}
 
 			draw();
 			SDL_GL_SwapBuffers();
 
+
 			if(1000/FPS>SDL_GetTicks()-start)
                 SDL_Delay(1000/FPS>SDL_GetTicks()-start);
+
+            SDL_WM_SetCaption(title.str().c_str(), 0);
+            title.ignore(0);
 
     }
 

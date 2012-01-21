@@ -5,10 +5,10 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib\DisplayConfig.h" open="1" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="129" topLine="0" />
 	</File>
 	<File name="lib\Draw.h" open="1" top="0" tabpos="3">
-		<Cursor position="52" topLine="0" />
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib\EventHandler.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
@@ -20,12 +20,24 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib\menuInterface.h" open="1" top="0" tabpos="7">
-		<Cursor position="55" topLine="0" />
-	</File>
-	<File name="lib\render.h" open="1" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="9">
-		<Cursor position="658" topLine="24" />
+	<File name="lib\render.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="20" topLine="0" />
+	</File>
+	<File name="lib\render.h" open="1" top="1" tabpos="8">
+		<Cursor position="83" topLine="0" />
+	</File>
+	<File name="lib\videoutil.h" open="1" top="0" tabpos="10">
+		<Cursor position="78" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="1149" topLine="39" />
+	</File>
+	<File name="utils\Window.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="61" topLine="0" />
+	</File>
+	<File name="utils\Window.h" open="1" top="0" tabpos="13">
+		<Cursor position="4" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

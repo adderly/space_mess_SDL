@@ -1,9 +1,24 @@
 # depslib dependency file v1.0
-1327102833 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
+1327126390 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
 	<iostream>
+	<sstream>
+	"lib/videoutil.h"
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
 1323750799 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.cpp
+
+1327125991 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\videoutil.h
+
+1327129431 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
+	"render.h"
+
+1327130441 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
+	"..\utils\Window.h"
+
+1327128824 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.h
+
+1327129431 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
+	"Window.h"
 
