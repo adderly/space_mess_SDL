@@ -20,8 +20,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="README" />
+		<Unit filename="lib\DisplayConfig.h" />
+		<Unit filename="lib\Draw.h" />
+		<Unit filename="lib\EventHandler.cpp" />
+		<Unit filename="lib\EventHandler.h" />
+		<Unit filename="lib\Player.h" />
+		<Unit filename="lib\menuInterface.h" />
+		<Unit filename="lib\render.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="utils\render.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

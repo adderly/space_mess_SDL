@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1327102833 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
+	<iostream>
+	<SDL/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1323750799 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.cpp
+
