@@ -1,13 +1,22 @@
-#include"..\utils\Window.h"
+#include"../utils/Window.h"
+#include"Environment.h"
+#include<SDL/SDL.h>
+#include<SDL/SDL_opengl.h>
+#include<GL/glu.h>
+#include<iostream>
+#include<sstream>
 
 
-class render:Window
+class render
 {
-    unsigned int screen;
+   SDL_Surface *screen;
+     const SDL_VideoInfo *info;
 
  public:
+  int x;
   render();
-  int init();
+  void prepare();
+  void init();
   void reshape(int width,int height);
   static int setFullScreen();
   void draw();

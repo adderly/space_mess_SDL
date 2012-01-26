@@ -22,3 +22,73 @@
 1327129431 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
 	"Window.h"
 
+1327116062 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/EventHandler.cpp
+
+1327432852 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/render.cpp
+	"render.h"
+
+1327318741 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/render.h
+	"../utils/Window.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<GL/glu.h>
+	<iostream>
+	<sstream>
+
+1327312433 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/main.cpp
+	"lib/Game.h"
+
+1327116062 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/videoutil.h
+
+1327312695 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/utils/Window.cpp
+	"Window.h"
+
+1327312707 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/utils/Window.h
+	<string>
+
+1327310307 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Environment.cpp
+	"Environment.h"
+
+1327308246 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Environment.h
+
+1327431595 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Game.cpp
+	"Game.h"
+
+1327431595 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Game.h
+	"render.h"
+
+1327112462 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\eventhandler.cpp
+
+1327427994 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\game.cpp
+	"Game.h"
+
+1327427994 c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\game.h
+	"render.h"
+
+1327315140 c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\render.h
+	"../utils/Window.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<GL/glu.h>
+	<iostream>
+	<sstream>
+
+1327309106 c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\utils\window.h
+	<string>
+
+1327304646 c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\environment.h
+
+1327308832 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\main.cpp
+	"lib/Game.h"
+
+1327309094 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\utils\window.cpp
+	"Window.h"
+
+1327306706 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\environment.cpp
+	"Environment.h"
+
+1327523388 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\render.cpp
+	"render.h"
+
