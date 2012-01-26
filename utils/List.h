@@ -8,6 +8,8 @@ template<class Type> class List
     public:
     List();
     int getCount();
+    void add(Type* obj);
+    void remove(Type* obj);
     Type* getnext();
     Type* getPrevious();
     Type* getCurrent();

@@ -1,8 +1,11 @@
-typedef struct
-	{
+
+class player
+{
 		int x;
 		int y;
-		int width; 
+		int width;
 		int height;
-		bool alive;		
-	}  player ;
+		bool alive;
+
+};
+
