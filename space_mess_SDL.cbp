@@ -31,12 +31,15 @@
 		<Unit filename="lib\EventHandler.h" />
 		<Unit filename="lib\Game.cpp" />
 		<Unit filename="lib\Game.h" />
+		<Unit filename="lib\Particle.h" />
+		<Unit filename="lib\ParticleGenerator.h" />
 		<Unit filename="lib\Player.h" />
 		<Unit filename="lib\menuInterface.h" />
 		<Unit filename="lib\render.cpp" />
 		<Unit filename="lib\render.h" />
 		<Unit filename="lib\videoutil.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="utils\List.h" />
 		<Unit filename="utils\Window.cpp" />
 		<Unit filename="utils\Window.h" />
 		<Extensions>
