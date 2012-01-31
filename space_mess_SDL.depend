@@ -1,25 +1,33 @@
 # depslib dependency file v1.0
-1327126390 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
-	<iostream>
-	<sstream>
-	"lib/videoutil.h"
-	<SDL/SDL.h>
-	<GL/gl.h>
-	<GL/glu.h>
+1327792798 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
+	"lib/Game.h"
 
-1323750799 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.cpp
+1327810797 
+
+1327885858 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.cpp
+	"EventHandler.h"
 
 1327125991 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\videoutil.h
 
-1327129431 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
+1327886420 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
 	"render.h"
 
-1327130441 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
-	"..\utils\Window.h"
+1327886766 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
+	"../utils/Window.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<SDL/SDL_thread.h>
+	<GL/glu.h>
+	<iostream>
+	<sstream>
 
-1327128824 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.h
+1327130441 Window.h"
 
-1327129431 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
+1327792798 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.h
+	<string>
+
+1327870844 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
 	"Window.h"
 
 1327116062 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/EventHandler.cpp
@@ -39,6 +47,8 @@
 1327312433 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/main.cpp
 	"lib/Game.h"
 
+1327810797 h"
+
 1327116062 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/videoutil.h
 
 1327312695 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/utils/Window.cpp
@@ -49,6 +59,8 @@
 
 1327310307 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Environment.cpp
 	"Environment.h"
+
+1327810797 nt.h"
 
 1327308246 /home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/Environment.h
 
@@ -91,4 +103,107 @@
 
 1327523388 source:c:\users\adderly\desktop\projects\adderly-space_mess_sdl-68c596e\lib\render.cpp
 	"render.h"
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\lib\eventhandler.cpp
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\lib\game.cpp
+	"Game.h"
+
+1327810797 i:\home\moisex\documents\projects\space_mess_sdl\lib\game.h
+	"render.h"
+
+1327810797 i:\home\moisex\documents\projects\space_mess_sdl\lib\render.h
+	"../utils/Window.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<GL/glu.h>
+	<iostream>
+	<sstream>
+
+1327810797 i:\home\moisex\documents\projects\space_mess_sdl\utils\window.h
+	<string>
+
+1327810797 i:\home\moisex\documents\projects\space_mess_sdl\lib\environment.h
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\lib\render.cpp
+	"render.h"
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\main.cpp
+	"lib/Game.h"
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\utils\window.cpp
+	"Window.h"
+
+1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\lib\environment.cpp
+	"Environment.h"
+
+1327810797 source:/home/moisex/Documents/Projects/space_mess_SDL/main.cpp
+	"lib/Game.h"
+
+1327906271 /home/moisex/Documents/Projects/space_mess_SDL/lib/Game.h
+	"render.h"
+	"Player.h"
+
+1327904766 /home/moisex/Documents/Projects/space_mess_SDL/lib/render.h
+	"../utils/Window.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<SDL/SDL_thread.h>
+	<GL/glu.h>
+	<iostream>
+	<sstream>
+
+1327810797 /home/moisex/Documents/Projects/space_mess_SDL/utils/Window.h
+	<string>
+
+1327810797 /home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.h
+
+1327810797 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.cpp
+	"Environment.h"
+
+1327903857 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/EventHandler.cpp
+	"EventHandler.h"
+
+1327906301 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Game.cpp
+	"Game.h"
+
+1327904419 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/render.cpp
+	"render.h"
+
+1327888843 source:/home/moisex/Documents/Projects/space_mess_SDL/utils/Window.cpp
+	"Window.h"
+
+1327894274 source:/home/moisex/Documents/Projects/space_mess_SDL/testing/main.cpp
+	<iostream>
+	"../lib/DisplayConfig.h"
+
+1327898479 /home/moisex/Documents/Projects/space_mess_SDL/lib/DisplayConfig.h
+	<fstream>
+	<iostream>
+	<string>
+	<vector>
+	<map>
+	<cstdlib>
+
+1327903821 /home/moisex/Documents/Projects/space_mess_SDL/lib/EventHandler.h
+
+1327906533 /home/moisex/Documents/Projects/space_mess_SDL/lib/Player.h
+
+1327885822 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
+
+1327888570 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
+	"Game.h"
+
+1327888694 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
+	"render.h"
+	"Player.h"
+
+1327792798 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
+
+1327888534 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
+
+1327792798 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
+	"Environment.h"
 

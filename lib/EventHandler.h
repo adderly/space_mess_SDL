@@ -2,11 +2,11 @@
 
 class EventHandler
 	{
-	    SDL_Event event;
+
 
 		public:
+		//EventHandler(Game& gm);
 		EventHandler();
 		~EventHandler();
-
 
 	};

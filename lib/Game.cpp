@@ -2,17 +2,38 @@
 
 Game::Game()
 {
+
     isRunning = true;
+    player = new Player();
+
 }
+
 void Game::MainLoop()
 {
     while(isRunning)
     {
       //  start = SDL_GetTicks();
 
-        while(SDL_PollEvent(&event))
-        {
-            if(event.type == SDL_QUIT) isRunning = false;
+        checkEvents();
+        rend.draw();
+        std::cout<<SDL_GetError();
+
+        SDL_GL_SwapBuffers();
+
+
+			if(1000/FPS>SDL_GetTicks()-start)
+               SDL_Delay(1000/FPS>SDL_GetTicks()-start);
+
+         //  SDL_WM_SetCaption("ya", 0);
+
+    }
+}
+void Game::checkEvents()
+{
+     while(SDL_PollEvent(&this->event))
+     {
+
+        if(event.type == SDL_QUIT) isRunning = false;
             if(SDL_KEYDOWN)
             {
                 switch(event.key.keysym.sym)
@@ -30,21 +51,13 @@ void Game::MainLoop()
                     break;
                 }
             }
-        }
-        rend.draw();
-        std::cout<<SDL_GetError();
+     }
 
-        SDL_GL_SwapBuffers();
-
-
-			if(1000/FPS>SDL_GetTicks()-start)
-               SDL_Delay(1000/FPS>SDL_GetTicks()-start);
-
-         //  SDL_WM_SetCaption("ya", 0);
-
-    }
 }
 Game::~Game()
 {
 
 }
+
+
+

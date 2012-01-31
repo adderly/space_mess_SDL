@@ -1,43 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="README" open="1" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+	<File name="README" open="0" top="0" tabpos="1">
+		<Cursor position="137" topLine="0" />
 	</File>
-	<File name="lib\Game.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="272" topLine="0" />
+	<File name="lib/DisplayConfig.h" open="0" top="0" tabpos="0">
+		<Cursor position="242" topLine="2" />
 	</File>
-	<File name="lib\Game.h" open="1" top="0" tabpos="3">
-		<Cursor position="103" topLine="0" />
+	<File name="lib/Environment.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="27" topLine="0" />
 	</File>
-	<File name="lib\Particle.h" open="1" top="0" tabpos="11">
+	<File name="lib/Environment.h" open="0" top="0" tabpos="0">
+		<Cursor position="104" topLine="0" />
+	</File>
+	<File name="lib/EventHandler.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="25" topLine="0" />
+	</File>
+	<File name="lib/EventHandler.h" open="0" top="0" tabpos="0">
+		<Cursor position="87" topLine="0" />
+	</File>
+	<File name="lib/Game.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1112" topLine="39" />
+	</File>
+	<File name="lib/Game.h" open="1" top="0" tabpos="2">
+		<Cursor position="194" topLine="3" />
+	</File>
+	<File name="lib/Particle.h" open="0" top="0" tabpos="11">
 		<Cursor position="149" topLine="0" />
 	</File>
-	<File name="lib\ParticleGenerator.h" open="1" top="0" tabpos="12">
-		<Cursor position="156" topLine="0" />
+	<File name="lib/ParticleGenerator.h" open="0" top="0" tabpos="12">
+		<Cursor position="130" topLine="0" />
 	</File>
-	<File name="lib\Player.h" open="1" top="1" tabpos="4">
-		<Cursor position="83" topLine="0" />
+	<File name="lib/Player.h" open="1" top="0" tabpos="3">
+		<Cursor position="94" topLine="0" />
 	</File>
-	<File name="lib\render.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="380" topLine="0" />
+	<File name="lib/render.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="1336" topLine="5" />
 	</File>
-	<File name="lib\render.h" open="1" top="0" tabpos="6">
+	<File name="lib/render.h" open="0" top="0" tabpos="6">
+		<Cursor position="208" topLine="12" />
+	</File>
+	<File name="lib/videoutil.h" open="0" top="0" tabpos="7">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib\videoutil.h" open="1" top="0" tabpos="7">
+	<File name="main.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="0" topLine="0" />
+	<File name="utils/ArrayList.h" open="0" top="0" tabpos="0">
+		<Cursor position="90" topLine="0" />
 	</File>
-	<File name="utils\List.h" open="1" top="0" tabpos="13">
-		<Cursor position="290" topLine="0" />
+	<File name="utils/List.h" open="0" top="0" tabpos="13">
+		<Cursor position="52" topLine="0" />
 	</File>
-	<File name="utils\Window.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="0" topLine="0" />
+	<File name="utils/Window.cpp" open="0" top="0" tabpos="9">
+		<Cursor position="43" topLine="0" />
 	</File>
-	<File name="utils\Window.h" open="1" top="0" tabpos="10">
-		<Cursor position="265" topLine="0" />
+	<File name="utils/Window.h" open="0" top="0" tabpos="10">
+		<Cursor position="218" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
