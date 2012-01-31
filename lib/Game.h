@@ -1,8 +1,7 @@
-
-//#include"videoutil.h"
-
 #include"render.h"
-#include"Player.h"
+#include<sstream>
+
+
 
 class Game:render
 {
@@ -11,13 +10,15 @@ class Game:render
     bool isRunning;
     static const int FPS = 30;
     Uint32 start;
-    Player* player;
+
     SDL_Event event;
+    SDL_Thread* ethread ;
     void (Game::*fn)(void *);
 
 
     public:
     Game();
+    void movePlayers();
     void MainLoop();
     void checkEvents();
     ~Game();
