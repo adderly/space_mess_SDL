@@ -138,41 +138,41 @@
 1327810797 source:i:\home\moisex\documents\projects\space_mess_sdl\lib\environment.cpp
 	"Environment.h"
 
-1327810797 source:/home/moisex/Documents/Projects/space_mess_SDL/main.cpp
+1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/main.cpp
 	"lib/Game.h"
 
-1327906271 /home/moisex/Documents/Projects/space_mess_SDL/lib/Game.h
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/Game.h
 	"render.h"
-	"Player.h"
+	<sstream>
 
-1327904766 /home/moisex/Documents/Projects/space_mess_SDL/lib/render.h
-	"../utils/Window.h"
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/render.h
+	"../utils/keys.h"
+	"Player.h"
 	"Environment.h"
 	<SDL/SDL.h>
 	<SDL/SDL_opengl.h>
 	<SDL/SDL_thread.h>
 	<GL/glu.h>
 	<iostream>
-	<sstream>
 
-1327810797 /home/moisex/Documents/Projects/space_mess_SDL/utils/Window.h
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/utils/Window.h
 	<string>
 
-1327810797 /home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.h
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.h
 
-1327810797 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.cpp
+1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Environment.cpp
 	"Environment.h"
 
 1327903857 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/EventHandler.cpp
 	"EventHandler.h"
 
-1327906301 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Game.cpp
+1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Game.cpp
 	"Game.h"
 
-1327904419 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/render.cpp
+1328294964 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/render.cpp
 	"render.h"
 
-1327888843 source:/home/moisex/Documents/Projects/space_mess_SDL/utils/Window.cpp
+1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/utils/Window.cpp
 	"Window.h"
 
 1327894274 source:/home/moisex/Documents/Projects/space_mess_SDL/testing/main.cpp
@@ -187,9 +187,9 @@
 	<map>
 	<cstdlib>
 
-1327903821 /home/moisex/Documents/Projects/space_mess_SDL/lib/EventHandler.h
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/EventHandler.h
 
-1327906533 /home/moisex/Documents/Projects/space_mess_SDL/lib/Player.h
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/Player.h
 
 1327885822 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
 
@@ -211,4 +211,9 @@
 	"Player.h"
 
 1327993682 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\keys.h
+
+1328121875 /home/moisex/Documents/Projects/space_mess_SDL/utils/keys.h
+
+1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Player.cpp
+	"Player.h"
 

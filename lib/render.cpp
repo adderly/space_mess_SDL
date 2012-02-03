@@ -30,7 +30,7 @@ void render::prepare()
 void render::init()
 {
 
-    glClearColor(1,0,0,1);
+    glClearColor(1,1,1,1);
     glMatrixMode(GL_PROJECTION);
     glViewport(0,0,680,460);
    // gluPerspective(45.0,680/460,1.0,500.0);
@@ -44,7 +44,11 @@ void render::init()
 
 void render::reshape(int width, int height)
 {
-
+    glClearColor(0,0,0,1);
+    glViewport(0,0,width,height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(0,width,height,0,-1,1);
 }
 int render::setFullScreen()
 {
