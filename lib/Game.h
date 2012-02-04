@@ -7,7 +7,7 @@ class Game:render
 {
 
     render rend;
-    bool isRunning;
+    bool Running,Paused,Mainmenu;
     static const int FPS = 30;
     Uint32 start;
 

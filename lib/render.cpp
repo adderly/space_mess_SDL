@@ -4,6 +4,7 @@ render::render()
 {
     x = 1;
     prepare();
+    text = new Text();
 
 
 }
@@ -76,6 +77,8 @@ void render::draw()
             glVertex2f(0,0);
             glVertex2f(500,350);
 		glEnd();
+    SDL_BlitSurface(text->text,NULL,screen,NULL);
+    SDL_Flip(screen);
 
 }
 render::~render(){}

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1327792798 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
+1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\main.cpp
 	"lib/Game.h"
 
 1327810797 
@@ -9,11 +9,12 @@
 
 1327125991 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\videoutil.h
 
-1327994725 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
+1328328715 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
 	"render.h"
 
-1327993125 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
+1328327278 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
 	"../utils/keys.h"
+	"../utils/TextRender.h"
 	"Player.h"
 	"Environment.h"
 	<SDL/SDL.h>
@@ -24,10 +25,10 @@
 
 1327130441 Window.h"
 
-1327792798 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.h
+1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.h
 	<string>
 
-1327870844 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
+1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\window.cpp
 	"Window.h"
 
 1327116062 source:/home/moisex/Documents/Projects/adderly-space_mess_SDL-68c596e/lib/EventHandler.cpp
@@ -191,29 +192,82 @@
 
 1328121875 /home/moisex/Documents/Projects/space_mess_SDL/lib/Player.h
 
-1327885822 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
+1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
 
-1327994235 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
+1328324430 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
 	"Game.h"
 
-1327990932 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
+1328324430 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
 	"render.h"
 	<sstream>
 
-1327792798 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
+1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
 
-1327993734 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
+1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
 
-1327792798 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
+1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
 	"Environment.h"
 
-1327993762 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
+1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
 	"Player.h"
 
-1327993682 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\keys.h
+1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\keys.h
 
 1328121875 /home/moisex/Documents/Projects/space_mess_SDL/utils/keys.h
 
 1328121875 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Player.cpp
 	"Player.h"
+
+1328310928 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Environment.cpp
+	"Environment.h"
+
+1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Environment.h
+
+1327885858 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/EventHandler.cpp
+	"EventHandler.h"
+
+1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/EventHandler.h
+
+1328310928 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Game.cpp
+	"Game.h"
+
+1328319778 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Game.h
+	"render.h"
+	<sstream>
+
+1328318265 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/render.h
+	"../utils/keys.h"
+	"Player.h"
+	"Environment.h"
+	<SDL/SDL.h>
+	<SDL/SDL_opengl.h>
+	<SDL/SDL_thread.h>
+	<GL/glu.h>
+	<iostream>
+
+1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/utils/keys.h
+
+1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Player.h
+
+1328310928 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/Player.cpp
+	"Player.h"
+
+1328310937 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/lib/render.cpp
+	"render.h"
+
+1328310928 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/main.cpp
+	"lib/Game.h"
+
+1328310928 source:/media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/utils/Window.cpp
+	"Window.h"
+
+1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/utils/Window.h
+	<string>
+
+1328327960 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.h
+	<SDL/SDL.h>
+	<SDL/SDL_ttf.h>
+
+1328329007 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.cpp
+	"TextRender.h"
 

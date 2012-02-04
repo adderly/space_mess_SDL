@@ -2,7 +2,9 @@
 
 Game::Game():render()
 {
-    isRunning = true;
+    Running = true;
+    Paused = false;
+    Mainmenu = true;
 }
 void Game::movePlayers()
 {
@@ -19,7 +21,7 @@ void Game::movePlayers()
 
 void Game::MainLoop()
 {
-    while(isRunning)
+    while(Running)
     {
       std::stringstream t;
       std::string title;
@@ -47,7 +49,7 @@ void Game::checkEvents()
 
 
 
-        if(event.type == SDL_QUIT) isRunning = false;
+        if(event.type == SDL_QUIT) Running = false;
 
             if(event.type == SDL_KEYDOWN)
             {
@@ -86,7 +88,7 @@ void Game::checkEvents()
                         down = false;
                     break;
                     case SDLK_ESCAPE:
-                        isRunning = false;
+                        Running = false;
                     break;
                     case SDLK_F12:
                         //rend.setFullScreen();

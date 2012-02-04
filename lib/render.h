@@ -1,4 +1,5 @@
 #include"../utils/keys.h"
+#include"../utils/TextRender.h"
 #include"Player.h"
 #include"Environment.h"
 #include<SDL/SDL.h>
@@ -13,7 +14,7 @@ class render
 {
    SDL_Surface *screen;
    const SDL_VideoInfo *info;
-
+   Text* text;
 
  public:
   Player player;
