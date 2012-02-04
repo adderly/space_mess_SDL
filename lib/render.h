@@ -1,5 +1,5 @@
 #include"../utils/keys.h"
-#include"../utils/TextRender.h"
+#include"ParticleGenerator.h"
 #include"Player.h"
 #include"Environment.h"
 #include<SDL/SDL.h>
@@ -14,7 +14,8 @@ class render
 {
    SDL_Surface *screen;
    const SDL_VideoInfo *info;
-   Text* text;
+   ParticleGenerator* generator;
+    friend class Game;
 
  public:
   Player player;
@@ -27,4 +28,7 @@ class render
   void reshape(int width,int height);
   static int setFullScreen();
   void draw();
+  void drawMainMenu();
+  void drawPauseMenu();
+  void releaseResources();
 };

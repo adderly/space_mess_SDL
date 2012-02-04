@@ -1,13 +1,25 @@
-#include"Particle.h"
+#include<cstdlib>
+#include<iostream>
 #include<vector>
 
-typedef Particle Particle;
+//typedef Particle Particle;
+
+#ifndef Particle
+    #include"Particle.h"
+#endif
 
 class ParticleGenerator
 {
-    vector<Particle> particles;
+
+    int particleCount;
+
     public:
+    friend class render;
+    std::vector<Particle*> particles;
     ParticleGenerator();
+    void createParticles(int num);
+    void evolveParticles();
+    std::vector<Particle*> &getParticles();
     ~ParticleGenerator();
 
 };

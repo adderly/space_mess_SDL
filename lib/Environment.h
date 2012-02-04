@@ -13,6 +13,7 @@ class Environment
     public:
     float gravity;
     float delay;
+    float wind;
     Environment();
     float getGravity(){return gravity;}
     float getDelay(){return delay;}

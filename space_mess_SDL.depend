@@ -9,12 +9,12 @@
 
 1327125991 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\videoutil.h
 
-1328328715 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
+1328348297 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
 	"render.h"
 
-1328327278 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
+1328346870 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
 	"../utils/keys.h"
-	"../utils/TextRender.h"
+	"ParticleGenerator.h"
 	"Player.h"
 	"Environment.h"
 	<SDL/SDL.h>
@@ -194,21 +194,21 @@
 
 1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
 
-1328324430 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
+1328340039 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
 	"Game.h"
 
 1328324430 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
 	"render.h"
 	<sstream>
 
-1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
+1328339299 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
 
-1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
+1328340076 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
 
-1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
+1328339330 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
 	"Environment.h"
 
-1328310928 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
+1328340076 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
 	"Player.h"
 
 1328310928 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\keys.h
@@ -270,4 +270,21 @@
 
 1328329007 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.cpp
 	"TextRender.h"
+
+1328348327 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.cpp
+	"ParticleGenerator.h"
+
+1328347494 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.h
+	<iostream>
+	<vector>
+	"Particle.h"
+
+1328347492 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.h
+
+1328346531 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\testmain.cpp
+	"../lib/ParticleGenerator.h"
+	<iostream>
+
+1328346701 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.cpp
+	"Particle.h"
 

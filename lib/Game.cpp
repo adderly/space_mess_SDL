@@ -8,10 +8,10 @@ Game::Game():render()
 }
 void Game::movePlayers()
 {
-        if(right) rend.x++;
-        if(left)  rend.x--;
-        if(up) rend.y--;
-        if(down) rend.y++;
+        if(right) x++;
+        if(left)  x--;
+        if(up) y--;
+        if(down) y++;
 
 //        if(right) player.x++;
 //        if(left)  player.x--;
@@ -28,27 +28,26 @@ void Game::MainLoop()
 
         movePlayers();
         checkEvents();
-        rend.draw();
+
+        draw();
         std::cout<<SDL_GetError();
         SDL_GL_SwapBuffers();
 
 
 
-        t << rend.x<<"   "<<rend.y;
+        t << x<<"   "<<y;
         title = t.str();
            SDL_WM_SetCaption(title.c_str(), 0);
 
         if(1000/FPS>SDL_GetTicks()-start)
                SDL_Delay(1000/FPS>SDL_GetTicks()-start);
     }
+
 }
 void Game::checkEvents()
 {
      while(SDL_PollEvent(&this->event))
      {
-
-
-
         if(event.type == SDL_QUIT) Running = false;
 
             if(event.type == SDL_KEYDOWN)

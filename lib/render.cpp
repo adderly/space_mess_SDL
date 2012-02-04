@@ -4,7 +4,8 @@ render::render()
 {
     x = 1;
     prepare();
-    text = new Text();
+    generator = new ParticleGenerator();
+    generator->createParticles(400);
 
 
 }
@@ -77,9 +78,22 @@ void render::draw()
             glVertex2f(0,0);
             glVertex2f(500,350);
 		glEnd();
-    SDL_BlitSurface(text->text,NULL,screen,NULL);
-    SDL_Flip(screen);
+
+		glColor3f(1,0,0);
+        glBegin(GL_QUADS);
+                for(int n = 0; n < generator->particles.size();n++)
+                {
+                        glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y);
+                        glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y);
+                        glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y+generator->particles[n]->height);
+                        glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y+generator->particles[n]->height);
+                }
+		glEnd();
+        generator->evolveParticles();
 
 }
+void render::drawMainMenu(){}
+void render::drawPauseMenu(){}
+void render::releaseResources(){}
 render::~render(){}
 
