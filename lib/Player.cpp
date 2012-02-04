@@ -6,8 +6,8 @@ Player::Player()
     this->movy = 0;
     this->movz = 0;
     this->alive = true;
-    this->width = 40;
-    this->height = 60;
+    this->width = 80;
+    this->height = 45;
     this->x = 0;
     this->y = 0;
 }

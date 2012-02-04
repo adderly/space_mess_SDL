@@ -1,4 +1,5 @@
 #include"../utils/keys.h"
+#include"videoutil.h"
 #include"ParticleGenerator.h"
 #include"Player.h"
 #include"Environment.h"
@@ -27,8 +28,10 @@ class render
   void init();
   void reshape(int width,int height);
   static int setFullScreen();
+  void checkCollition();
   void draw();
   void drawMainMenu();
   void drawPauseMenu();
   void releaseResources();
+  void fallowMouse(int x,int y);
 };

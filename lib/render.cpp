@@ -5,7 +5,7 @@ render::render()
     x = 1;
     prepare();
     generator = new ParticleGenerator();
-    generator->createParticles(400);
+    generator->createParticles(1000);
 
 
 }
@@ -26,7 +26,7 @@ void render::prepare()
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
 
-    screen = SDL_SetVideoMode(680,460,16,SDL_SWSURFACE|SDL_OPENGL);
+    screen = SDL_SetVideoMode(width,height,bpp,SDL_SWSURFACE|SDL_OPENGL);
     init();
 }
 void render::init()
@@ -34,13 +34,14 @@ void render::init()
 
     glClearColor(1,1,1,1);
     glMatrixMode(GL_PROJECTION);
-    glViewport(0,0,680,460);
+    glViewport(0,0,width,height);
    // gluPerspective(45.0,680/460,1.0,500.0);
     //glMatrixMode(GL_MODELVIEW);
     glDisable(GL_DEPTH_TEST);
     glLoadIdentity();
     glShadeModel(GL_SMOOTH);
-    glOrtho(0,680,460,0,-1,1);
+    glOrtho(0,width,height,0,-1,1);
+    //SDL_WM_GrabInput(SDL_GRAB_ON);
 }
 
 
@@ -89,11 +90,53 @@ void render::draw()
                         glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y+generator->particles[n]->height);
                 }
 		glEnd();
+		checkCollition();
         generator->evolveParticles();
 
+}
+void render::checkCollition()
+{
+    for(int f = 0;f < generator->particles.size();f++)
+    {
+        if(generator->particles[f]->pos_x < 0)
+        {
+            generator->particles[f]->speed_x = - generator->particles[f]->speed_x;
+            if(generator->particles[f]->speed_x > generator->particles[f]->speed_y) generator->particles[f]->speed_y *= 1.2;
+        }
+        if(generator->particles[f]->pos_y < 0)
+        {
+            generator->particles[f]->speed_y = - generator->particles[f]->speed_y;
+            if(generator->particles[f]->speed_y > generator->particles[f]->speed_x) generator->particles[f]->speed_x *=0.1;
+        }
+        if(generator->particles[f]->pos_x+generator->particles[f]->width > width)
+        {
+            generator->particles[f]->speed_x = - generator->particles[f]->speed_x;
+        }
+        if(generator->particles[f]->pos_y+generator->particles[f]->height > height)
+        {
+            generator->particles[f]->speed_y = - generator->particles[f]->speed_y;
+        }
+    }
 }
 void render::drawMainMenu(){}
 void render::drawPauseMenu(){}
 void render::releaseResources(){}
+void render::fallowMouse(int mouse_x,int mouse_y)
+{
+    for(int n = 0;n< generator->particles.size();n++)
+    {
+        if(generator->particles[n]->pos_x > x || generator->particles[n]->pos_x < x)
+        {
+           generator->particles[n]->speed_x = - generator->particles[n]->speed_x;
+           generator->particles[n]->x_max = mouse_x;
+        }
+         if(generator->particles[n]->pos_y > y || generator->particles[n]->pos_y < y)
+        {
+           generator->particles[n]->speed_y = - generator->particles[n]->speed_y;
+           generator->particles[n]->y_max = mouse_y;
+        }
+
+    }
+}
 render::~render(){}
 

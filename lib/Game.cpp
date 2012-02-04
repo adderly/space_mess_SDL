@@ -8,10 +8,10 @@ Game::Game():render()
 }
 void Game::movePlayers()
 {
-        if(right) x++;
-        if(left)  x--;
-        if(up) y--;
-        if(down) y++;
+        if(right) x+=2;
+        if(left)  x-=2;
+        if(up) y-=2;
+        if(down) y+=2;
 
 //        if(right) player.x++;
 //        if(left)  player.x--;
@@ -21,6 +21,7 @@ void Game::movePlayers()
 
 void Game::MainLoop()
 {
+
     while(Running)
     {
       std::stringstream t;
@@ -35,9 +36,9 @@ void Game::MainLoop()
 
 
 
-        t << x<<"   "<<y;
+        t << event.motion.x<<"   "<<event.motion.y;
         title = t.str();
-           SDL_WM_SetCaption(title.c_str(), 0);
+        SDL_WM_SetCaption(title.c_str(), 0);
 
         if(1000/FPS>SDL_GetTicks()-start)
                SDL_Delay(1000/FPS>SDL_GetTicks()-start);
@@ -49,6 +50,47 @@ void Game::checkEvents()
      while(SDL_PollEvent(&this->event))
      {
         if(event.type == SDL_QUIT) Running = false;
+
+              if (event.type == SDL_MOUSEMOTION);
+                    //fallowMouse(event.motion.x,event.motion.y);
+              if(event.type == SDL_MOUSEBUTTONDOWN)
+              {
+                  switch(event.button.button)
+                  {
+                      case SDL_BUTTON_LEFT:
+                      fallowMouse(event.motion.x,event.motion.y);
+                      break;
+                      case SDL_BUTTON_RIGHT:
+                      break;
+                      case SDL_BUTTON_MIDDLE:
+                      break;
+                      case SDL_BUTTON_X1:
+                      break;
+                      case SDL_BUTTON_X2:
+                      break;
+                      default:
+                      break;
+                  }
+              }
+              if(event.type == SDL_MOUSEBUTTONUP)
+              {
+                  switch(event.button.button)
+                  {
+                       case SDL_BUTTON_LEFT:
+                      break;
+                      case SDL_BUTTON_RIGHT:
+                      break;
+                      case SDL_BUTTON_MIDDLE:
+                      break;
+                      case SDL_BUTTON_X1:
+                      break;
+                      case SDL_BUTTON_X2:
+                      break;
+                      default:
+                      break;
+                  }
+              }
+
 
             if(event.type == SDL_KEYDOWN)
             {
@@ -98,6 +140,15 @@ void Game::checkEvents()
             }
      }
 
+}
+void Game::setTitle(int w,int h)
+{
+    std::stringstream t2;
+      std::string title2;
+
+          t2 << x<<"   "<<y;
+        title2 = t2.str();
+           SDL_WM_SetCaption(title2.c_str(), 0);
 }
 Game::~Game()
 {

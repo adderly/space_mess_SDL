@@ -7,6 +7,7 @@ class Particle
     float* colorv;
     float height,width;
     float pos_x,pos_y,pos_z;
+    float x_max,y_max;
     float speed_x,speed_y,speed_z;
     bool alive;
     Particle();

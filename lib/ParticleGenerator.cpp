@@ -3,18 +3,37 @@
 ParticleGenerator::ParticleGenerator(){}
 void ParticleGenerator::createParticles(int amount)
 {
+    float XNumber= 0;
+    float YNumber= 0;
+
+
     float colorv[] = {255.0,255.0,0.0};
     for(int n = 0; n< amount;n++)
     {
-        Particle* p = new Particle(10,10,-1,0.15*n,0.01*n,0.0,10.0,colorv);
-        p->setSize(5,5);
+        if(rand() > 45000)
+        {
+        XNumber= 0.0005-(rand()%100/22.5);
+        YNumber= 0.0005-(rand()%100/9);
+        }
+        else
+        {
+            XNumber= 0.0005-(rand()%100/12.5);
+            YNumber= 0.0005-(rand()%100/20);
+        }
+
+
+        Particle* p = new Particle(350,240,-1,n%amount*XNumber/3,n%amount*YNumber/3,0.0,10.0,colorv);
+        p->setSize(4,2);
         particles.push_back(p);
+
     }
 }
 void ParticleGenerator::evolveParticles()
 {
+
     for(int amount = 0; amount < particles.size();amount++)
     {
+
         particles[amount]->autoEvolve();
        // std::cout<<particles[amount]->pos_x;
     }

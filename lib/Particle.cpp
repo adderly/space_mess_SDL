@@ -3,6 +3,10 @@
 Particle::Particle()
 {
     this->alive = true;
+    width = 2;
+    height = 2;
+    x_max = 0;
+    y_max = 0;
 }
 
 Particle::Particle(int x,int y, int z,float speedx,
@@ -16,14 +20,37 @@ Particle::Particle(int x,int y, int z,float speedx,
     speed_z = speedz;
     lifetime = life;
     colorv = color;
-
+    x_max = 0;
+    y_max = 0;
 }
 
 void Particle::autoEvolve()
 {
+   if(x_max == 0)
+   {
     pos_x+= speed_x;
     pos_y+= speed_y;
     pos_z+= speed_z;
+
+   }
+   else
+   {
+
+      if(pos_x+pos_y < x_max) pos_x += speed_x;
+       if(pos_x+pos_y > x_max) pos_x -= speed_x;
+      if(pos_x+pos_y > y_max) pos_y -= speed_y;
+       if(pos_x+pos_y < y_max) pos_y += speed_y;
+
+
+
+
+//       else
+//       {
+//           pos_x+= speed_x;
+//            pos_y+= speed_y;
+//            pos_z+= speed_z;
+//       }
+   }
 
 }
 
