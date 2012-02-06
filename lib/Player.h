@@ -11,7 +11,6 @@ class Player
 		int width;
 		int height;
 		bool alive;
-
 		Player();
 		~Player();
 };

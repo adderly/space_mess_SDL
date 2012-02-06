@@ -8,17 +8,18 @@ Text::Text()
 }
 Text::Text(SDL_Surface &main)
 {
-    TTF_Init()-1;
+    TTF_Init();
     textColor = {255,255,255};
     this->screen = &main;
     loadResources();
 }
 void Text::loadResources()
 {
-   font = TTF_OpenFont("UbuntuMono-BI.ttf", 16);
-    if(text == NULL) exit(0);
-//   SDL_Color c = {255,0,0};
-//   text = TTF_RenderText_Solid(font,"okay",c);
+   font = TTF_OpenFont("resources/lazy.ttf", 45);
+   //std::cout<<TTF_GetError();
+    if(t == NULL) exit(0);
+    SDL_Color c = {255,255,0};
+   t = TTF_RenderText_Solid(font,"Fuck IT",c);
 
 }
 void Text::freeResources()

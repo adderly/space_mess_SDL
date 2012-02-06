@@ -8,15 +8,27 @@ Game::Game():render()
 }
 void Game::movePlayers()
 {
-        if(right) x+=2;
-        if(left)  x-=2;
-        if(up) y-=2;
-        if(down) y+=2;
+        if(right)
+        {
+            x+=2;
+            player.x++;
+        }
+        if(left)
+        {
+            x-=2;
+            player.x--;
+        }
+        if(up)
+        {
+            y-=2;
+            player.y++;
+        }
+        if(down)
+        {
+            y+=2;
+            player.y--;
+        }
 
-//        if(right) player.x++;
-//        if(left)  player.x--;
-//        if(up) player.y++;
-//        if(down) player.y--;
 }
 
 void Game::MainLoop()
@@ -53,12 +65,13 @@ void Game::checkEvents()
 
               if (event.type == SDL_MOUSEMOTION);
                     //fallowMouse(event.motion.x,event.motion.y);
+
               if(event.type == SDL_MOUSEBUTTONDOWN)
               {
                   switch(event.button.button)
                   {
                       case SDL_BUTTON_LEFT:
-                      fallowMouse(event.motion.x,event.motion.y);
+                      shut();
                       break;
                       case SDL_BUTTON_RIGHT:
                       break;
@@ -107,6 +120,9 @@ void Game::checkEvents()
                     break;
                     case SDLK_DOWN:
                         down = true;
+                    break;
+                    case SDLK_p:
+                    music->play();
                     break;
                     default:
                     break;

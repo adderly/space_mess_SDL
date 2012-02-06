@@ -1,5 +1,6 @@
 #include<SDL/SDL.h>
 #include<SDL/SDL_ttf.h>
+ #include<iostream>
 
 class Text
 {
@@ -9,7 +10,7 @@ class Text
 
     public:
     TTF_Font*    font;
-    SDL_Surface* text;
+    SDL_Surface* t;
     Text();
     Text(SDL_Surface &main);
     void loadResources();

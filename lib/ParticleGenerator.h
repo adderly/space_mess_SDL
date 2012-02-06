@@ -18,6 +18,8 @@ class ParticleGenerator
     std::vector<Particle*> particles;
     ParticleGenerator();
     void createParticles(int num);
+    void addParticle(int x,int y, int z,float speedx,float speedy,float speedz,float life,float *color);
+    void addParticle(Particle* newone);
     void evolveParticles();
     std::vector<Particle*> &getParticles();
     ~ParticleGenerator();

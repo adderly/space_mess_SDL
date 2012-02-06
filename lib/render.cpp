@@ -5,18 +5,28 @@ render::render()
     x = 1;
     prepare();
     generator = new ParticleGenerator();
-    generator->createParticles(1000);
+    generator->createParticles(500);
+    texture = loadTexture("resources/brick.bmp");
+    text = new Text();
+    music = new Audio();
+    music->loadSound("sdfsd");
 
 
 }
+void render::shut()
+{
+    float color[] = {255,222,225};
+    Particle* p = new Particle(player.x,player.y,0,2,0.6,0,10,color);
+    p->setSize(20,20);
+    generator->addParticle(p);
+}
 void render::prepare()
 {
-    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER) < 0)
+    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_AUDIO) < 0)
     {
         std::cout<<"Could not init video" <<std::endl;
         exit(-1);
     }
-
 
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
@@ -41,6 +51,8 @@ void render::init()
     glLoadIdentity();
     glShadeModel(GL_SMOOTH);
     glOrtho(0,width,height,0,-1,1);
+    glEnable(GL_TEXTURE_2D);
+    glEnable(GL_ALPHA);
     //SDL_WM_GrabInput(SDL_GRAB_ON);
 }
 
@@ -63,18 +75,17 @@ void render::draw()
 
 
     glClear(GL_COLOR_BUFFER_BIT);
-    glColor3f(0,1,0);
+   // glColor3f(0,1,0);
+
+        glBindTexture(GL_TEXTURE_2D,texture);
         glBegin(GL_QUADS);
-            glVertex2f(player.x+this->x,player.y+this->y);
-            glVertex2f(player.x+player.width+this->x,player.y+this->y);
-            glVertex2f(player.x+player.width+this->x,player.y+player.height+this->y);
-            glVertex2f(player.x+this->x,player.y+player.height+this->y);
+            glVertex2f(player.x+this->x,player.y+this->y); glTexCoord2f(0.0,1.0);
+            glVertex2f(player.x+player.width+this->x,player.y+this->y);  glTexCoord2f(1.0,1.0);
+            glVertex2f(player.x+player.width+this->x,player.y+player.height+this->y);   glTexCoord2f(0.0,1.0);
+            glVertex2f(player.x+this->x,player.y+player.height+this->y); glTexCoord2f(0.0,0.0);
         glEnd();
-		glBegin(GL_TRIANGLES);
-			glVertex3f(0.0+this->x,2.0+this->y,-15.0);
-			glVertex3f(-2.0+this->x,-2.0+this->y,-15.0);
-			glVertex3f(2.0+this->x,-2.0+this->y,-15.0);
-		glEnd();
+
+
 		glBegin(GL_LINES);
             glVertex2f(0,0);
             glVertex2f(500,350);
@@ -92,6 +103,8 @@ void render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
+        SDL_BlitSurface(text->t,NULL,screen,NULL);
+
 
 }
 void render::checkCollition()

@@ -1,6 +1,15 @@
 #include"ParticleGenerator.h"
 
 ParticleGenerator::ParticleGenerator(){}
+void ParticleGenerator::addParticle(Particle* newone)
+{
+    particles.push_back(newone);
+}
+void ParticleGenerator::addParticle(int x,int y, int z,float speedx,float speedy,float speedz,float life,float *color)
+{
+
+}
+
 void ParticleGenerator::createParticles(int amount)
 {
     float XNumber= 0;
