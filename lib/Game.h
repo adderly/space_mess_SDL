@@ -6,7 +6,7 @@
 class Game:public Render
 {
     Render rend;
-    bool Running,Paused,Mainmenu;
+    bool Running,Paused,Mainmenu,GRABBED;
     int* mouseX,*mouseY;
     static const int FPS = 30;
     Uint32 start;

@@ -40,4 +40,5 @@ class Render:public Environment
   void releaseResources();
   void fallowMouse(int x,int y);
   void shut();
+  void clean();
 };

@@ -44,10 +44,10 @@ void Render::init()
 {
 
     glClearColor(1,1,1,1);
-    glMatrixMode(GL_PROJECTION);
+   // glMatrixMode(GL_PROJECTION);
     glViewport(0,0,width,height);
-   // gluPerspective(45.0,680/460,1.0,500.0);
-    //glMatrixMode(GL_MODELVIEW);
+    gluPerspective(45.0,680/460,1.0,500.0);
+    glMatrixMode(GL_MODELVIEW);
     glDisable(GL_DEPTH_TEST);
     glLoadIdentity();
     glShadeModel(GL_SMOOTH);
@@ -87,16 +87,6 @@ void Render::draw()
         glEnd();
         glDisable(GL_TEXTURE_2D);
 
-
-
-		glBegin(GL_LINES);
-            glVertex2f(0,0);
-            glVertex2f(500,350);
-		glEnd();
-		if(MOUSE_LCLICK == true)
-		{
-		   this->x += 2;
-		}
 
 //
 //        glBegin(GL_QUADS);
@@ -168,5 +158,6 @@ void Render::fallowMouse(int mouse_x,int mouse_y)
 
     }
 }
+void Render::clean(){}
 Render::~Render(){}
 

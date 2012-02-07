@@ -12,7 +12,7 @@ void Gun::fire()
 }
 Gun::~Gun()
 {
-   delete &name;
+    delete &name;
     delete &amoamout;
     delete &maxHeat;
 }

@@ -5,7 +5,7 @@ Game::Game():Render()
     Running = true;
     Paused = false;
     Mainmenu = true;
-
+    GRABBED = false;
 }
 void Game::movePlayers()
 {
@@ -29,6 +29,28 @@ void Game::movePlayers()
             y+=2;
             player.y--;
         }
+        if(MOUSE_LCLICK)
+		{
+
+
+            if(!GRABBED)
+            {
+                if(event.motion.x > player.x && event.motion.x < player.x+player.width )
+            if(event.motion.y > player.y && event.motion.y < player.y+player.height)
+               {
+                   player.y = event.motion.y;
+                   player.x = event.motion.x;
+                   GRABBED = true;
+               }
+            }
+            if(GRABBED)
+            {
+
+                   player.y = event.motion.y;
+                   player.x = event.motion.x;
+
+            }
+		}
 
 }
 
@@ -74,7 +96,7 @@ void Game::checkEvents()
                   {
                       case SDL_BUTTON_LEFT:
                       MOUSE_LCLICK = true;
-                      shut();
+                      //shut();
                       break;
                       case SDL_BUTTON_RIGHT:
                       MOUSE_RCLICK = true;
@@ -96,7 +118,7 @@ void Game::checkEvents()
                   {
                       case SDL_BUTTON_LEFT:
                       MOUSE_LCLICK = false;
-                      shut();
+                      //shut();
                       break;
                       case SDL_BUTTON_RIGHT:
                       MOUSE_RCLICK = false;
