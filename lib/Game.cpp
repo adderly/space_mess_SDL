@@ -1,10 +1,11 @@
 #include"Game.h"
 
-Game::Game():render()
+Game::Game():Render()
 {
     Running = true;
     Paused = false;
     Mainmenu = true;
+
 }
 void Game::movePlayers()
 {
@@ -39,6 +40,7 @@ void Game::MainLoop()
       std::stringstream t;
       std::string title;
 
+
         movePlayers();
         checkEvents();
 
@@ -48,7 +50,7 @@ void Game::MainLoop()
 
 
 
-        t << event.motion.x<<"   "<<event.motion.y;
+        t << event.motion.x<<"   "<<event.motion.y <<"    "<< player.x<<"   "<<player.y;
         title = t.str();
         SDL_WM_SetCaption(title.c_str(), 0);
 
@@ -71,11 +73,14 @@ void Game::checkEvents()
                   switch(event.button.button)
                   {
                       case SDL_BUTTON_LEFT:
+                      MOUSE_LCLICK = true;
                       shut();
                       break;
                       case SDL_BUTTON_RIGHT:
+                      MOUSE_RCLICK = true;
                       break;
                       case SDL_BUTTON_MIDDLE:
+                      MOUSE_MCLICK = true;
                       break;
                       case SDL_BUTTON_X1:
                       break;
@@ -89,11 +94,15 @@ void Game::checkEvents()
               {
                   switch(event.button.button)
                   {
-                       case SDL_BUTTON_LEFT:
+                      case SDL_BUTTON_LEFT:
+                      MOUSE_LCLICK = false;
+                      shut();
                       break;
                       case SDL_BUTTON_RIGHT:
+                      MOUSE_RCLICK = false;
                       break;
                       case SDL_BUTTON_MIDDLE:
+                      MOUSE_MCLICK = false;
                       break;
                       case SDL_BUTTON_X1:
                       break;
@@ -123,6 +132,12 @@ void Game::checkEvents()
                     break;
                     case SDLK_p:
                     music->play();
+                    break;
+                    case SDLK_r:
+                    music->resume();
+                    break;
+                    case SDLK_s:
+                    music->pause();
                     break;
                     default:
                     break;

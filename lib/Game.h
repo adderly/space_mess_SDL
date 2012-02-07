@@ -1,21 +1,17 @@
-#include"render.h"
+#include"Render.h"
 #include<sstream>
 
 
 
-class Game:render
+class Game:public Render
 {
-
-    render rend;
+    Render rend;
     bool Running,Paused,Mainmenu;
     int* mouseX,*mouseY;
     static const int FPS = 30;
     Uint32 start;
     SDL_Event event;
-    SDL_Thread* ethread ;
-    void (Game::*fn)(void *);
-    friend class render;
-
+    friend class Render;
 
     public:
     Game();

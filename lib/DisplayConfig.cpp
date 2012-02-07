@@ -42,7 +42,7 @@ int DisplayConfig::readConfig()
 {
     while(!input.eof())
     {
-        input.getline();
+        //input.getline();
     }
 }
 int DisplayConfig::writeConfig(){}

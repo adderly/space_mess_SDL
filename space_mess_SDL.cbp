@@ -23,8 +23,13 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="README" />
-		<Unit filename="lib/AudioPlayback.cpp" />
-		<Unit filename="lib/AudioPlayback.h" />
+		<Unit filename="lib/Actors/Gun.cpp" />
+		<Unit filename="lib/Actors/Gun.h" />
+		<Unit filename="lib/Actors/Spaceship.h" />
+		<Unit filename="lib/Audio/AudioHandler.h" />
+		<Unit filename="lib/Audio/AudioPlayback.cpp" />
+		<Unit filename="lib/Audio/AudioPlayback.h" />
+		<Unit filename="lib/DisplayConfig.cpp" />
 		<Unit filename="lib/DisplayConfig.h" />
 		<Unit filename="lib/Draw.h" />
 		<Unit filename="lib/Environment.cpp" />
@@ -39,9 +44,9 @@
 		<Unit filename="lib/ParticleGenerator.h" />
 		<Unit filename="lib/Player.cpp" />
 		<Unit filename="lib/Player.h" />
+		<Unit filename="lib/Render.cpp" />
+		<Unit filename="lib/Render.h" />
 		<Unit filename="lib/menuInterface.h" />
-		<Unit filename="lib/render.cpp" />
-		<Unit filename="lib/render.h" />
 		<Unit filename="lib/videoutil.h" />
 		<Unit filename="main.cpp">
 			<Option compiler="gcc" use="0" buildCommand="g++ -o testing main.cpp" />
@@ -53,6 +58,7 @@
 		<Unit filename="utils/TextureLoader.h" />
 		<Unit filename="utils/Window.cpp" />
 		<Unit filename="utils/Window.h" />
+		<Unit filename="utils/keys.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

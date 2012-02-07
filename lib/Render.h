@@ -1,19 +1,19 @@
+#include<SDL/SDL.h>
+#include<SDL/SDL_opengl.h>
+#include<SDL/SDL_thread.h>
+#include<GL/glu.h>
+#include<iostream>
 #include"../utils/keys.h"
 #include"videoutil.h"
 #include"ParticleGenerator.h"
 #include"Player.h"
 #include"Environment.h"
 #include"../utils/TextRender.h"
-#include<SDL/SDL.h>
-#include<SDL/SDL_opengl.h>
-#include<SDL/SDL_thread.h>
-#include<GL/glu.h>
-#include<iostream>
 #include"../utils/TextureLoader.h"
-#include"AudioPlayback.h"
+#include"Audio/AudioPlayback.h"
 
 
-class render
+class Render:public Environment
 {
    SDL_Surface *screen;
    const SDL_VideoInfo *info;
@@ -27,8 +27,8 @@ class render
   Player player;
   int x;
   int y;
-  render();
-  ~render();
+  Render();
+  ~Render();
   void prepare();
   void init();
   void reshape(int width,int height);
