@@ -31,13 +31,13 @@
 		<Unit filename="lib/Audio/AudioPlayback.h" />
 		<Unit filename="lib/DisplayConfig.cpp" />
 		<Unit filename="lib/DisplayConfig.h" />
-		<Unit filename="lib/Draw.h" />
 		<Unit filename="lib/Environment.cpp" />
 		<Unit filename="lib/Environment.h" />
 		<Unit filename="lib/EventHandler.cpp" />
 		<Unit filename="lib/EventHandler.h" />
 		<Unit filename="lib/Game.cpp" />
 		<Unit filename="lib/Game.h" />
+		<Unit filename="lib/ObjectFactory.h" />
 		<Unit filename="lib/Particle.cpp" />
 		<Unit filename="lib/Particle.h" />
 		<Unit filename="lib/ParticleGenerator.cpp" />

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="lib/Audio/AudioPlayback.cpp" open="1" top="0" tabpos="4">
+	<File name="lib/Actors/Gun.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="149" topLine="0" />
+	</File>
+	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="758" topLine="26" />
 	</File>
-	<File name="lib/DisplayConfig.h" open="0" top="0" tabpos="1">
-		<Cursor position="360" topLine="0" />
+	<File name="lib/DisplayConfig.cpp" open="1" top="1" tabpos="6">
+		<Cursor position="284" topLine="0" />
 	</File>
-	<File name="lib/Draw.h" open="0" top="0" tabpos="2">
-		<Cursor position="0" topLine="0" />
+	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="7">
+		<Cursor position="255" topLine="9" />
 	</File>
 	<File name="lib/Environment.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="27" topLine="0" />
@@ -23,10 +26,13 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib/Game.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="368" topLine="71" />
+		<Cursor position="925" topLine="18" />
 	</File>
-	<File name="lib/Game.h" open="1" top="1" tabpos="1">
-		<Cursor position="230" topLine="0" />
+	<File name="lib/Game.h" open="1" top="0" tabpos="1">
+		<Cursor position="124" topLine="0" />
+	</File>
+	<File name="lib/ObjectFactory.h" open="1" top="0" tabpos="5">
+		<Cursor position="40" topLine="0" />
 	</File>
 	<File name="lib/Player.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="61" topLine="0" />
@@ -35,9 +41,12 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib/Render.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="201" topLine="51" />
+		<Cursor position="5358" topLine="142" />
 	</File>
-	<File name="lib/Render.h" open="1" top="0" tabpos="5">
-		<Cursor position="296" topLine="23" />
+	<File name="lib/Render.h" open="1" top="0" tabpos="4">
+		<Cursor position="884" topLine="23" />
+	</File>
+	<File name="utils/keys.h" open="0" top="0" tabpos="0">
+		<Cursor position="0" topLine="15" />
 	</File>
 </CodeBlocks_layout_file>
