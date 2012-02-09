@@ -10,14 +10,14 @@ DisplayConfig::DisplayConfig()
        defaults +=   "DEPTH 32\n";
        defaults +=   "FULLSCREEN 0";
 
-	   input.open("/config/config.dat");
+	   input.open("config/xconfig.dat");
 	    if(!input.is_open())
 	    {
 		system("mkdir config");
-		output.open("config/xconfig.dat");
+		output.open("config/xconfig.dat",ios::out);
 		output << defaults;
+		
 		output.close();
-
 	    }
 
 	    else
@@ -42,7 +42,7 @@ int DisplayConfig::readConfig()
 {
     while(!input.eof())
     {
-        //input.getline();
+       //input.getline();
     }
 }
 int DisplayConfig::writeConfig(){}

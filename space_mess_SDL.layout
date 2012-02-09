@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
+	<File name="README" open="1" top="0" tabpos="8">
+		<Cursor position="375" topLine="5" />
+	</File>
 	<File name="lib/Actors/Gun.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="149" topLine="0" />
 	</File>
@@ -8,7 +11,7 @@
 		<Cursor position="758" topLine="26" />
 	</File>
 	<File name="lib/DisplayConfig.cpp" open="1" top="1" tabpos="6">
-		<Cursor position="284" topLine="0" />
+		<Cursor position="917" topLine="38" />
 	</File>
 	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="7">
 		<Cursor position="255" topLine="9" />
