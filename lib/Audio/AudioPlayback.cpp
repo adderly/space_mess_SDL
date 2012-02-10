@@ -22,6 +22,10 @@ void Audio::playEffect(const std::string name)
 {
     Mix_PlayChannel(-1,effect,1);
 }
+void Audio::playEffect(Mix_Chunk* effect)
+{
+    Mix_PlayChannel(-1,effect,1);
+}
 void Audio::pause()
 {
     Mix_PauseMusic();

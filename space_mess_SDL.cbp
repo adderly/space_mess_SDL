@@ -26,7 +26,6 @@
 		<Unit filename="lib/Actors/Gun.cpp" />
 		<Unit filename="lib/Actors/Gun.h" />
 		<Unit filename="lib/Actors/Spaceship.h" />
-		<Unit filename="lib/Audio/AudioHandler.h" />
 		<Unit filename="lib/Audio/AudioPlayback.cpp" />
 		<Unit filename="lib/Audio/AudioPlayback.h" />
 		<Unit filename="lib/DisplayConfig.cpp" />
@@ -53,6 +52,8 @@
 		</Unit>
 		<Unit filename="utils/ArrayList.h" />
 		<Unit filename="utils/List.h" />
+		<Unit filename="utils/Log.cpp" />
+		<Unit filename="utils/Log.h" />
 		<Unit filename="utils/TextRender.cpp" />
 		<Unit filename="utils/TextRender.h" />
 		<Unit filename="utils/TextureLoader.h" />

@@ -1,5 +1,6 @@
 #include<fstream>
 #include<iostream>
+#include<sstream>
 #include<string>
 #include<vector>
 #include<map>
@@ -17,13 +18,15 @@ class DisplayConfig
     ifstream input;
     ofstream output;
     string tosave;
-    map<char,string> settings;
+    map<string, int> settings;
+    map<string, int>::iterator it;
 
     public:
     string defaults;
     DisplayConfig();
-    map<char,string> &getsettings();
-    int readConfig();
+    map<string, int> &getsettings();
+    void addToMap(const string ,const int);
+    bool readConfig();
     int writeConfig();
     ~DisplayConfig();
 };

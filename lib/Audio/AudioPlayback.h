@@ -35,6 +35,7 @@ class Audio
         void loadSound(const char* filename);
         void play();
         void playSpecific(const std::string name); //inside the map
+        void playEffect(Mix_Chunk* effect);
         void playEffect(const std::string name);
         void pause();
         void resume();
