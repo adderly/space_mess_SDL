@@ -4,6 +4,7 @@
 #include<string>
 #include<vector>
 #include<map>
+#include<stdlib.h>
 #include<cstdlib>
 
 //This Will Read The Configurations From A Formated Text
@@ -15,6 +16,7 @@ using namespace std;
 
 class DisplayConfig
 {
+    string defaults;
     ifstream input;
     ofstream output;
     string tosave;
@@ -22,7 +24,6 @@ class DisplayConfig
     map<string, int>::iterator it;
 
     public:
-    string defaults;
     DisplayConfig();
     map<string, int> &getsettings();
     void addToMap(const string ,const int);

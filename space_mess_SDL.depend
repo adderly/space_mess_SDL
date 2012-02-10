@@ -301,7 +301,7 @@
 1328595090 /home/moisex/Desktop/space_mess_SDL/lib/EventHandler.h
 	<SDL/SDL.h>
 
-1328616525 source:/home/moisex/Desktop/space_mess_SDL/lib/Game.cpp
+1328856653 source:/home/moisex/Desktop/space_mess_SDL/lib/Game.cpp
 	"Game.h"
 
 1328616447 /home/moisex/Desktop/space_mess_SDL/lib/Game.h
@@ -323,9 +323,10 @@
 	"../utils/TextureLoader.h"
 	"AudioPlayback.h"
 
-1328599131 /home/moisex/Desktop/space_mess_SDL/utils/keys.h
+1328856609 /home/moisex/Desktop/space_mess_SDL/utils/keys.h
 
-1328490760 /home/moisex/Desktop/space_mess_SDL/lib/videoutil.h
+1328860315 /home/moisex/Desktop/space_mess_SDL/lib/videoutil.h
+	"DisplayConfig.h"
 
 1328611182 /home/moisex/Desktop/space_mess_SDL/lib/ParticleGenerator.h
 	<cstdlib>
@@ -350,9 +351,8 @@
 1328555270 source:/home/moisex/Desktop/space_mess_SDL/lib/render.cpp
 	"render.h"
 
-1328831601 source:/home/moisex/Desktop/space_mess_SDL/main.cpp
+1328860469 source:/home/moisex/Desktop/space_mess_SDL/main.cpp
 	"lib/Game.h"
-	"lib/DisplayConfig.h"
 
 1328490760 source:/home/moisex/Desktop/space_mess_SDL/utils/Window.cpp
 	"Window.h"
@@ -368,7 +368,7 @@
 1328512876 source:/home/moisex/Desktop/space_mess_SDL/utils/TextRender.cpp
 	"TextRender.h"
 
-1328603526 /home/moisex/Desktop/space_mess_SDL/utils/TextureLoader.h
+1328856894 /home/moisex/Desktop/space_mess_SDL/utils/TextureLoader.h
 	<SDL/SDL.h>
 	<SDL/SDL_opengl.h>
 	<SDL/SDL_image.h>
@@ -395,19 +395,20 @@
 	"../utils/TextureLoader.h"
 	"Audio/AudioPlayback.h"
 
-1328645218 source:/home/moisex/Desktop/space_mess_SDL/lib/Render.cpp
+1328860315 source:/home/moisex/Desktop/space_mess_SDL/lib/Render.cpp
 	"Render.h"
 
-1328843851 source:/home/moisex/Desktop/space_mess_SDL/lib/DisplayConfig.cpp
+1328860011 source:/home/moisex/Desktop/space_mess_SDL/lib/DisplayConfig.cpp
 	"DisplayConfig.h"
 
-1328847863 /home/moisex/Desktop/space_mess_SDL/lib/DisplayConfig.h
+1328859705 /home/moisex/Desktop/space_mess_SDL/lib/DisplayConfig.h
 	<fstream>
 	<iostream>
 	<sstream>
 	<string>
 	<vector>
 	<map>
+	<stdlib.h>
 	<cstdlib>
 
 1328615045 source:/home/moisex/Desktop/space_mess_SDL/lib/Actors/Gun.cpp

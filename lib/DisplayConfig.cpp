@@ -19,10 +19,8 @@ DisplayConfig::DisplayConfig()
             system("mkdir config");
             output.open("config/xconfig.dat",ios::out);
             output << defaults;
-
             output.close();
 	    }
-
 	    else
 	    {
 	    	if(input.is_open())
@@ -36,16 +34,13 @@ DisplayConfig::DisplayConfig()
 	    	    cout<<"To Fix The Problem"<<endl;
 	    	}
 	    }
-
         if(input.is_open()) input.close();
-
 }
 
 void DisplayConfig::addToMap(const string key, const int value)
 {
    settings.insert(pair<string, int>(key,value ));
 }
-
 //scan the opened file
 //for loading the settings
 //into the settingsmap
@@ -62,23 +57,27 @@ bool DisplayConfig::readConfig()
         {
              while(getline(input,data))
             {
-
                 pos= data.find_first_of("=");
-                key = data.substr(0,pos);
-                value = data.substr(pos+1);
+                key = data.substr(0,pos-1);
+                value = data.substr(pos+2);
 
+                    intvalue = atoi(value.c_str());
+                    if(intvalue >= 0)
+                        {
 
-                if((ss >> intvalue).fail())
-                {
-                    addToMap( key,intvalue );
-                }
-                else
-                {
-                    cout<<"Error reading configfile"<<endl;
-                }
+                           addToMap( key,intvalue );
+                           //cout<<value<<endl;
+                        }
+                    else
+                        {
+                            cout<<"Error reading configfile"<<endl;
+                            return false;
+                        }
             }
         }
         input.close();
+
+        return true;
 }
 
 int DisplayConfig::writeConfig()
@@ -87,7 +86,8 @@ int DisplayConfig::writeConfig()
     {
          for(it = settings.begin(); it != settings.end(); it++)
         {
-            cout << (*it).first << " => " << (*it).second << endl;
+            //cout << (*it).first << " => " << (*it).second << endl;
+            //cout<<settings.find("fullscreen")->first <<endl;
         }
     }
 

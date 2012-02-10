@@ -3,6 +3,7 @@
 Render::Render():Environment()
 {
     x = 1;
+    loadSettings();
     prepare();
     generator = new ParticleGenerator();
     generator->createParticles(500);

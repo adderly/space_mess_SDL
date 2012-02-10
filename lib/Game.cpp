@@ -9,22 +9,22 @@ Game::Game():Render()
 }
 void Game::movePlayers()
 {
-        if(right)
+        if(p_right)
         {
             x+=2;
             player.x++;
         }
-        if(left)
+        if(p_left)
         {
             x-=2;
             player.x--;
         }
-        if(up)
+        if(p_up)
         {
             y-=2;
             player.y++;
         }
-        if(down)
+        if(p_down)
         {
             y+=2;
             player.y--;
@@ -141,16 +141,16 @@ void Game::checkEvents()
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_RIGHT:
-                        right = true;
+                        p_right = true;
                     break;
                     case SDLK_LEFT:
-                        left = true;
+                        p_left = true;
                     break;
                     case SDLK_UP:
-                        up = true;
+                        p_up = true;
                     break;
                     case SDLK_DOWN:
-                        down = true;
+                        p_down = true;
                     break;
                     case SDLK_p:
                     music->play();
@@ -170,16 +170,16 @@ void Game::checkEvents()
                 switch(event.key.keysym.sym)
                 {
                      case SDLK_RIGHT:
-                        right = false;
+                        p_right = false;
                     break;
                     case SDLK_LEFT:
-                        left = false;
+                        p_left = false;
                     break;
                     case SDLK_UP:
-                        up = false;
+                        p_up = false;
                     break;
                     case SDLK_DOWN:
-                        down = false;
+                        p_down = false;
                     break;
                     case SDLK_ESCAPE:
                         Running = false;

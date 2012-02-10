@@ -7,10 +7,10 @@
 */
 
 /*    KEYBOARD      */
-static bool left = false;
-static bool right = false;
-static bool up = false;
-static bool down = false;
+static bool p_left = false;
+static bool p_right = false;
+static bool p_up = false;
+static bool p_down = false;
 static bool SPACE = false;
 static bool ENTER = false;
 static bool A = false;
