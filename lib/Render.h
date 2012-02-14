@@ -11,6 +11,7 @@
 #include"../utils/TextRender.h"
 #include"../utils/TextureLoader.h"
 #include"Audio/AudioPlayback.h"
+#include"../utils/Log.h"
 
 
 class Render:public Environment

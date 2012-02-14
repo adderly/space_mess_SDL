@@ -6,6 +6,7 @@
 #include<map>
 #include<stdlib.h>
 #include<cstdlib>
+#include"../utils/Log.h"
 
 //This Will Read The Configurations From A Formated Text
 //File

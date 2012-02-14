@@ -17,15 +17,16 @@ Log::~Log()
 bool Log::checkFolderExistance()
 {
     string command = ("okay.txt");
-    check.open(command.c_str(),ios::ios_base::out);
-    if(!check.is_open())
+    check.open((defaultDir+command).c_str(),ios::ios_base::out);
+    if(check.is_open())
     {
 
     }
     else
     {
         std::cout<<"Did not existed!";
-        system(("mkdir "+defaultDir).c_str());
+       std::cout<<"ummmm-->>"<< system(("mkdir "+defaultDir).c_str());
+       //std::cout<<"eeehhmmm-->>"<< system("ls");
         check.open(command.c_str());
     }
     check.close();
@@ -37,15 +38,16 @@ void Log::closef()
 
 }
 void Log::openf(){}
-void Log::write_to_f(const string whichone,const string data)
+void Log::write_to_f(const std::string whichone,const std::string data)
 {
     ofile.open((defaultDir+whichone+".log").c_str(),std::ios_base::out|std::ios_base::app);
 
     if(ofile.is_open())
     {
-        ofile<<"kind of worked";
+        ofile<<data<<std::endl;
     }
-   // else if(ofile.){}
+   else{std::cout<<"DAmn";}
+   ofile.close();
 
 }
 

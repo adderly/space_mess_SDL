@@ -10,7 +10,7 @@ Render::Render():Environment()
     texture = loadTexture("resources/images/brick.bmp");
     text = new Text();
     music = new Audio();
-    music->loadSound("sdfsd");
+
 
 
 }
@@ -27,12 +27,13 @@ void Render::prepare()
     if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_AUDIO) < 0)
     {
         std::cout<<"Could not init video" <<std::endl;
+        saveLog("Could Not INIT VIDEO");
         exit(-1);
     }
 
-    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 5);
-    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 5);
-    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 5);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
@@ -47,7 +48,7 @@ void Render::init()
     glClearColor(1,1,1,1);
    // glMatrixMode(GL_PROJECTION);
     glViewport(0,0,width,height);
-    gluPerspective(45.0,680/460,1.0,500.0);
+    //gluPerspective(45.0,680/460,1.0,500.0);
     glMatrixMode(GL_MODELVIEW);
     glDisable(GL_DEPTH_TEST);
     glLoadIdentity();
@@ -74,7 +75,6 @@ int Render::setFullScreen()
 }
 void Render::draw()
 {
-
 
     glClear(GL_COLOR_BUFFER_BIT);
    // glColor3f(0,1,0);

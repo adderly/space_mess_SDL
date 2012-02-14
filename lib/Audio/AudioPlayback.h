@@ -2,6 +2,7 @@
 #include<map>
 #include<string>
 #include<vector>
+#include"../../utils/Log.h"
 
 
 /*
@@ -10,13 +11,25 @@
 *   it will called and asigned effect(sound)
 *   ex. player shooting
 */
+struct Sound
+{
+    Sound* next;
+    Sound* previous;
+    std::string name;
+    bool isMusic;
+    Mix_Music* music;
+    Mix_Chunk* effect;
+
+};
+
+
 
 class Audio
 {
     Mix_Chunk* effect;
     Mix_Music* music;
 
-    std::map<std::string,Mix_Chunk*> songs; //Songs or something like it
+    std::map<std::string,Mix_Music*> songs; //Songs or something like it
     std::map<std::string,Mix_Chunk*> effects;
     std::vector<std::string> musicList; //for next and previous
     std::string current;
@@ -32,7 +45,7 @@ class Audio
         Audio();
         Audio(const std::string name,const std::string location); //default song
         void addMusic(const std::string name,const std::string location);
-        void loadSound(const char* filename);
+        void loadSound(const std::string location,const std::string filename);
         void play();
         void playSpecific(const std::string name); //inside the map
         void playEffect(Mix_Chunk* effect);

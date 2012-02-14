@@ -15,7 +15,7 @@ Text::Text(SDL_Surface &main)
 }
 void Text::loadResources()
 {
-   font = TTF_OpenFont("resources/lazy.ttf", 45);
+   font = TTF_OpenFont("lazy.ttf", 45);
    //std::cout<<TTF_GetError();
     if(t == NULL) exit(0);
     SDL_Color c = {255,255,0};
