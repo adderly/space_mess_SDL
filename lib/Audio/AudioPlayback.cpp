@@ -3,8 +3,11 @@
 Audio::Audio()
 {
     Mix_OpenAudio(22050,MIX_DEFAULT_FORMAT,2,4096);
+
     music = Mix_LoadMUS("resources/sound/sound.wav");
     effect = Mix_LoadWAV("resources/sound/tone.wav");
+    if(music == NULL) saveLog("Fucking audio!");
+
 }
 Audio::Audio(const std::string name,const std::string location)
 {

@@ -6,7 +6,7 @@ map<string, int> &DisplayConfig::getsettings()
 }
 DisplayConfig::DisplayConfig()
 {
-       saveLog("From Display Constrcutor");
+
        defaults =  "height = 460\n";
        defaults +=  "width = 680\n";
        defaults +=   "bpp = 32\n";
@@ -72,6 +72,7 @@ bool DisplayConfig::readConfig()
                     else
                         {
                             cout<<"Error reading configfile"<<endl;
+                            saveLog("From Read Config");
                             return false;
                         }
             }

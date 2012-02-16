@@ -25,6 +25,9 @@ class Log
      bool checkFolderExistance();
      ~Log();
 };
+
+
+
 static void saveLog(std::string data)
 {
     Log* log = new Log();

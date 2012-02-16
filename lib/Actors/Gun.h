@@ -1,14 +1,15 @@
 #include<string>
+#include"Weapon.h"
 
-class Gun
+class Gun:public Weapon
 {
     std::string name;
-    int amoamout;
     float maxHeat;
     public:
     Gun();
-        virtual void fire();
-        void setName(std::string name);
+        void fire();
+        void setName(std::string name){this->name = name;}
+        std::string getName(){return this->name;}
     ~Gun();
 };
 

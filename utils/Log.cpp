@@ -1,3 +1,4 @@
+
 #include"Log.h"
 
 Log::Log()
@@ -50,4 +51,6 @@ void Log::write_to_f(const std::string whichone,const std::string data)
    ofile.close();
 
 }
+
+
 

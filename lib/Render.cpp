@@ -46,7 +46,7 @@ void Render::init()
 {
 
     glClearColor(1,1,1,1);
-   // glMatrixMode(GL_PROJECTION);
+    glMatrixMode(GL_PROJECTION);
     glViewport(0,0,width,height);
     //gluPerspective(45.0,680/460,1.0,500.0);
     glMatrixMode(GL_MODELVIEW);
