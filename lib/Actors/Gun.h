@@ -3,6 +3,8 @@
 
 class Gun:public Weapon
 {
+    friend class Player;
+    int ammoAmount;
     std::string name;
     float maxHeat;
     public:

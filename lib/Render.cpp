@@ -7,18 +7,14 @@ Render::Render():Environment()
     prepare();
     generator = new ParticleGenerator();
     generator->createParticles(500);
+    player = new Player(generator);
     texture = loadTexture("resources/images/brick.bmp");
-    text = new Text();
     music = new Audio();
-
-
-
 }
 void Render::shut()
 {
-
     float color[] = {255,222,225};
-    Particle* p = new Particle(player.x+player.width,-1*player.y+(player.width/2),0,2,gravity,0,10,color);
+    Particle* p = new Particle(player->x+player->width,-1*player->y+(player->width/2),0,2,gravity,0,10,color);
     p->setSize(20,20);
     generator->addParticle(p);
 }
@@ -44,7 +40,6 @@ void Render::prepare()
 }
 void Render::init()
 {
-
     glClearColor(1,1,1,1);
     glMatrixMode(GL_PROJECTION);
     glViewport(0,0,width,height);
@@ -58,8 +53,6 @@ void Render::init()
     glEnable(GL_ALPHA);
     //SDL_WM_GrabInput(SDL_GRAB_ON);
 }
-
-
 void Render::reshape(int width, int height)
 {
     glClearColor(0,0,0,1);
@@ -75,21 +68,18 @@ int Render::setFullScreen()
 }
 void Render::draw()
 {
-
     glClear(GL_COLOR_BUFFER_BIT);
    // glColor3f(0,1,0);
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D,texture);
         glBegin(GL_QUADS);
-            glVertex2f(player.x+this->x,player.y+this->y); glTexCoord2f(0.0,1.0);
-            glVertex2f(player.x+player.width+this->x,player.y+this->y);  glTexCoord2f(1.0,1.0);
-            glVertex2f(player.x+player.width+this->x,player.y+player.height+this->y);   glTexCoord2f(0.0,1.0);
-            glVertex2f(player.x+this->x,player.y+player.height+this->y); glTexCoord2f(0.0,0.0);
+            glVertex2f(player->x+this->x,player->y+this->y); glTexCoord2f(0.0,1.0);
+            glVertex2f(player->x+player->width+this->x,player->y+this->y);  glTexCoord2f(1.0,1.0);
+            glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(0.0,1.0);
+            glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,0.0);
         glEnd();
         glDisable(GL_TEXTURE_2D);
 
-
-//
 //        glBegin(GL_QUADS);
 //        glVertex2d(square.x,square.y);
 //        glVertex2d(square.x+square.w,square.y);
@@ -109,39 +99,49 @@ void Render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
-        SDL_BlitSurface(text->t,NULL,screen,NULL);
-
-
 }
 void Render::checkCollition()
 {
     for(int f = 0;f < generator->particles.size();f++)
     {
-        if(generator->particles[f]->pos_x < 0)
+        if( generator->particles[f]->alive == true)
         {
-            generator->particles[f]->speed_x = -1 * generator->particles[f]->speed_x;
-            if(generator->particles[f]->speed_x > generator->particles[f]->speed_y) generator->particles[f]->speed_y *= 1.01;
-        }
-        if(generator->particles[f]->pos_y < 0)
+            if(generator->particles[f]->pos_x < 2)
+            {
+                generator->particles[f]->speed_x = -1 * generator->particles[f]->speed_x;
+                if(generator->particles[f]->speed_x > generator->particles[f]->speed_y) generator->particles[f]->speed_y *= 1.01;
+                //generator->particles[f]->alive = false;
+            }
+            if(generator->particles[f]->pos_y < 2)
+            {
+                generator->particles[f]->speed_y = -1 * generator->particles[f]->speed_y;
+                if(generator->particles[f]->speed_y > generator->particles[f]->speed_x) generator->particles[f]->speed_x *=1.01;
+                // generator->particles[f]->alive = false;
+            }
+            if(generator->particles[f]->pos_x+generator->particles[f]->width >= width)
+            {
+                generator->particles[f]->speed_x = - generator->particles[f]->speed_x;
+               if(generator->particles[f]-> width > 10) generator->createParticles(60);
+                // generator->particles[f]->alive = false;
+            }
+            if(generator->particles[f]->pos_y+generator->particles[f]->height >= height-5)
+            {
+                generator->particles[f]->speed_y = - generator->particles[f]->speed_y;
+                // generator->particles[f]->alive = false;
+            }
+        }else
         {
-            generator->particles[f]->speed_y = -1 * generator->particles[f]->speed_y;
-            if(generator->particles[f]->speed_y > generator->particles[f]->speed_x) generator->particles[f]->speed_x *=1.01;
-        }
-        if(generator->particles[f]->pos_x+generator->particles[f]->width > width)
-        {
-            generator->particles[f]->speed_x = - generator->particles[f]->speed_x;
-
-           if(generator->particles[f]-> width > 10) generator->createParticles(60);
-        }
-        if(generator->particles[f]->pos_y+generator->particles[f]->height > height)
-        {
-            generator->particles[f]->speed_y = - generator->particles[f]->speed_y;
+           // delete generator->particles[f];
         }
     }
 }
 void Render::drawMainMenu(){}
-void Render::drawPauseMenu(){}
-void Render::releaseResources(){}
+void Render::drawPauseMenu()
+{
+}
+void Render::releaseResources()
+{
+}
 void Render::fallowMouse(int mouse_x,int mouse_y)
 {
     for(int n = 0;n< generator->particles.size();n++)
@@ -156,7 +156,6 @@ void Render::fallowMouse(int mouse_x,int mouse_y)
            generator->particles[n]->speed_y = - generator->particles[n]->speed_y;
            generator->particles[n]->y_max = mouse_y;
         }
-
     }
 }
 void Render::clean(){}

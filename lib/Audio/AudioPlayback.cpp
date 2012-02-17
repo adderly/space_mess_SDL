@@ -23,7 +23,6 @@ void Audio::addMusic(const std::string name,const std::string location)
     {
         try
         {
-
             songs.insert(std::pair<std::string,Mix_Music*>(name,ms));
         }catch(...)
         {

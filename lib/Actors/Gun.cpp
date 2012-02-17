@@ -1,13 +1,14 @@
 #include"Gun.h"
 
 
-Gun::Gun()
+Gun::Gun():Weapon()
 {
-
+    ammoAmount= 100;
 }
 
 void Gun::fire()
 {
+    ammoAmount--;
 
 }
 Gun::~Gun()

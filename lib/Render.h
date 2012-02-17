@@ -20,12 +20,12 @@ class Render:public Environment
    const SDL_VideoInfo *info;
    ParticleGenerator* generator;
    unsigned int texture;
-   Text* text;
     Audio* music;
+
     friend class Game;
 
  public:
-  Player player;
+  Player* player;
   int x;
   int y;
   Render();
