@@ -16,7 +16,8 @@
 
 class Render:public Environment
 {
-   SDL_Surface *screen;
+   SDL_Surface *screen,*background;
+   SDL_Rect camera;
    const SDL_VideoInfo *info;
    ParticleGenerator* generator;
    unsigned int texture;

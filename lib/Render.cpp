@@ -2,6 +2,10 @@
 
 Render::Render():Environment()
 {
+    camera.h  = 660;
+    camera.w = 460;
+    camera.x = 0;
+    camera.y = 0;
     x = 1;
     loadSettings();
     prepare();
@@ -33,9 +37,13 @@ void Render::prepare()
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-    SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
+    SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
-    screen = SDL_SetVideoMode(width,height,bpp,SDL_SWSURFACE|SDL_OPENGL);
+    screen = SDL_SetVideoMode(width,height,bpp, SDL_SWSURFACE|SDL_OPENGL);
+    if( (background = IMG_Load("resources/images/back2.bmp"))== NULL) return;
+    background = SDL_DisplayFormat(background);
+
     init();
 }
 void Render::init()
@@ -68,6 +76,7 @@ int Render::setFullScreen()
 }
 void Render::draw()
 {
+
     glClear(GL_COLOR_BUFFER_BIT);
    // glColor3f(0,1,0);
         glEnable(GL_TEXTURE_2D);
@@ -78,7 +87,7 @@ void Render::draw()
             glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(0.0,1.0);
             glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,0.0);
         glEnd();
-        glDisable(GL_TEXTURE_2D);
+       // glDisable(GL_TEXTURE_2D);
 
 //        glBegin(GL_QUADS);
 //        glVertex2d(square.x,square.y);
@@ -99,6 +108,10 @@ void Render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
+        SDL_BlitSurface(background,NULL,screen,&camera);
+        //SDL_BlitSurface(background,NULL,screen,NULL);
+        SDL_Flip(screen);
+        SDL_GL_SwapBuffers();
 }
 void Render::checkCollition()
 {

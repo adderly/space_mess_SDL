@@ -68,8 +68,8 @@ void Game::MainLoop()
         checkEvents();
 
         draw();
-        std::cout<<SDL_GetError();
-        SDL_GL_SwapBuffers();
+        //std::cout<<SDL_GetError();
+        //SDL_GL_SwapBuffers();
 
 
 
