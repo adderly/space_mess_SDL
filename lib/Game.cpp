@@ -12,42 +12,43 @@ void Game::movePlayers()
         if(p_right)
         {
             x+=2;
-            player.x++;
+            player->x++;
         }
         if(p_left)
         {
             x-=2;
-            player.x--;
+            player->x--;
         }
         if(p_up)
         {
             y-=2;
-            player.y++;
+            player->y++;
         }
         if(p_down)
         {
             y+=2;
-            player.y--;
+            player->y--;
         }
         if(MOUSE_LCLICK)
 		{
+		   player->shoot();
 
 
             if(!GRABBED)
             {
-                if(event.motion.x > player.x && event.motion.x < player.x+player.width )
-            if(event.motion.y > player.y && event.motion.y < player.y+player.height)
+                if(event.motion.x > player->x && event.motion.x < player->x+player->width )
+            if(event.motion.y > player->y && event.motion.y < player->y+player->height)
                {
-                   player.y = event.motion.y;
-                   player.x = event.motion.x;
+                   player->y = event.motion.y;
+                   player->x = event.motion.x;
                    GRABBED = true;
                }
             }
             if(GRABBED)
             {
 
-                   player.y = event.motion.y;
-                   player.x = event.motion.x;
+                   player->y = event.motion.y;
+                   player->x = event.motion.x;
 
             }
 		}
@@ -67,12 +68,12 @@ void Game::MainLoop()
         checkEvents();
 
         draw();
-        std::cout<<SDL_GetError();
-        SDL_GL_SwapBuffers();
+        //std::cout<<SDL_GetError();
+        //SDL_GL_SwapBuffers();
 
 
 
-        t << event.motion.x<<"   "<<event.motion.y <<"    "<< player.x<<"   "<<player.y;
+        t << event.motion.x<<"   "<<event.motion.y <<"    "<< player->x<<"   "<<player->y;
         title = t.str();
         SDL_WM_SetCaption(title.c_str(), 0);
 
@@ -99,6 +100,7 @@ void Game::checkEvents()
                       //shut();
                       break;
                       case SDL_BUTTON_RIGHT:
+                       music->playEffect("sdfsd");
                       MOUSE_RCLICK = true;
                       break;
                       case SDL_BUTTON_MIDDLE:

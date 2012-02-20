@@ -1,4 +1,6 @@
 
+#ifndef PARTICLE
+#define PARTICLE
 
 class Particle
 {
@@ -19,3 +21,4 @@ class Particle
     ~Particle();
 };
 
+#endif

@@ -9,6 +9,8 @@
     #include"Particle.h"
 #endif
 
+#ifndef GEN
+#define GEN
 class ParticleGenerator
 {
 
@@ -19,6 +21,7 @@ class ParticleGenerator
     std::vector<Particle*> particles;
     ParticleGenerator();
     void createParticles(int num);
+    void genParticlesAt(int x, int y,int z,int amount);
     void addParticle(int x,int y, int z,float speedx,float speedy,float speedz,float life,float *color);
     void addParticle(Particle* newone);
     void evolveParticles();
@@ -26,3 +29,4 @@ class ParticleGenerator
     ~ParticleGenerator();
 
 };
+#endif

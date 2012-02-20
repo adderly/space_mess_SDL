@@ -1,18 +1,18 @@
 #include"Gun.h"
 
 
-Gun::Gun(){}
-void Gun::setName(std::string name)
+Gun::Gun():Weapon()
 {
-    this->name = name;
+    ammoAmount= 100;
 }
+
 void Gun::fire()
 {
-    amoamout--;
+    ammoAmount--;
+
 }
 Gun::~Gun()
 {
     delete &name;
-    delete &amoamout;
     delete &maxHeat;
 }

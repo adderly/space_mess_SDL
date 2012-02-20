@@ -2,15 +2,17 @@
 template<class Type> class List
 {
     int count;
-    Type *next;
-    Type *previous;
+    Type *first;
+    Type *last;
     Type *current;
     public:
     List();
     int getCount();
     void add(Type* obj);
     void remove(Type* obj);
-    Type* getnext();
+    void Next();
+    void Previous();
+    Type* getNext();
     Type* getPrevious();
     Type* getCurrent();
     ~List();

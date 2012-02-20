@@ -6,6 +6,7 @@ map<string, int> &DisplayConfig::getsettings()
 }
 DisplayConfig::DisplayConfig()
 {
+
        defaults =  "height = 460\n";
        defaults +=  "width = 680\n";
        defaults +=   "bpp = 32\n";
@@ -71,6 +72,7 @@ bool DisplayConfig::readConfig()
                     else
                         {
                             cout<<"Error reading configfile"<<endl;
+                            saveLog("From Read Config");
                             return false;
                         }
             }
@@ -84,11 +86,24 @@ int DisplayConfig::writeConfig()
 {
     if(!settings.empty())
     {
-         for(it = settings.begin(); it != settings.end(); it++)
+        try
         {
-            //cout << (*it).first << " => " << (*it).second << endl;
-            //cout<<settings.find("fullscreen")->first <<endl;
+             output.open("config/xconfig.dat");
+             if(output.is_open())
+             {
+                 for(it = settings.begin(); it != settings.end(); it++)
+                {
+                   output<< it->first<<" + "<<it->second<<"\n";
+                }
+                output.close();
+             }
+             else throw ;
         }
+        catch(...)
+        {
+            saveLog("Error Saving DisplayConfig");
+        }
+
     }
 
 }

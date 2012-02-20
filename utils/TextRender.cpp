@@ -15,11 +15,20 @@ Text::Text(SDL_Surface &main)
 }
 void Text::loadResources()
 {
-   font = TTF_OpenFont("resources/lazy.ttf", 45);
-   //std::cout<<TTF_GetError();
-    if(t == NULL) exit(0);
-    SDL_Color c = {255,255,0};
-   t = TTF_RenderText_Solid(font,"Fuck IT",c);
+    try
+    {
+        font = TTF_OpenFont("resources/lazy.ttf", 45);
+       //std::cout<<TTF_GetError();
+
+        SDL_Color c = {255,255,0};
+       t = TTF_RenderText_Solid(font,"Fuck IT",c);
+    }catch(...)
+    {
+        if(font == NULL) saveLog("Error Opening Font File @TextRender.LoadResoureces");
+        if(t == NULL) saveLog("");
+        std::terminate();
+    }
+
 
 }
 void Text::freeResources()

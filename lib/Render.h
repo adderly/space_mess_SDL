@@ -11,20 +11,22 @@
 #include"../utils/TextRender.h"
 #include"../utils/TextureLoader.h"
 #include"Audio/AudioPlayback.h"
+#include"../utils/Log.h"
 
 
 class Render:public Environment
 {
-   SDL_Surface *screen;
+   SDL_Surface *screen,*background;
+   SDL_Rect camera;
    const SDL_VideoInfo *info;
    ParticleGenerator* generator;
    unsigned int texture;
-   Text* text;
     Audio* music;
+
     friend class Game;
 
  public:
-  Player player;
+  Player* player;
   int x;
   int y;
   Render();

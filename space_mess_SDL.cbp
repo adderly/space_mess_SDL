@@ -23,9 +23,13 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="README" />
+		<Unit filename="editor/Editor.h" />
+		<Unit filename="editor/ObjectManager.h" />
 		<Unit filename="lib/Actors/Gun.cpp" />
 		<Unit filename="lib/Actors/Gun.h" />
 		<Unit filename="lib/Actors/Spaceship.h" />
+		<Unit filename="lib/Actors/Weapon.cpp" />
+		<Unit filename="lib/Actors/Weapon.h" />
 		<Unit filename="lib/Audio/AudioPlayback.cpp" />
 		<Unit filename="lib/Audio/AudioPlayback.h" />
 		<Unit filename="lib/DisplayConfig.cpp" />

@@ -5,10 +5,10 @@
 
 class Game:public Render
 {
-    Render rend;
+    Render* rend;
     bool Running,Paused,Mainmenu,GRABBED;
     int* mouseX,*mouseY;
-    static const int FPS = 30;
+    static const int FPS = 20;
     Uint32 start;
     SDL_Event event;
     friend class Render;

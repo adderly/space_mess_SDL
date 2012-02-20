@@ -4,20 +4,29 @@
 	<File name="README" open="0" top="0" tabpos="8">
 		<Cursor position="375" topLine="0" />
 	</File>
-	<File name="lib/Actors/Gun.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="149" topLine="0" />
+	<File name="lib/Actors/Gun.cpp" open="1" top="0" tabpos="13">
+		<Cursor position="101" topLine="0" />
 	</File>
-	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="584" topLine="12" />
+	<File name="lib/Actors/Gun.h" open="1" top="0" tabpos="7">
+		<Cursor position="160" topLine="0" />
+	</File>
+	<File name="lib/Actors/Weapon.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="90" topLine="0" />
+	</File>
+	<File name="lib/Actors/Weapon.h" open="0" top="0" tabpos="0">
+		<Cursor position="199" topLine="0" />
+	</File>
+	<File name="lib/Audio/AudioPlayback.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="205" topLine="42" />
 	</File>
 	<File name="lib/Audio/AudioPlayback.h" open="0" top="0" tabpos="9">
-		<Cursor position="940" topLine="19" />
+		<Cursor position="852" topLine="32" />
 	</File>
-	<File name="lib/DisplayConfig.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="495" topLine="0" />
+	<File name="lib/DisplayConfig.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="2104" topLine="0" />
 	</File>
-	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="2">
-		<Cursor position="276" topLine="0" />
+	<File name="lib/DisplayConfig.h" open="0" top="0" tabpos="2">
+		<Cursor position="276" topLine="2" />
 	</File>
 	<File name="lib/Environment.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="27" topLine="0" />
@@ -29,39 +38,51 @@
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib/EventHandler.h" open="0" top="0" tabpos="6">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="109" topLine="0" />
 	</File>
-	<File name="lib/Game.cpp" open="0" top="0" tabpos="2">
-		<Cursor position="925" topLine="18" />
+	<File name="lib/Game.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="2160" topLine="0" />
 	</File>
-	<File name="lib/Game.h" open="0" top="0" tabpos="1">
-		<Cursor position="220" topLine="0" />
+	<File name="lib/Game.h" open="1" top="1" tabpos="8">
+		<Cursor position="181" topLine="3" />
 	</File>
 	<File name="lib/ObjectFactory.h" open="0" top="0" tabpos="5">
 		<Cursor position="37" topLine="0" />
 	</File>
-	<File name="lib/Player.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="61" topLine="0" />
+	<File name="lib/Particle.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="160" topLine="0" />
 	</File>
-	<File name="lib/Player.h" open="0" top="0" tabpos="9">
-		<Cursor position="0" topLine="0" />
+	<File name="lib/Particle.h" open="1" top="0" tabpos="6">
+		<Cursor position="527" topLine="0" />
 	</File>
-	<File name="lib/Render.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="5358" topLine="126" />
+	<File name="lib/ParticleGenerator.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="1277" topLine="42" />
+	</File>
+	<File name="lib/ParticleGenerator.h" open="1" top="0" tabpos="5">
+		<Cursor position="392" topLine="15" />
+	</File>
+	<File name="lib/Player.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="204" topLine="4" />
+	</File>
+	<File name="lib/Player.h" open="1" top="0" tabpos="3">
+		<Cursor position="325" topLine="9" />
+	</File>
+	<File name="lib/Render.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="4545" topLine="0" />
 	</File>
 	<File name="lib/Render.h" open="0" top="0" tabpos="4">
-		<Cursor position="884" topLine="7" />
+		<Cursor position="567" topLine="5" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="266" topLine="0" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="101" topLine="0" />
 	</File>
 	<File name="utils/Log.cpp" open="0" top="0" tabpos="11">
-		<Cursor position="236" topLine="14" />
+		<Cursor position="199" topLine="0" />
 	</File>
 	<File name="utils/Log.h" open="0" top="0" tabpos="0">
-		<Cursor position="198" topLine="7" />
+		<Cursor position="449" topLine="2" />
 	</File>
 	<File name="utils/keys.h" open="0" top="0" tabpos="0">
-		<Cursor position="0" topLine="15" />
+		<Cursor position="0" topLine="5" />
 	</File>
 </CodeBlocks_layout_file>

@@ -7,6 +7,8 @@ Particle::Particle()
     height = 2;
     x_max = 0;
     y_max = 0;
+    width = 2;
+    height = 2;
 }
 
 Particle::Particle(int x,int y, int z,float speedx,
