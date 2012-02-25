@@ -41,9 +41,9 @@ void Render::prepare()
     SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
     screen = SDL_SetVideoMode(width,height,bpp, SDL_SWSURFACE|SDL_OPENGL);
-    if( (background = IMG_Load("resources/images/back2.bmp"))== NULL) return;
-    background = SDL_DisplayFormat(background);
-
+    background = IMG_Load("resources/images/back.bmp");
+    if( background == NULL) exit(-1);;
+    //background = SDL_DisplayFormat(background);
     init();
 }
 void Render::init()
@@ -108,9 +108,9 @@ void Render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
-        SDL_BlitSurface(background,NULL,screen,&camera);
-        //SDL_BlitSurface(background,NULL,screen,NULL);
-        SDL_Flip(screen);
+        //SDL_BlitSurface(screen,&camera,background,NULL);
+        SDL_BlitSurface(background,NULL,screen,NULL);
+        //SDL_Flip(screen);
         SDL_GL_SwapBuffers();
 }
 void Render::checkCollition()

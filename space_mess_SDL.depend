@@ -10,10 +10,10 @@
 1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\videoutil.h
 	"DisplayConfig.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.cpp
 	"Render.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\render.h
 	<SDL/SDL.h>
 	<SDL/SDL_opengl.h>
 	<SDL/SDL_thread.h>
@@ -27,6 +27,7 @@
 	"../utils/TextRender.h"
 	"../utils/TextureLoader.h"
 	"Audio/AudioPlayback.h"
+	"../utils/Log.h"
 
 1327130441 Window.h"
 
@@ -204,21 +205,23 @@
 1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\eventhandler.h
 	<SDL/SDL.h>
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.cpp
 	"Game.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\game.h
 	"Render.h"
 	<sstream>
 
 1328339299 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.h
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.h
+	"Actors/Gun.h"
+	"ParticleGenerator.h"
 
 1328339330 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\environment.cpp
 	"Environment.h"
 
-1328354834 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\player.cpp
 	"Player.h"
 
 1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\keys.h
@@ -274,31 +277,32 @@
 1328310928 /media/Los Tereques/Development/C++/space_mess_SDL/space_mess_SDL/utils/Window.h
 	<string>
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.h
 	<SDL/SDL.h>
 	<SDL/SDL_ttf.h>
 	<iostream>
+	"Log.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textrender.cpp
 	"TextRender.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.cpp
 	"ParticleGenerator.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particlegenerator.h
 	<cstdlib>
 	<iostream>
 	<vector>
 	<math.h>
 	"Particle.h"
 
-1328362229 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.h
 
 1328346531 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\testmain.cpp
 	"../lib/ParticleGenerator.h"
 	<iostream>
 
-1328365868 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\particle.cpp
 	"Particle.h"
 
 1328490760 source:/home/moisex/Desktop/space_mess_SDL/lib/Environment.cpp
@@ -551,25 +555,27 @@
 1329372181 source:/home/moisex/Desktop/space_mess_SDL/lib/Actors/Weapon.cpp
 	"Weapon.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\gun.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\gun.cpp
 	"Gun.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\gun.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\gun.h
 	<string>
+	"Weapon.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\audio\audioplayback.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\audio\audioplayback.cpp
 	"AudioPlayback.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\audio\audioplayback.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\audio\audioplayback.h
 	<SDL/SDL_mixer.h>
 	<map>
 	<string>
 	<vector>
+	"../../utils/Log.h"
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\displayconfig.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\displayconfig.cpp
 	"DisplayConfig.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\displayconfig.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\displayconfig.h
 	<fstream>
 	<iostream>
 	<sstream>
@@ -578,18 +584,25 @@
 	<map>
 	<stdlib.h>
 	<cstdlib>
+	"../utils/Log.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textureloader.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\textureloader.h
 	<SDL/SDL.h>
 	<SDL/SDL_opengl.h>
 	<SDL/SDL_image.h>
 
-1328934108 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\log.cpp
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\utils\log.cpp
 	"Log.h"
 
-1328934108 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\log.h
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\utils\log.h
 	<fstream>
 	<iostream>
 	<cstdlib>
 	<string>
+	<exception>
+
+1329701904 d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\weapon.h
+
+1329701904 source:d:\development\c++\space_mess_sdl\space_mess_sdl\lib\actors\weapon.cpp
+	"Weapon.h"
 
