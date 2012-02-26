@@ -42,7 +42,11 @@ void Render::prepare()
 
     screen = SDL_SetVideoMode(width,height,bpp, SDL_SWSURFACE|SDL_OPENGL);
     background = IMG_Load("resources/images/back.bmp");
-    if( background == NULL) exit(-1);;
+    if( background == NULL) {
+        std::cout<<"Unable to load back.bmp" <<std::endl;
+        saveLog("Could Not load resource/images/back.bmp");
+        exit(-1);
+    }
     //background = SDL_DisplayFormat(background);
     init();
 }

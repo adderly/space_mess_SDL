@@ -31,18 +31,18 @@ void Game::movePlayers()
         }
         if(MOUSE_LCLICK)
 		{
-		   player->shoot();
+            player->shoot();
 
 
             if(!GRABBED)
             {
                 if(event.motion.x > player->x && event.motion.x < player->x+player->width )
-            if(event.motion.y > player->y && event.motion.y < player->y+player->height)
-               {
-                   player->y = event.motion.y;
-                   player->x = event.motion.x;
-                   GRABBED = true;
-               }
+                    if(event.motion.y > player->y && event.motion.y < player->y+player->height)
+                       {
+                           player->y = event.motion.y;
+                           player->x = event.motion.x;
+                           GRABBED = true;
+                       }
             }
             if(GRABBED)
             {
