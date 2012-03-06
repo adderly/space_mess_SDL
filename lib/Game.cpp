@@ -78,17 +78,18 @@ void Game::MainLoop()
 
         if(1000/FPS > SDL_GetTicks()-start)
                SDL_Delay(1000/FPS>SDL_GetTicks()-start);
+
     }
     SDL_Quit();
 }
 void Game::checkEvents()
 {
-     while(SDL_PollEvent(&this->event))
+     while(SDL_PollEvent(&event))
      {
         if(event.type == SDL_QUIT) Running = false;
 
         if (event.type == SDL_MOUSEMOTION);
-            //fallowMouse(event.motion.x,event.motion.y);
+            fallowMouse(event.motion.x,event.motion.y);
 
         if(event.type == SDL_MOUSEBUTTONDOWN)
         {

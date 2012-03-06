@@ -24,7 +24,7 @@ void Render::shut()
 }
 void Render::prepare()
 {
-    if(SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_AUDIO) < 0)
+    if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
         std::cout<<"Could not init video" <<std::endl;
         saveLog("Could Not INIT VIDEO");
@@ -40,14 +40,14 @@ void Render::prepare()
     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
-    screen = SDL_SetVideoMode(width,height,bpp, SDL_SWSURFACE|SDL_OPENGL);
-    background = IMG_Load("resources/images/back.bmp");
+    screen = SDL_SetVideoMode(width,height,bpp,SDL_HWSURFACE|SDL_OPENGLBLIT);
+    background = IMG_Load("resources/images/brick.bmp");
     if( background == NULL) {
         std::cout<<"Unable to load back.bmp" <<std::endl;
         saveLog("Could Not load resource/images/back.bmp");
         exit(-1);
     }
-    //background = SDL_DisplayFormat(background);
+    background = SDL_DisplayFormat(background);
     init();
 }
 void Render::init()
@@ -57,7 +57,7 @@ void Render::init()
     glViewport(0,0,width,height);
     //gluPerspective(45.0,680/460,1.0,500.0);
     glMatrixMode(GL_MODELVIEW);
-    glDisable(GL_DEPTH_TEST);
+    //glDisable(GL_DEPTH_TEST);
     glLoadIdentity();
     glShadeModel(GL_SMOOTH);
     glOrtho(0,width,height,0,-1,1);
@@ -76,13 +76,20 @@ void Render::reshape(int width, int height)
 int Render::setFullScreen()
 {
     glLoadIdentity();
-    SDL_SetVideoMode(680,460,32,SDL_FULLSCREEN|SDL_OPENGL|SDL_SWSURFACE);
+    SDL_SetVideoMode(680,460,32,SDL_FULLSCREEN|SDL_OPENGL|SDL_HWSURFACE);
 }
 void Render::draw()
 {
-
     glClear(GL_COLOR_BUFFER_BIT);
    // glColor3f(0,1,0);
+
+   /***************BLITExample********************
+   *    UpdateRect IS The KEY HERE!
+   *
+   */
+   SDL_BlitSurface(background,NULL,screen,NULL);
+   SDL_UpdateRect(screen, 0, 0, background->w, background->h);
+
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D,texture);
         glBegin(GL_QUADS);
@@ -93,12 +100,6 @@ void Render::draw()
         glEnd();
        // glDisable(GL_TEXTURE_2D);
 
-//        glBegin(GL_QUADS);
-//        glVertex2d(square.x,square.y);
-//        glVertex2d(square.x+square.w,square.y);
-//        glVertex2d(square.x+square.w,square.y+square.h);
-//        glVertex2d(square.x,square.y+square.h);
-//        glEnd();
 
 		glColor3f(1,0,0);
         glBegin(GL_QUADS);
@@ -113,8 +114,8 @@ void Render::draw()
 		checkCollition();
         generator->evolveParticles();
         //SDL_BlitSurface(screen,&camera,background,NULL);
-        SDL_BlitSurface(background,NULL,screen,NULL);
-        //SDL_Flip(screen);
+
+
         SDL_GL_SwapBuffers();
 }
 void Render::checkCollition()
@@ -163,16 +164,7 @@ void Render::fallowMouse(int mouse_x,int mouse_y)
 {
     for(int n = 0;n< generator->particles.size();n++)
     {
-        if(generator->particles[n]->pos_x > x || generator->particles[n]->pos_x < x)
-        {
-           generator->particles[n]->speed_x = - generator->particles[n]->speed_x;
-           generator->particles[n]->x_max = mouse_x;
-        }
-         if(generator->particles[n]->pos_y > y || generator->particles[n]->pos_y < y)
-        {
-           generator->particles[n]->speed_y = - generator->particles[n]->speed_y;
-           generator->particles[n]->y_max = mouse_y;
-        }
+
     }
 }
 void Render::clean(){}

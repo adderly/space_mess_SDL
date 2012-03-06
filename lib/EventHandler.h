@@ -1,15 +1,19 @@
 #include<SDL/SDL.h>
+#include"../utils/keys.h"
 
+class Game;
+class Player;
 class EventHandler
 	{
-     protected: SDL_Event event;
+
+       SDL_Event event;
      friend class Game;
 		public:
-
-
-		//EventHandler(Game& gm);
 		EventHandler();
+		EventHandler(Game* gm);
+		EventHandler(Game* gm,Player* player);
 		void checkEvents();
+		void addFuncToKey(void(*callback));
 		~EventHandler();
 
 	};

@@ -1,3 +1,4 @@
+#include<SDL/SDL.h>
 /*
     This file constains keys for handling
     constantly pressend keys
@@ -7,6 +8,7 @@
 */
 
 /*    KEYBOARD      */
+static SDL_Event event;
 static bool p_left = false;
 static bool p_right = false;
 static bool p_up = false;
