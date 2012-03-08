@@ -13,6 +13,19 @@ Text::Text(SDL_Surface &main)
     this->screen = &main;
     loadResources();
 }
+Text::Text(SDL_Surface &surface,const std::string text)
+{
+
+}
+Text::Text(SDL_Surface &surface,const std::string text,float **color)
+{
+
+}
+void Text::init()
+{
+    font = TTF_OpenFont("resources/lazy.ttf", 45);
+    t = TTF_RenderText_Solid(font,"Fuck IT",textColor);
+}
 void Text::loadResources()
 {
     try
