@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="lib/Actors/Gun.h" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="lib/Actors/Weapon.h" open="1" top="0" tabpos="7">
+		<Cursor position="197" topLine="0" />
+	</File>
+	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="48" topLine="0" />
+	</File>
+	<File name="lib/Audio/AudioPlayback.h" open="0" top="0" tabpos="0">
+		<Cursor position="219" topLine="0" />
+	</File>
+	<File name="lib/DisplayConfig.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="2422" topLine="0" />
+	</File>
+	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="8">
+		<Cursor position="165" topLine="0" />
+	</File>
+	<File name="lib/EventHandler.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="181" topLine="0" />
+	</File>
+	<File name="lib/EventHandler.h" open="1" top="0" tabpos="11">
+		<Cursor position="298" topLine="3" />
+	</File>
+	<File name="lib/Game.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1586" topLine="0" />
+	</File>
+	<File name="lib/Game.h" open="1" top="0" tabpos="10">
+		<Cursor position="216" topLine="7" />
+	</File>
+	<File name="lib/Reader.h" open="0" top="0" tabpos="0">
+		<Cursor position="15" topLine="0" />
+	</File>
+	<File name="lib/Render.cpp" open="1" top="1" tabpos="9">
+		<Cursor position="3152" topLine="90" />
+	</File>
+	<File name="lib/Render.h" open="1" top="0" tabpos="12">
+		<Cursor position="331" topLine="15" />
+	</File>
+	<File name="lib/Render/Draw.h" open="0" top="0" tabpos="0">
+		<Cursor position="458" topLine="5" />
+	</File>
+	<File name="lib/World.h" open="0" top="0" tabpos="0">
+		<Cursor position="97" topLine="0" />
+	</File>
+	<File name="lib/WorldHandler.h" open="0" top="0" tabpos="0">
+		<Cursor position="107" topLine="0" />
+	</File>
+	<File name="lib/Writer.h" open="0" top="0" tabpos="0">
+		<Cursor position="172" topLine="0" />
+	</File>
+	<File name="lib/videoutil.h" open="1" top="0" tabpos="3">
+		<Cursor position="252" topLine="0" />
+	</File>
+	<File name="utils/Log.h" open="1" top="0" tabpos="4">
+		<Cursor position="490" topLine="0" />
+	</File>
+	<File name="utils/TextRender.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="365" topLine="0" />
+	</File>
+	<File name="utils/keys.h" open="0" top="0" tabpos="0">
+		<Cursor position="168" topLine="17" />
+	</File>
+</CodeBlocks_layout_file>

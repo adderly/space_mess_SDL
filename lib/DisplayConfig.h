@@ -14,7 +14,8 @@
 //Settings FileName = xconfig.dat
 
 using namespace std;
-
+#ifndef DISPLAYCONFIG
+#define DISPLAYCONFIG
 class DisplayConfig
 {
     string defaults;
@@ -32,3 +33,4 @@ class DisplayConfig
     int writeConfig();
     ~DisplayConfig();
 };
+#endif

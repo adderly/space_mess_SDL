@@ -1,3 +1,7 @@
+
+#ifndef GUN
+#define GUN
+
 #include<string>
 #include"Weapon.h"
 
@@ -15,4 +19,4 @@ class Gun:public Weapon
     ~Gun();
 };
 
-
+#endif

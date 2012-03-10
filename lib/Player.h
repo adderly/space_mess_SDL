@@ -1,3 +1,7 @@
+
+
+#ifndef PLAYER
+#define PLAYER
 #include"Actors/Gun.h"
 #include"ParticleGenerator.h"
 
@@ -21,5 +25,5 @@ class Player
 		Player(ParticleGenerator* gen);
 		~Player();
 };
-
+#endif
 

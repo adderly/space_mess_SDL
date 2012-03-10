@@ -1,5 +1,8 @@
+
 #include<SDL/SDL.h>
 
+#ifndef KEYS
+#define KEYS
 /*
     This file constains keys for handling
     constantly pressend keys
@@ -7,9 +10,14 @@
     MOUSE AND KEYBOARD
     *******
 */
+// Game STATES
+
+static bool Running =  true;
+static bool Paused = true;
+static bool Mainmenu= false;
+static bool GRABBED =  false;
 
 /*    KEYBOARD      */
-
 static SDL_Event event;
 static bool p_left = false;
 static bool p_right = false;
@@ -38,4 +46,4 @@ static bool MOUSE_RCLICK = false;
 static bool MOUSE_MCLICK = false;
 
 
-
+#endif

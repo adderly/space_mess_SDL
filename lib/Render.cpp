@@ -7,13 +7,17 @@ Render::Render():Environment()
     camera.x = 0;
     camera.y = 0;
     x = 1;
-    loadSettings();
     prepare();
     generator = new ParticleGenerator();
     generator->createParticles(500);
     player = new Player(generator);
     texture = loadTexture("resources/images/brick.bmp");
     music = new Audio();
+    /*  MENU */
+    menu = new Menu(width,height,460,320);
+    menu->setEvent(event);
+    menu->setParentBackground(screen);
+    menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
 }
 void Render::shut()
 {
@@ -47,7 +51,8 @@ void Render::prepare()
         saveLog("Could Not load resource/images/back.bmp");
         exit(-1);
     }
-    background = SDL_DisplayFormat(background);
+    background = SDL_DisplayFormatAlpha(background);
+
     init();
 }
 void Render::init()
@@ -87,6 +92,7 @@ void Render::draw()
    *    UpdateRect IS The KEY HERE!
    *
    */
+
    SDL_BlitSurface(background,NULL,screen,NULL);
    SDL_UpdateRect(screen, 0, 0, background->w, background->h);
 
@@ -98,7 +104,7 @@ void Render::draw()
             glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(0.0,1.0);
             glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,0.0);
         glEnd();
-       // glDisable(GL_TEXTURE_2D);
+        glDisable(GL_TEXTURE_2D);
 
 
 		glColor3f(1,0,0);
@@ -114,8 +120,7 @@ void Render::draw()
 		checkCollition();
         generator->evolveParticles();
         //SDL_BlitSurface(screen,&camera,background,NULL);
-
-
+       menu->draw();
         SDL_GL_SwapBuffers();
 }
 void Render::checkCollition()

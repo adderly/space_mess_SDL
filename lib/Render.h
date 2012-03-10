@@ -12,7 +12,10 @@
 #include"../utils/TextureLoader.h"
 #include"Audio/AudioPlayback.h"
 #include"../utils/Log.h"
+#include"Menu.h" //Drawable is here
 
+#ifndef RENDER
+#define RENDER
 
 class Render:public Environment
 {
@@ -22,10 +25,8 @@ class Render:public Environment
    ParticleGenerator* generator;
    unsigned int texture;
     Audio* music;
-
-    friend class Game;
-
- public:
+  public:
+  Menu* menu;
   Player* player;
   int x;
   int y;
@@ -44,3 +45,4 @@ class Render:public Environment
   void shut();
   void clean();
 };
+#endif

@@ -1,14 +1,15 @@
-#include<fstream>
-#include<iostream>
-#include<cstdlib>
-#include<string>
-#include<exception>
+
 
 
 
 #ifndef LOG
 #define LOG
 
+#include<fstream>
+#include<iostream>
+#include<cstdlib>
+#include<string>
+#include<exception>
 using namespace std;
 class Log
 {
@@ -33,6 +34,12 @@ static void saveLog(std::string data)
     Log* log = new Log();
     log->write_to_f("Testing",data);
 }
+static void saveLog(std::string filename,std::string data)
+{
+    Log* log = new Log();
+    log->write_to_f(filename,data);
+}
+
 
 #endif
 

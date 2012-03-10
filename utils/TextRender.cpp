@@ -2,43 +2,70 @@
 
 Text::Text()
 {
-    TTF_Init();
-    textColor = {255,255,255};
-    loadResources();
-}
-Text::Text(SDL_Surface &main)
-{
-    TTF_Init();
-    textColor = {255,255,255};
-    this->screen = &main;
-    loadResources();
-}
-Text::Text(SDL_Surface &surface,const std::string text)
-{
+    init();
 
 }
-Text::Text(SDL_Surface &surface,const std::string text,float **color)
+Text::Text(std::string txt)
 {
-
+    init();
+    this->text = txt;
 }
+Text::Text(SDL_Surface* main)
+{
+    init();
+    this->tmp = main;
+}
+Text::Text(SDL_Surface* surface,const std::string text,int fontsize)
+{
+    init();
+    this->tmp = surface;
+    this->text = text;
+    this->fontSize = fontsize;
+}
+Text::Text(SDL_Surface *surface,const std::string text,SDL_Color color)
+{
+    this->tmp = surface;
+    this->text = text;
+    this->textColor = color;
+}
+SDL_Surface* Text::generate(SDL_Surface *texture,const std::string text)
+{
+    tmp = texture;
+    tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
+    return tmp;
+}
+SDL_Surface* Text::generate()
+{
+    tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
+    return tmp;
+}
+
 void Text::init()
 {
-    font = TTF_OpenFont("resources/lazy.ttf", 45);
-    t = TTF_RenderText_Solid(font,"Fuck IT",textColor);
+    textColor = {255,255,0};
+
+    try{
+        if(TTF_Init()==-1)
+        {
+            throw 3;
+        }
+        loadResources();
+    }catch(...)
+    {
+        saveLog("Could Not Init TTF");
+        std::terminate();
+    }
+
 }
 void Text::loadResources()
 {
     try
     {
         font = TTF_OpenFont("resources/lazy.ttf", 45);
-       //std::cout<<TTF_GetError();
 
-        SDL_Color c = {255,255,0};
-       t = TTF_RenderText_Solid(font,"Fuck IT",c);
     }catch(...)
     {
         if(font == NULL) saveLog("Error Opening Font File @TextRender.LoadResoureces");
-        if(t == NULL) saveLog("");
         std::terminate();
     }
 
@@ -47,6 +74,7 @@ void Text::loadResources()
 void Text::freeResources()
 {
     TTF_CloseFont(font);
+    font = NULL;
     TTF_Quit();
 }
 Text::~Text(){}

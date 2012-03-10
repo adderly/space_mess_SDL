@@ -24,7 +24,6 @@
 		</Compiler>
 		<Unit filename="README" />
 		<Unit filename="editor/Editor.h" />
-		<Unit filename="editor/ObjectManager.h" />
 		<Unit filename="lib/Actors/Gun.cpp" />
 		<Unit filename="lib/Actors/Gun.h" />
 		<Unit filename="lib/Actors/Spaceship.h" />
@@ -34,12 +33,15 @@
 		<Unit filename="lib/Audio/AudioPlayback.h" />
 		<Unit filename="lib/DisplayConfig.cpp" />
 		<Unit filename="lib/DisplayConfig.h" />
+		<Unit filename="lib/Drawable.h" />
 		<Unit filename="lib/Environment.cpp" />
 		<Unit filename="lib/Environment.h" />
 		<Unit filename="lib/EventHandler.cpp" />
 		<Unit filename="lib/EventHandler.h" />
 		<Unit filename="lib/Game.cpp" />
 		<Unit filename="lib/Game.h" />
+		<Unit filename="lib/Menu.cpp" />
+		<Unit filename="lib/Menu.h" />
 		<Unit filename="lib/ObjectFactory.h" />
 		<Unit filename="lib/Particle.cpp" />
 		<Unit filename="lib/Particle.h" />
@@ -47,9 +49,14 @@
 		<Unit filename="lib/ParticleGenerator.h" />
 		<Unit filename="lib/Player.cpp" />
 		<Unit filename="lib/Player.h" />
+		<Unit filename="lib/Read.h" />
+		<Unit filename="lib/Reader.h" />
 		<Unit filename="lib/Render.cpp" />
 		<Unit filename="lib/Render.h" />
-		<Unit filename="lib/menuInterface.h" />
+		<Unit filename="lib/World.h" />
+		<Unit filename="lib/WorldHandler.h" />
+		<Unit filename="lib/Write.h" />
+		<Unit filename="lib/Writer.h" />
 		<Unit filename="lib/videoutil.h" />
 		<Unit filename="main.cpp">
 			<Option compiler="gcc" use="0" buildCommand="g++ -o testing main.cpp" />
@@ -61,8 +68,6 @@
 		<Unit filename="utils/TextRender.cpp" />
 		<Unit filename="utils/TextRender.h" />
 		<Unit filename="utils/TextureLoader.h" />
-		<Unit filename="utils/Window.cpp" />
-		<Unit filename="utils/Window.h" />
 		<Unit filename="utils/keys.h" />
 		<Extensions>
 			<code_completion />
