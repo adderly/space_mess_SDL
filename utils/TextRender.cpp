@@ -28,7 +28,23 @@ Text::Text(SDL_Surface *surface,const std::string text,SDL_Color color)
     this->text = text;
     this->textColor = color;
 }
+SDL_Surface* Text::generate(const std::string text)
+{
+    tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
+    return tmp;
+}
+SDL_Surface* Text::generate(const std::string text,int size)
+{
+    tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
+    return tmp;
+}
 SDL_Surface* Text::generate(SDL_Surface *texture,const std::string text)
+{
+    tmp = texture;
+    tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
+    return tmp;
+}
+SDL_Surface* Text::generate(SDL_Surface *texture,const std::string text,int size)
 {
     tmp = texture;
     tmp = TTF_RenderText_Solid(font,text.c_str(),textColor);
@@ -61,7 +77,7 @@ void Text::loadResources()
 {
     try
     {
-        font = TTF_OpenFont("resources/lazy.ttf", 45);
+        font = TTF_OpenFont("resources/font/Ubuntu-B.ttf", 45);
 
     }catch(...)
     {

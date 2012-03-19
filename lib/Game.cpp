@@ -31,24 +31,24 @@ void Game::movePlayers()
             player->shoot();
 
 
-
-            if(!GRABBED)
-            {
-                if(event.motion.x > player->x && event.motion.x < player->x+player->width )
-                    if(event.motion.y > player->y && event.motion.y < player->y+player->height)
-                       {
-                           player->y = event.motion.y;
-                           player->x = event.motion.x;
-                           GRABBED = true;
-                       }
-            }
-            if(GRABBED)
-            {
-
-                   player->y = event.motion.y;
-                   player->x = event.motion.x;
-
-            }
+//
+//            if(!GRABBED)
+//            {
+//                if(event.motion.x > player->x && event.motion.x < player->x+player->width )
+//                    if(event.motion.y > player->y && event.motion.y < player->y+player->height)
+//                       {
+//                           player->y = event.motion.y;
+//                           player->x = event.motion.x;
+//                           GRABBED = true;
+//                       }
+//            }
+//            if(GRABBED)
+//            {
+//
+//                   player->y = event.motion.y;
+//                   player->x = event.motion.x;
+//
+//            }
 
 		}
 
@@ -86,11 +86,12 @@ void Game::checkEvent()
 {
     while(SDL_PollEvent(&event))
     {
-        if(event.type == SDL_QUIT) Running = false;
+
         if(menu->visible)
         {
-            menu->check();
+            menu->check(event);
         }
+        else if(event.type == SDL_QUIT) Running = false;
          {
                 if(event.type == SDL_KEYDOWN)
                 {
@@ -157,7 +158,7 @@ void Game::checkEvent()
                     {
                         case SDL_BUTTON_LEFT:
                               MOUSE_LCLICK = true;
-                              //shut();
+                              shut();
                               break;
                         case SDL_BUTTON_RIGHT:
                               // music->playEffect("sdfsd");

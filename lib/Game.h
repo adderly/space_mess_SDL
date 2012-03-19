@@ -7,7 +7,7 @@ class Game:public Render
 {
 
     int* mouseX,*mouseY;
-    static const int FPS = 30;
+    static const int FPS = 20;
     Uint32 start;
     //SDL_Event event; it is in Keys now Static ;)/
     friend class Render;

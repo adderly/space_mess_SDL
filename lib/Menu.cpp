@@ -5,12 +5,10 @@ Menu::Menu():Drawable(10,10,10,10)
 {
 
     visible = true;
-    gridoptions.spacing = 10.0;
     this->x = 0;
     this->y = 0;
     this->width = 450;
     this->height = 320;
-
     init();
 }
 Menu::Menu(float parentWidth,float parentHeight,float width,float height):Drawable(10,10,width,height)
@@ -23,12 +21,27 @@ Menu::Menu(float parentWidth,float parentHeight,float width,float height):Drawab
     //Centering the menu
     this->x = (parentWidth/2)-(width/2);
     this->y = (parentHeight/2)-(height/2);
-    //this->background = txt.generate(this->background,"OH YEAH");
     init();
+}
+void Menu::addOption(MenuOption* opt)
+{
+    options.push_back(opt);
 }
 //create some defaults options
 void Menu::init()
 {
+    /*------------Menu Defaults Options--------*/
+        //BackButton
+        MenuOption *ba =  new MenuOption(this->width-120,this->height-60,120,60);
+        ba->enable = false;
+        ba->background = SDL_DisplayFormatAlpha(txt.generate(this->background,"EH aqui la cosa",50));
+        ba->b = imgr.gen(ba->text,ba->background);
+        ba->func = std::exit;
+        options.push_back(ba);
+
+
+    /*-----------------------------------------*/
+
     gridoptions.spacing = 10.0;
     gridoptions.columns = 3;
     int tmpy = this->y;
@@ -36,45 +49,48 @@ void Menu::init()
     int tmpw = 75;
     int tmph = 45;
     int counter = 0;
-    for(int l= 0,n = 0; n<11;n++,tmpx+=75,counter++)
+    for(int n = 0; n<11;n++,tmpx+=75,++counter)
     {
       MenuOption *op = new MenuOption();
-
+        if(counter == gridoptions.columns)
+          {
+              tmpy+=tmph;
+              tmpx = this->x;
+              counter = 0;
+          }
       op->width = tmpw;
       op->height = tmph;
-      op->x = tmpx+l;
-
-      if(counter == 3)
-      {
-          tmpy+=tmph;
-          tmpx = this->x;
-          counter = 0;
-      }
-      op->y = tmpy+l;
+      op->x = tmpx;
+      op->y = tmpy;
       op->text = "Option";
-      op->background = SDL_DisplayFormatAlpha(IMG_Load("resources/images/brick.bmp"));
+      op->background = SDL_DisplayFormatAlpha(txt.generate(this->background,"EH aqui la cosa"));
+      op->b = imgr.gen(op->text,op->background);
       op->enable = false;
+      op->func = std::exit;
       options.push_back(op);
     }
+    this->setBackground(SDL_DisplayFormatAlpha(txt.generate(this->background,"EH aqui la cosa")));
+
 }
 void Menu::setUpItems()
 {
     int amount = (int)options.size();
 
 }
-void Menu::check()
+void Menu::check(){}
+void Menu::check(SDL_Event &e)
 {
-    while(SDL_PollEvent(event))
-    {
+        this->event = &e;
+
         if(event->type == SDL_MOUSEMOTION)
         {
             mouseOver();
         }
-        if(event->type == SDL_MOUSEBUTTONDOWN)
+        else if(event->type == SDL_MOUSEBUTTONDOWN )
         {
             mouseDown();
         }
-        if(event->type == SDL_MOUSEBUTTONUP)
+        if(event->type == SDL_MOUSEBUTTONUP )
         {
               switch(event->key.keysym.sym)
             {
@@ -86,10 +102,11 @@ void Menu::check()
             }
             mouseUp();
         }
-    }
+
 }
 void Menu::drag()
 {
+
 }
 void Menu::mouseOver()
 {
@@ -100,65 +117,91 @@ void Menu::mouseOver()
             if(event->motion.y >= (**it).y && event->motion.y <= (**it).y+(**it).height)
             {
                 (**it).enable = true;
+                someOptionEnabled = true;;
             }
-            else (**it).enable = false;
+            else {
+                (**it).enable = false;
+                someOptionEnabled = false;
+            }
         }
-        else (**it).enable = false;
+        else
+        {
+                (**it).enable = false;
+                someOptionEnabled = false;
+        }
     }
 
 }
 void Menu::mouseDown()
 {
-    for(it=options.begin();it != options.end();it++)
-    {
-        if((**it).enable) (**it).func();
-    }
+    if(someOptionEnabled)
+        for(it=options.begin();it != options.end();it++)
+        {
+           if((**it).enable== true) (**it).func(0);
+        }
 }
 void Menu::mouseUp()
 {
+    if(someOptionEnabled);
      for(it=options.begin();it != options.end();it++)
     {
-        if((**it).enable) (**it).func();
+        if((**it).enable) (**it).vfunc();
+
     }
 }
 void Menu::draw()
 {
-   // glColor4ub(0,0,0,255);
-    glColor3f(1,1,1);
-     glBegin(GL_QUADS);
+    glColor4f(1,0,0,0.5);
+    glBegin(GL_QUADS);
             glVertex2f(x,y);
             glVertex2f(x+width,y);
             glVertex2f(x+width,y+height);
             glVertex2f(x,y+height);
      glEnd();
-    SDL_BlitSurface(background,NULL,ParentBackground,NULL);
-            SDL_UpdateRect(ParentBackground,x,y,width,height);
 
     if(!options.empty())
     {
+        glEnable(GL_TEXTURE_2D);
         //Print Options
         for(it = options.begin();it != options.end();it++)
         {
-            if((**it).enable == true)glColor3f(1,0,0);
-            else glColor3f(1,1,1);
+            if((**it).enable == true){glColor4f(1,0,0,1.0);}
+            else{glColor4f(1,1,0,1.0);}
+
+            glBindTexture(GL_TEXTURE_2D,(**it).b);
             glBegin(GL_QUADS);
-            glVertex2f((**it).x+gridoptions.spacing,(**it).y);
-            glVertex2f((**it).x+(**it).width,(**it).y);
-            glVertex2f((**it).x+(**it).width,(**it).y+(**it).height);
-            glVertex2f((**it).x,(**it).y+(**it).height);
+             glVertex2f((**it).x+gridoptions.spacing,(**it).y);                           glTexCoord2f(1.0,0.0);
+            glVertex2f((**it).x+(**it).width+gridoptions.spacing,(**it).y);               glTexCoord2f(1.0,1.0);
+            glVertex2f((**it).x+(**it).width+gridoptions.spacing,(**it).y+(**it).height); glTexCoord2f(0.0,1.0);
+            glVertex2f((**it).x+gridoptions.spacing,(**it).y+(**it).height);              glTexCoord2f(0.0,0.0);
             glEnd();
-            if((**it).background != NULL)
-            {
-               SDL_BlitSurface((**it).background,NULL,background,NULL);
-               SDL_UpdateRect(background,(**it).x,(**it).y,(**it).background->w,(**it).background->h);
-
-            }
-
         }
+        glDisable(GL_TEXTURE_2D);
+
+
 
     }
 
 }
-Menu::~Menu(){}
+void Menu::setVisible(bool value){ this->visible = value;}
+void Menu::setExitOption(MenuOption* o)
+{
+    exit = o;
+    exit->x = this->width - exit->width;
+    exit->y = this->height - exit->height;
+    options.push_back(exit);
+}
+void Menu::setBackOption(MenuOption* o)
+{
+    back = o;
+    back->x = this->width - back->width;
+    back->y = this->height - back->height;
+    options.push_back(back);
+}
+
+Menu::~Menu()
+{
+    delete &imgr;
+}
 
 

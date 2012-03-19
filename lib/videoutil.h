@@ -1,5 +1,7 @@
 #include"DisplayConfig.h"
 
+#ifndef VUTIL
+#define VUTIL
 
 static unsigned int fullscreen = 0;
 static unsigned int width = 680;
@@ -21,6 +23,7 @@ static void loadSettings()
 
 
 
+#endif
 
 
 

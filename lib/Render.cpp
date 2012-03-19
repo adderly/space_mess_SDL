@@ -17,7 +17,7 @@ Render::Render():Environment()
     menu = new Menu(width,height,460,320);
     menu->setEvent(event);
     menu->setParentBackground(screen);
-    menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
+    //menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
 }
 void Render::shut()
 {
@@ -45,13 +45,14 @@ void Render::prepare()
     SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1);
 
     screen = SDL_SetVideoMode(width,height,bpp,SDL_HWSURFACE|SDL_OPENGLBLIT);
-    background = IMG_Load("resources/images/brick.bmp");
+    background = SDL_DisplayFormatAlpha(IMG_Load("resources/images/back.bmp"));
     if( background == NULL) {
         std::cout<<"Unable to load back.bmp" <<std::endl;
         saveLog("Could Not load resource/images/back.bmp");
         exit(-1);
     }
-    background = SDL_DisplayFormatAlpha(background);
+   bt = loadTexture("resources/images/b.bmp");
+   // SDL_SetColorKey(background,SDL_SRCCOLORKEY,SDL_MapRGB(background->format,0x00,0xff,0xff));
 
     init();
 }
@@ -61,13 +62,15 @@ void Render::init()
     glMatrixMode(GL_PROJECTION);
     glViewport(0,0,width,height);
     //gluPerspective(45.0,680/460,1.0,500.0);
-    glMatrixMode(GL_MODELVIEW);
-    //glDisable(GL_DEPTH_TEST);
     glLoadIdentity();
+    glMatrixMode(GL_MODELVIEW);
+    glDisable(GL_DEPTH_TEST);
     glShadeModel(GL_SMOOTH);
     glOrtho(0,width,height,0,-1,1);
     glEnable(GL_TEXTURE_2D);
     glEnable(GL_ALPHA);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
     //SDL_WM_GrabInput(SDL_GRAB_ON);
 }
 void Render::reshape(int width, int height)
@@ -93,20 +96,24 @@ void Render::draw()
    *
    */
 
-   SDL_BlitSurface(background,NULL,screen,NULL);
-   SDL_UpdateRect(screen, 0, 0, background->w, background->h);
 
         glEnable(GL_TEXTURE_2D);
-        glBindTexture(GL_TEXTURE_2D,texture);
+        glBindTexture(GL_TEXTURE_2D,bt);
         glBegin(GL_QUADS);
-            glVertex2f(player->x+this->x,player->y+this->y); glTexCoord2f(0.0,1.0);
-            glVertex2f(player->x+player->width+this->x,player->y+this->y);  glTexCoord2f(1.0,1.0);
-            glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(0.0,1.0);
-            glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,0.0);
+            glVertex2f(player->x+this->x,player->y+this->y); glTexCoord2f(0.0,0.0);
+            glVertex2f(player->x+player->width+this->x,player->y+this->y);  glTexCoord2f(1.0,0.0);
+            glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(1.0,1.0);
+            glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,1.0);
         glEnd();
         glDisable(GL_TEXTURE_2D);
 
-
+        glBegin(GL_QUADS);
+        glColor4f(1.0,0.0,0.0,0.5);
+            glVertex2f(10,10);
+            glVertex2f(100,10);
+            glVertex2f(100,100);
+            glVertex2f(10,100);
+        glEnd();
 		glColor3f(1,0,0);
         glBegin(GL_QUADS);
                 for(int n = 0; n < generator->particles.size();n++)
@@ -119,8 +126,8 @@ void Render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
-        //SDL_BlitSurface(screen,&camera,background,NULL);
-       menu->draw();
+        if(menu->visible)drawMainMenu();
+
         SDL_GL_SwapBuffers();
 }
 void Render::checkCollition()
@@ -158,7 +165,10 @@ void Render::checkCollition()
         }
     }
 }
-void Render::drawMainMenu(){}
+void Render::drawMainMenu()
+{
+    menu->draw();
+}
 void Render::drawPauseMenu()
 {
 }

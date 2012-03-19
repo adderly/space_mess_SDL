@@ -25,6 +25,7 @@ class Render:public Environment
    ParticleGenerator* generator;
    unsigned int texture;
     Audio* music;
+    unsigned int bt;
   public:
   Menu* menu;
   Player* player;
