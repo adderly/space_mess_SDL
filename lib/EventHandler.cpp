@@ -5,14 +5,6 @@ EventHandler::EventHandler(SDL_Event* event)
 {
    this->event =  event;
 }
-EventHandler::EventHandler(Game* g)
-{
-
-}
-EventHandler::EventHandler(Game* g,Player* p)
-{
-
-}
 void EventHandler::check()
 {
     while(SDL_PollEvent(event))

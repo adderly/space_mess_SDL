@@ -20,16 +20,14 @@
 /*  OPtion to be contained Inside A menu*/
 #ifndef MENUOPTION
 #define MENUOPTION
-typedef class MenuOption
+typedef class MenuOption:public Drawable
 {
     public:
-    SDL_Surface *background;
     unsigned int b;
-    float width,height,x,y;
-    float defaultwidth,defaultheight;
+    static const float defaultwidth = 120;
+    static const float defaultheight = 60;
     std::string text;
-    bool enable;
-
+    bool enable, hasText;
 
     //callbacks
     void (*vfunc)();
@@ -37,13 +35,11 @@ typedef class MenuOption
     void (*keyDown)(int);
     void (*keyUp)(int);
 
-    MenuOption()
+    MenuOption():Drawable(10,10,10,10)
     {
-        defaultheight =70;
-        defaultwidth =120;
         this->enable = false;
     }
-    MenuOption(float x,float y,float w,float h)
+    MenuOption(float x,float y,float w,float h):Drawable(x,y,w,h)
     {
         this->x=x;
         this->y=y;
@@ -51,7 +47,8 @@ typedef class MenuOption
         this->height=h;
         this->enable = false;
     }
-
+    //Not Doing Anything
+    virtual void draw(){}
 };
 #endif
 
@@ -75,7 +72,7 @@ class CheckBox
 
 typedef struct
 {
-    enum layout:bool{};
+    enum layout:bool{};//FlowLayout,GridLayout,freeLayout
     float spacing;
     int columns ;
 }GridOptions;
@@ -135,6 +132,7 @@ class Menu:public Drawable,public EInterface
     inline void mouseDown();
     inline void mouseUp();
     inline void drag();
+    void setUpOption(MenuOption* opt);
     void addOption(MenuOption* opt);
     void setBackground(SDL_Surface* surface){this->background = surface;}
     void setEvent(SDL_Event &e){this->event = &e;}

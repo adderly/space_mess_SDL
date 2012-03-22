@@ -23,6 +23,10 @@ Menu::Menu(float parentWidth,float parentHeight,float width,float height):Drawab
     this->y = (parentHeight/2)-(height/2);
     init();
 }
+void setUpOption(MenuOption* opt)
+{
+
+}
 void Menu::addOption(MenuOption* opt)
 {
     options.push_back(opt);

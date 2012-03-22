@@ -19,31 +19,33 @@
 
 class Render:public Environment
 {
-   SDL_Surface *screen,*background;
-   SDL_Rect camera;
-   const SDL_VideoInfo *info;
-   ParticleGenerator* generator;
-   unsigned int texture;
-    Audio* music;
-    unsigned int bt;
+
+       SDL_Surface *screen,*background;
+       SDL_Rect camera;
+       const SDL_VideoInfo *info;
+       ParticleGenerator* generator;
+       unsigned int texture,bt;
+        Audio* music;
+
   public:
-  Menu* menu;
-  Player* player;
-  int x;
-  int y;
-  Render();
-  ~Render();
-  void prepare();
-  void init();
-  void reshape(int width,int height);
-  static int setFullScreen();
-  void checkCollition();
-  void draw();
-  void drawMainMenu();
-  void drawPauseMenu();
-  void releaseResources();
-  void fallowMouse(int x,int y);
-  void shut();
-  void clean();
+      Menu* menu;
+      Player* player;
+      int x;
+      int y;
+      Render();
+      ~Render();
+      void prepare();
+      void init();
+      void reshape(int width,int height);
+      static int setFullScreen();
+      void checkCollition();
+      void draw();
+      void drawMainMenu();
+      void drawPauseMenu();
+      void releaseResources();
+      void fallowMouse(int x,int y);
+      void shut();
+      void clean();
+      SDL_Surface* getScreen(){return this->screen;}
 };
 #endif

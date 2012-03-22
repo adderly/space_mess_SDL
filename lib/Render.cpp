@@ -16,7 +16,8 @@ Render::Render():Environment()
     /*  MENU */
     menu = new Menu(width,height,460,320);
     menu->setEvent(event);
-    menu->setParentBackground(screen);
+    menu->setParentBackground(getScreen());
+   // menu->setVisible(false);
     //menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
 }
 void Render::shut()
@@ -34,6 +35,9 @@ void Render::prepare()
         saveLog("Could Not INIT VIDEO");
         exit(-1);
     }
+
+      putenv("SDL_VIDEO_WINDOW_POS=center");
+    //putenv("SDL_VIDEO_CENTERED=1");
 
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
@@ -96,7 +100,6 @@ void Render::draw()
    *
    */
 
-
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D,bt);
         glBegin(GL_QUADS);
@@ -105,6 +108,7 @@ void Render::draw()
             glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(1.0,1.0);
             glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,1.0);
         glEnd();
+
         glDisable(GL_TEXTURE_2D);
 
         glBegin(GL_QUADS);
@@ -126,7 +130,7 @@ void Render::draw()
 		glEnd();
 		checkCollition();
         generator->evolveParticles();
-        if(menu->visible)drawMainMenu();
+       // if(menu->visible)drawMainMenu();
 
         SDL_GL_SwapBuffers();
 }
