@@ -1,6 +1,7 @@
 #include<sstream>
 
-
+#ifndef SF
+#define SF
 static std::string getFromInt(int number)
 {
 
@@ -10,5 +11,5 @@ static std::string getFromInt(int number)
 
     return ss.str();
 }
-
+#endif
 

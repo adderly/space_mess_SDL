@@ -66,10 +66,10 @@ void Game::MainLoop()
         movePlayers();
         checkEvent();
         draw();
+        SDL_GL_SwapBuffers();
 
         //std::cout<<SDL_GetError()<<std::endl;
         //saveLog("error",SDL_GetError());
-        //SDL_GL_SwapBuffers();
 
         t << "Event: (" << event.motion.x << "," << event.motion.y << ") ";
         t << "Player: (" << player->x << "," << player->y << ")";
@@ -87,11 +87,11 @@ void Game::checkEvent()
     while(SDL_PollEvent(&event))
     {
 
-        if(menu->visible)
-        {
-            menu->check(event);
-        }
-        else if(event.type == SDL_QUIT) Running = false;
+//        if(menu->visible)
+//        {
+//            menu->check(event);
+//        }
+         if(event.type == SDL_QUIT) Running = false;
          {
                 if(event.type == SDL_KEYDOWN)
                 {

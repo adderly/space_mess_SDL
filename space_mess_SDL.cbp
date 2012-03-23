@@ -23,6 +23,8 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="README" />
+		<Unit filename="editor/Editable.h" />
+		<Unit filename="editor/Editor.cpp" />
 		<Unit filename="editor/Editor.h" />
 		<Unit filename="lib/Actors/Gun.cpp" />
 		<Unit filename="lib/Actors/Gun.h" />
@@ -31,19 +33,24 @@
 		<Unit filename="lib/Actors/Weapon.h" />
 		<Unit filename="lib/Audio/AudioPlayback.cpp" />
 		<Unit filename="lib/Audio/AudioPlayback.h" />
+		<Unit filename="lib/Button.h" />
+		<Unit filename="lib/CheckBox.h" />
 		<Unit filename="lib/DisplayConfig.cpp" />
 		<Unit filename="lib/DisplayConfig.h" />
+		<Unit filename="lib/Draw.h" />
 		<Unit filename="lib/Drawable.h" />
 		<Unit filename="lib/Environment.cpp" />
 		<Unit filename="lib/Environment.h" />
 		<Unit filename="lib/EventHandler.cpp" />
 		<Unit filename="lib/EventHandler.h" />
+		<Unit filename="lib/EventInterface.h" />
 		<Unit filename="lib/Game.cpp" />
 		<Unit filename="lib/Game.h" />
 		<Unit filename="lib/Menu.cpp" />
 		<Unit filename="lib/Menu.h" />
 		<Unit filename="lib/MenuHandler.cpp" />
 		<Unit filename="lib/MenuHandler.h" />
+		<Unit filename="lib/MenuOption.h" />
 		<Unit filename="lib/ObjectFactory.h" />
 		<Unit filename="lib/Particle.cpp" />
 		<Unit filename="lib/Particle.h" />

@@ -1,16 +1,24 @@
 #include"Menu.h"
 
+#ifndef MHandler
+#define MHandler
 class MenuHandler
 {
+    list<Menu*> menus;
+    list<Menu*>::iterator it;
+
+
+    public:
+
     enum menus:bool
     {
-        MAINMENU=false,PAUSEMENU = false,INIT_MENU = false
+        MAINMENU=false,PAUSEMENU = false,UTILS_MENU = false
     };
-    public:
-    Menu *mainmenu,*pausemenu,*current;
+
+    Menu *mainmenu,*pausemenu,*initmenu,*current;
     MenuHandler();
     void loadDefaults();
-    void check(SDL_Event* e));
+    void check(SDL_Event* e);
     void switchTo();
     void gotoMain();
     void closeActive();
@@ -18,32 +26,4 @@ class MenuHandler
     void setPauseMenu(Menu* menu){pausemenu = menu;}
     ~MenuHandler();
 };
-
-MenuHandler::MenuHandler()
-{
-
-}
-void MenuHandler::loadDefaults()
-{
-    mainmenu =  new Menu(width,height,450,270);
-
-}
-void MenuHandler::check(SDL_Event* e)
-{
-    current->check(e);
-}
-void MenuHandler::closeActive()
-{
-    current->visible = false;
-}
-void MenuHandler::gotoMain()
-{
-    closeActive();
-    mainmenu->visible = true;
-}
-void MenuHandler::switchTo()
-{
-
-}
-MenuHandler::~MenuHandler(){}
-
+#endif

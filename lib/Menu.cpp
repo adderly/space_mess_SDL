@@ -23,12 +23,14 @@ Menu::Menu(float parentWidth,float parentHeight,float width,float height):Drawab
     this->y = (parentHeight/2)-(height/2);
     init();
 }
-void setUpOption(MenuOption* opt)
+void Menu::setUpOption(MenuOption* opt)
 {
+    opt->texture_id = imgr.gen(opt->text,SDL_DisplayFormatAlpha(txt.generate(opt->text,20)));
 
 }
 void Menu::addOption(MenuOption* opt)
 {
+    setUpOption(opt);
     options.push_back(opt);
 }
 //create some defaults options
@@ -36,10 +38,10 @@ void Menu::init()
 {
     /*------------Menu Defaults Options--------*/
         //BackButton
-        MenuOption *ba =  new MenuOption(this->width-120,this->height-60,120,60);
+        MenuOption *ba =  new MenuOption((this->x+this->width)-120,this->height-60,120,60);
         ba->enable = false;
         ba->background = SDL_DisplayFormatAlpha(txt.generate(this->background,"EH aqui la cosa",50));
-        ba->b = imgr.gen(ba->text,ba->background);
+        ba->texture_id = imgr.gen(ba->text,ba->background);
         ba->func = std::exit;
         options.push_back(ba);
 
@@ -68,7 +70,7 @@ void Menu::init()
       op->y = tmpy;
       op->text = "Option";
       op->background = SDL_DisplayFormatAlpha(txt.generate(this->background,"EH aqui la cosa"));
-      op->b = imgr.gen(op->text,op->background);
+      op->texture_id = imgr.gen(op->text,op->background);
       op->enable = false;
       op->func = std::exit;
       options.push_back(op);
@@ -121,7 +123,9 @@ void Menu::mouseOver()
             if(event->motion.y >= (**it).y && event->motion.y <= (**it).y+(**it).height)
             {
                 (**it).enable = true;
-                someOptionEnabled = true;;
+                someOptionEnabled = true;
+
+               // if((**it).MOUSEOVERFUNC) (**it).mouseOver();
             }
             else {
                 (**it).enable = false;
@@ -155,14 +159,29 @@ void Menu::mouseUp()
 }
 void Menu::draw()
 {
-    glColor4f(1,0,0,0.5);
+    glColor4f(color[0],color[1],color[2],color[3]);
     glBegin(GL_QUADS);
             glVertex2f(x,y);
             glVertex2f(x+width,y);
             glVertex2f(x+width,y+height);
             glVertex2f(x,y+height);
      glEnd();
+     glColor4f(1,1,0,0.5);
+     glBegin(GL_LINES);
+         //top
+         glVertex2f(x,y);
+         glVertex2f(x+width,y);
+         //leftBorder
+         glVertex2f(x,y);
+         glVertex2f(x,y+height);
+         //right border
+         glVertex2f(x+width,y);
+         glVertex2f(x+width,y+height);
 
+         //bottom border
+         glVertex2f(x,y+height);
+         glVertex2f(x+width,y+height);
+     glEnd();
     if(!options.empty())
     {
         glEnable(GL_TEXTURE_2D);
@@ -172,7 +191,7 @@ void Menu::draw()
             if((**it).enable == true){glColor4f(1,0,0,1.0);}
             else{glColor4f(1,1,0,1.0);}
 
-            glBindTexture(GL_TEXTURE_2D,(**it).b);
+            glBindTexture(GL_TEXTURE_2D,(**it).texture_id);
             glBegin(GL_QUADS);
              glVertex2f((**it).x+gridoptions.spacing,(**it).y);                           glTexCoord2f(1.0,0.0);
             glVertex2f((**it).x+(**it).width+gridoptions.spacing,(**it).y);               glTexCoord2f(1.0,1.0);

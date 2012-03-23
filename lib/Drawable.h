@@ -1,4 +1,5 @@
 #include"Draw.h"
+#include"../utils/Log.h"
 
 #ifndef DRAWABLE
 #define DRAWABLE
@@ -39,12 +40,13 @@ class Drawable:Draw
     }
     void setColor(float* color)
     {
-        if(sizeof(color) == sizeof(float)*4)
+        if(sizeof(color)/sizeof(float) == sizeof(float)*4)
         {
         this->color[0] = *(color);
         this->color[1] = *(color++);
         this->color[2] = *(color++);
         this->color[3] = *(color++);
+        saveLog("ont");
         }
     }
     void setColor(float r,float g,float b,float a)

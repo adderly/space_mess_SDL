@@ -12,7 +12,7 @@
 #include"../utils/TextureLoader.h"
 #include"Audio/AudioPlayback.h"
 #include"../utils/Log.h"
-#include"Menu.h" //Drawable is here
+#include"MenuHandler.h"
 
 #ifndef RENDER
 #define RENDER
@@ -25,13 +25,15 @@ class Render:public Environment
        const SDL_VideoInfo *info;
        ParticleGenerator* generator;
        unsigned int texture,bt;
-        Audio* music;
+
+
 
   public:
-      Menu* menu;
+    Audio* music;
+      //Menu* menu;
       Player* player;
-      int x;
-      int y;
+      MenuHandler* menuH;
+      int x,y;
       Render();
       ~Render();
       void prepare();

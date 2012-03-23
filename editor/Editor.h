@@ -1,5 +1,4 @@
 #include"../lib/Render.h"
-
 #include<map>
 
 
@@ -11,7 +10,6 @@ class Editor:public Render
         //ObjectFactory factory;
         //map<objects>
         //world
-        //list of menus
         //eventHandler
         //writer(file)
         //reader(file)

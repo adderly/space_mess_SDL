@@ -5,6 +5,9 @@
 #include<SDL/SDL_opengl.h>
 #include"Log.h"
 //generating images and textures
+
+#ifndef IMAGE
+#define IMAGE
 class ImageManager
 {
     std::map<std::string,unsigned int> textures;//GLTextures name,id
@@ -22,6 +25,6 @@ class ImageManager
     ~ImageManager();
 
 };
-
+#endif
 
 

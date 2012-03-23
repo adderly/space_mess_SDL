@@ -14,9 +14,7 @@ Render::Render():Environment()
     texture = loadTexture("resources/images/brick.bmp");
     music = new Audio();
     /*  MENU */
-    menu = new Menu(width,height,460,320);
-    menu->setEvent(event);
-    menu->setParentBackground(getScreen());
+    menuH = new MenuHandler();
    // menu->setVisible(false);
     //menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
 }
@@ -132,7 +130,7 @@ void Render::draw()
         generator->evolveParticles();
        // if(menu->visible)drawMainMenu();
 
-        SDL_GL_SwapBuffers();
+
 }
 void Render::checkCollition()
 {
@@ -171,7 +169,7 @@ void Render::checkCollition()
 }
 void Render::drawMainMenu()
 {
-    menu->draw();
+
 }
 void Render::drawPauseMenu()
 {

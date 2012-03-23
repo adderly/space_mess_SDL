@@ -4,6 +4,8 @@
 #include<string>
 #include<list>
 #include"Drawable.h"
+#include"MenuOption.h"
+#include"EventInterface.h"
 #include<sstream>
 #include"videoutil.h"
 #include"../utils/Log.h"
@@ -12,82 +14,27 @@
 #include"../utils/ImageManager.h"
 #include"../utils/stringfunctions.h"
 
+
+
 /*
-    A menu have options, and this options have attributes.
-    To make it clear an option of a menu may contain a pointer
-    to a function
+ This would be an specifier for the way or ordering items in a menu
 */
-/*  OPtion to be contained Inside A menu*/
-#ifndef MENUOPTION
-#define MENUOPTION
-typedef class MenuOption:public Drawable
-{
-    public:
-    unsigned int b;
-    static const float defaultwidth = 120;
-    static const float defaultheight = 60;
-    std::string text;
-    bool enable, hasText;
-
-    //callbacks
-    void (*vfunc)();
-    void (*func)(int);
-    void (*keyDown)(int);
-    void (*keyUp)(int);
-
-    MenuOption():Drawable(10,10,10,10)
-    {
-        this->enable = false;
-    }
-    MenuOption(float x,float y,float w,float h):Drawable(x,y,w,h)
-    {
-        this->x=x;
-        this->y=y;
-        this->width=w;
-        this->height=h;
-        this->enable = false;
-    }
-    //Not Doing Anything
-    virtual void draw(){}
-};
-#endif
-
-#ifndef BUTTON
-#define BUTTON
-class Button
-{
-
-};
-#endif
-#ifndef CHECKBOX
-#define CHECKBOX
-class CheckBox
-{
-
-};
-#endif
-/*
- This would be an specifier for
-*/
-
+#ifndef GRIDO
+#define GRIDO
 typedef struct
 {
     enum layout:bool{};//FlowLayout,GridLayout,freeLayout
     float spacing;
     int columns ;
 }GridOptions;
-
-/*  The Menu Extends Drawable Cause it would drawItself*/
-class EInterface
-{
-    public:
-    virtual void check()=0;
-    virtual void check(SDL_Event&)=0;
-    virtual void inline mouseOver() = 0;
-    virtual void inline mouseDown() = 0;
-    virtual void inline mouseUp() = 0;
-    virtual void inline drag() = 0;
-};
+#endif
+//#ifndef Panel
+//#define Panel
+//class Panel:public Drawable,public EInterface
+//{
+//
+//};
+//#endif
 #ifndef MENU
 #define MENU
 

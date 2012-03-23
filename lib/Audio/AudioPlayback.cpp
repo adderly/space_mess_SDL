@@ -47,7 +47,7 @@ void Audio::loadSound(const std::string name,const std::string location)
     }
 
 }
-void Audio::play()
+ void Audio::play()
 {
     Mix_PlayMusic(music,-1);
 }

@@ -3,27 +3,52 @@
 
 Editor::Editor():Render()
 {
-    GridOptions grid;
-    grid.spacing = 50;
-    grid.columns = 2;
-    mainmenu =  new Menu(width,height,450,350);
-    mainmenu->setBackground(getScreen());
-    //mainmenu->setGrid(grid);
-
-
+    init();
 }
 void Editor::loop()
 {
     while(Running)
     {
-        mainmenu->check(event);
-        mainmenu->draw();
+        check();
+
+        draw();
+        menuH->current->draw();
         SDL_GL_SwapBuffers();
         //draw();
     }
 }
+void Editor::check()
+{
+    while(SDL_PollEvent(&event))
+    {
+        if(event.type== SDL_QUIT) Running = false;
+        menuH->check(&event);
+
+        //switch(event.key.keysyn.sym){}
+    }
+}
 void Editor::init()
 {
+
+    GridOptions grid;
+    grid.spacing = 10;
+    grid.columns = 3;
+
+
+    mainmenu =  new Menu(width,height,450,350);
+    mainmenu->setBackground(getScreen());
+    mainmenu->setGrid(grid);
+    mainmenu->setColor(0.0,0.5,0.5,0.5);
+    mainmenu->setVisible(true);
+    menuH->setMainMenu(mainmenu);
+
+    float posx = mainmenu->x+mainmenu->width;
+    float posy = mainmenu->y+mainmenu->height;
+    MenuOption* op_exit = new MenuOption(posx-120,posy-60,120,60);
+    op_exit->text = "exit";
+    op_exit->enable = true;
+    op_exit->setVoidCallBack(exit);
+    mainmenu->addOption(op_exit);
 
 }
 Editor::~Editor(){}
