@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="editor/Editable.h" open="1" top="0" tabpos="1">
+	<File name="editor/Editable.h" open="0" top="0" tabpos="1">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="editor/Editor.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="344" topLine="0" />
+		<Cursor position="1050" topLine="0" />
 	</File>
-	<File name="editor/Editor.h" open="1" top="0" tabpos="2">
+	<File name="editor/Editor.h" open="0" top="0" tabpos="2">
 		<Cursor position="274" topLine="0" />
 	</File>
-	<File name="lib/Actors/Gun.h" open="1" top="0" tabpos="9">
+	<File name="lib/Actors/Gun.h" open="0" top="0" tabpos="9">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Actors/Spaceship.h" open="1" top="0" tabpos="8">
+	<File name="lib/Actors/Spaceship.h" open="0" top="0" tabpos="8">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Actors/Weapon.h" open="1" top="0" tabpos="10">
+	<File name="lib/Actors/Weapon.h" open="0" top="0" tabpos="10">
 		<Cursor position="197" topLine="0" />
 	</File>
-	<File name="lib/Audio/AudioPlayback.cpp" open="1" top="0" tabpos="12">
+	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="12">
 		<Cursor position="1290" topLine="35" />
 	</File>
-	<File name="lib/Audio/AudioPlayback.h" open="1" top="0" tabpos="11">
+	<File name="lib/Audio/AudioPlayback.h" open="0" top="0" tabpos="11">
 		<Cursor position="686" topLine="13" />
 	</File>
-	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="14">
+	<File name="lib/DisplayConfig.h" open="0" top="0" tabpos="14">
 		<Cursor position="568" topLine="0" />
 	</File>
 	<File name="lib/Drawable.h" open="0" top="0" tabpos="9">
 		<Cursor position="1023" topLine="27" />
 	</File>
-	<File name="lib/Environment.h" open="1" top="0" tabpos="6">
+	<File name="lib/Environment.h" open="0" top="0" tabpos="6">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="lib/EventHandler.cpp" open="0" top="0" tabpos="0">
@@ -43,16 +43,16 @@
 	<File name="lib/Game.h" open="0" top="0" tabpos="7">
 		<Cursor position="193" topLine="0" />
 	</File>
-	<File name="lib/Menu.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="2192" topLine="69" />
+	<File name="lib/Menu.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="2735" topLine="88" />
 	</File>
-	<File name="lib/Menu.h" open="1" top="0" tabpos="5">
-		<Cursor position="1061" topLine="38" />
+	<File name="lib/Menu.h" open="1" top="1" tabpos="2">
+		<Cursor position="639" topLine="26" />
 	</File>
 	<File name="lib/MenuHandler.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="186" topLine="0" />
 	</File>
-	<File name="lib/MenuHandler.h" open="1" top="0" tabpos="13">
+	<File name="lib/MenuHandler.h" open="0" top="0" tabpos="13">
 		<Cursor position="353" topLine="0" />
 	</File>
 	<File name="lib/MenuOption.h" open="0" top="0" tabpos="4">
@@ -61,7 +61,7 @@
 	<File name="lib/ObjectFactory.h" open="0" top="0" tabpos="5">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Render.cpp" open="1" top="0" tabpos="7">
+	<File name="lib/Render.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="1157" topLine="24" />
 	</File>
 	<File name="lib/Render.h" open="0" top="0" tabpos="8">

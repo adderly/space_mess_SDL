@@ -80,7 +80,28 @@ void Menu::init()
 }
 void Menu::setUpItems()
 {
-    int amount = (int)options.size();
+    /*This is where items will be ordered
+        acording to the grid properties
+    */
+    int amount = 0;
+    int total_items_width;
+    int total_items_height;
+
+    for(it =  options.begin();it != options.end();it++)
+    {
+        if((*it)->text != "exit")
+        {
+            total_items_width+=((*it)->width+gridoptions.spacing);
+            total_items_height+=((*it)->height+gridoptions.spacing);
+        }
+    }
+
+    int item_rows = total_items_width/(this->width-100);
+    it = options.begin();
+    for( int n_items = item_rows;it!=options.end();it++,n_items--)
+    {
+
+    }
 
 }
 void Menu::check(){}
@@ -200,9 +221,6 @@ void Menu::draw()
             glEnd();
         }
         glDisable(GL_TEXTURE_2D);
-
-
-
     }
 
 }
