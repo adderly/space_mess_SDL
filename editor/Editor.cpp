@@ -10,7 +10,6 @@ void Editor::loop()
     while(Running)
     {
         check();
-
         draw();
         menuH->current->draw();
         SDL_GL_SwapBuffers();

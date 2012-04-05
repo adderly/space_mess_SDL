@@ -9,7 +9,6 @@
 
 class Environment
 {
-
     public:
     float gravity;
     float delay;
