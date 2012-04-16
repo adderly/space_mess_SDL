@@ -1,5 +1,6 @@
 #include"Menu.h"
 
+namespace Graphics{
 #ifndef MHandler
 #define MHandler
 class MenuHandler
@@ -27,3 +28,4 @@ class MenuHandler
     ~MenuHandler();
 };
 #endif
+}

@@ -319,10 +319,10 @@
 1332376207 /home/moisex/Desktop/space_mess_SDL/lib/EventHandler.h
 	"../utils/keys.h"
 
-1332385712 source:/home/moisex/Desktop/space_mess_SDL/lib/Game.cpp
+1334551727 source:/home/moisex/Desktop/space_mess_SDL/lib/Game.cpp
 	"Game.h"
 
-1332187111 /home/moisex/Desktop/space_mess_SDL/lib/Game.h
+1334543516 /home/moisex/Desktop/space_mess_SDL/lib/Game.h
 	"Render.h"
 	<sstream>
 
@@ -356,9 +356,10 @@
 
 1329371563 /home/moisex/Desktop/space_mess_SDL/lib/Particle.h
 
-1331337112 /home/moisex/Desktop/space_mess_SDL/lib/Player.h
+1334551218 /home/moisex/Desktop/space_mess_SDL/lib/Player.h
 	"Actors/Gun.h"
 	"ParticleGenerator.h"
+	"Audio/AudioPlayback.h"
 
 1329373284 source:/home/moisex/Desktop/space_mess_SDL/lib/Particle.cpp
 	"Particle.h"
@@ -366,14 +367,14 @@
 1330721786 source:/home/moisex/Desktop/space_mess_SDL/lib/ParticleGenerator.cpp
 	"ParticleGenerator.h"
 
-1329375506 source:/home/moisex/Desktop/space_mess_SDL/lib/Player.cpp
+1334551671 source:/home/moisex/Desktop/space_mess_SDL/lib/Player.cpp
 	"Player.h"
 
 1328555270 source:/home/moisex/Desktop/space_mess_SDL/lib/render.cpp
 	"render.h"
 
-1332368688 source:/home/moisex/Desktop/space_mess_SDL/main.cpp
-	"editor/Editor.h"
+1334549166 source:/home/moisex/Desktop/space_mess_SDL/main.cpp
+	"lib/Game.h"
 
 1328490760 source:/home/moisex/Desktop/space_mess_SDL/utils/Window.cpp
 	"Window.h"
@@ -403,7 +404,7 @@
 1328554613 source:/home/moisex/Desktop/space_mess_SDL/lib/AudioPlayback.cpp
 	"AudioPlayback.h"
 
-1332392772 /home/moisex/Desktop/space_mess_SDL/lib/Render.h
+1334547217 /home/moisex/Desktop/space_mess_SDL/lib/Render.h
 	<SDL/SDL.h>
 	<SDL/SDL_opengl.h>
 	<SDL/SDL_thread.h>
@@ -420,7 +421,7 @@
 	"../utils/Log.h"
 	"MenuHandler.h"
 
-1332386205 source:/home/moisex/Desktop/space_mess_SDL/lib/Render.cpp
+1334551967 source:/home/moisex/Desktop/space_mess_SDL/lib/Render.cpp
 	"Render.h"
 
 1329235684 source:/home/moisex/Desktop/space_mess_SDL/lib/DisplayConfig.cpp
@@ -444,10 +445,10 @@
 	<string>
 	"Weapon.h"
 
-1332985280 source:/home/moisex/Desktop/space_mess_SDL/lib/Audio/AudioPlayback.cpp
+1334547217 source:/home/moisex/Desktop/space_mess_SDL/lib/Audio/AudioPlayback.cpp
 	"AudioPlayback.h"
 
-1332985280 /home/moisex/Desktop/space_mess_SDL/lib/Audio/AudioPlayback.h
+1334547217 /home/moisex/Desktop/space_mess_SDL/lib/Audio/AudioPlayback.h
 	<SDL/SDL_mixer.h>
 	<map>
 	<string>
@@ -621,7 +622,7 @@
 1329633136 source:/home/moisex/Documents/Projects/space_mess_SDL/lib/Actors/Weapon.cpp
 	"Weapon.h"
 
-1333583321 /home/moisex/Desktop/space_mess_SDL/lib/Menu.h
+1334543309 /home/moisex/Desktop/space_mess_SDL/lib/Menu.h
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
 	<SDL/SDL_opengl.h>
@@ -642,7 +643,7 @@
 	"Draw.h"
 	"../utils/Log.h"
 
-1332394914 source:/home/moisex/Desktop/space_mess_SDL/lib/Menu.cpp
+1334544917 source:/home/moisex/Desktop/space_mess_SDL/lib/Menu.cpp
 	"Menu.h"
 
 1332390254 source:/home/moisex/Desktop/space_mess_SDL/utils/ImageManager.cpp
@@ -661,18 +662,18 @@
 
 1329234292 source:/home/moisex/Desktop/space_mess_SDL/utils/List.cpp
 
-1332386205 source:/home/moisex/Desktop/space_mess_SDL/lib/MenuHandler.cpp
+1334543681 source:/home/moisex/Desktop/space_mess_SDL/lib/MenuHandler.cpp
 	"MenuHandler.h"
 
-1332384567 /home/moisex/Desktop/space_mess_SDL/lib/MenuHandler.h
+1334543346 /home/moisex/Desktop/space_mess_SDL/lib/MenuHandler.h
 	"Menu.h"
 
 1332364195 /home/moisex/Desktop/space_mess_SDL/lib/Draw.h
 
-1332396146 source:/home/moisex/Desktop/space_mess_SDL/editor/Editor.cpp
+1333633958 source:/home/moisex/Desktop/space_mess_SDL/editor/Editor.cpp
 	"Editor.h"
 
-1332384303 /home/moisex/Desktop/space_mess_SDL/editor/Editor.h
+1334543463 /home/moisex/Desktop/space_mess_SDL/editor/Editor.h
 	"../lib/Render.h"
 	<map>
 

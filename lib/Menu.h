@@ -16,6 +16,7 @@
 
 
 
+namespace Graphics{
 /*
  This would be an specifier for the way or ordering items in a menu
 */
@@ -96,3 +97,4 @@ class Menu:public Drawable,public EInterface
     ~Menu();
 };
 #endif
+}

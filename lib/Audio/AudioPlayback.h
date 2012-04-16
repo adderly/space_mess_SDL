@@ -5,6 +5,7 @@
 #include"../../utils/Log.h"
 
 
+namespace AudioPlayback{
 
 /*
 
@@ -12,6 +13,8 @@
 *   it will called and asigned effect(sound)
 *   ex. player shooting
 */
+#ifndef SOUND
+#define SOUND
 struct Sound
 {
     Sound* next;
@@ -61,4 +64,6 @@ class Audio
         ~Audio();
 };
 
+#endif
 
+}

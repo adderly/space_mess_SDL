@@ -3,6 +3,7 @@
 
 #include<sstream>
 
+using namespace Graphics;
 class Game:public Render
 {
 
@@ -20,4 +21,5 @@ class Game:public Render
     ~Game();
 
 };
+
 

@@ -3,6 +3,7 @@
 
 
 
+namespace Graphics{
 
 MenuHandler::MenuHandler()
 {
@@ -54,3 +55,4 @@ void MenuHandler::switchTo()
 }
 MenuHandler::~MenuHandler(){}
 
+}

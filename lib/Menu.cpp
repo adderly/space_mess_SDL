@@ -1,4 +1,5 @@
 #include"Menu.h"
+namespace Graphics{
 
 
 Menu::Menu():Drawable(10,10,10,10)
@@ -99,6 +100,7 @@ void Menu::setUpItems()
     int item_rows = total_items_width/(this->width-100);
     int item_per_row = total_items_width/(this->width-100);
     it = options.begin();
+
     for( int n_items = item_rows;it!=options.end();it++,n_items--)
     {
 
@@ -247,3 +249,4 @@ Menu::~Menu()
 }
 
 
+}

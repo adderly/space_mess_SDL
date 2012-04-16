@@ -2,6 +2,7 @@
 #include<map>
 
 
+using namespace Graphics;
 class Editor:public Render
 {
     private:

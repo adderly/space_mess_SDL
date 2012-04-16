@@ -4,13 +4,16 @@
 #define PLAYER
 #include"Actors/Gun.h"
 #include"ParticleGenerator.h"
-
+#include"Audio/AudioPlayback.h"
+ using namespace AudioPlayback;
+ typedef void (Audio::*play)();
 
 class Player
 {
         Gun *gun;
         ParticleGenerator* gen;
 		public:
+		play p;
 		friend class ParticleGenerator;
         int movx;
         int movy;

@@ -2,6 +2,7 @@
 
 Player::Player(ParticleGenerator* g)
 {
+    this->p = &Audio::play ;
     this->movx = 0;
     this->movy = 0;
     this->movz = 0;
@@ -15,6 +16,7 @@ Player::Player(ParticleGenerator* g)
 }
 void Player::shoot()
 {
+
     if(gun->ammoAmount > 0)
    {
         float color[] = {0,255,0};
@@ -25,5 +27,7 @@ void Player::shoot()
    }
 
 }
+//void Player::shoot(Audio& ai,){}
+
 Player::~Player(){}
 

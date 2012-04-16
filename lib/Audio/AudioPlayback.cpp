@@ -1,5 +1,7 @@
 #include"AudioPlayback.h"
 
+namespace AudioPlayback{
+
 Audio::Audio()
 {
     Mix_OpenAudio(22050,MIX_DEFAULT_FORMAT,2,4096);
@@ -84,4 +86,5 @@ Audio::~Audio()
     delete  (&current);
 }
 
+}
 

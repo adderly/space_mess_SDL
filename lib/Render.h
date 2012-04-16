@@ -14,8 +14,11 @@
 #include"../utils/Log.h"
 #include"MenuHandler.h"
 
+namespace Graphics{
 #ifndef RENDER
 #define RENDER
+
+using namespace AudioPlayback;
 
 class Render:public Environment
 {
@@ -29,7 +32,7 @@ class Render:public Environment
 
 
   public:
-    Audio* music;
+      Audio* music;
       //Menu* menu;
       Player* player;
       MenuHandler* menuH;
@@ -51,3 +54,4 @@ class Render:public Environment
       SDL_Surface* getScreen(){return this->screen;}
 };
 #endif
+}

@@ -1,5 +1,8 @@
 #include"Render.h"
 
+namespace Graphics
+{
+
 Render::Render():Environment()
 {
     camera.h  = 660;
@@ -116,7 +119,7 @@ void Render::draw()
             glVertex2f(100,100);
             glVertex2f(10,100);
         glEnd();
-		glColor3f(1,0,0);
+		glColor4f(1.0,0.0,0.0,0.5);
         glBegin(GL_QUADS);
                 for(int n = 0; n < generator->particles.size();n++)
                 {
@@ -126,6 +129,7 @@ void Render::draw()
                         glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y+generator->particles[n]->height);
                 }
 		glEnd();
+
 		checkCollition();
         generator->evolveParticles();
        // if(menu->visible)drawMainMenu();
@@ -187,3 +191,4 @@ void Render::fallowMouse(int mouse_x,int mouse_y)
 void Render::clean(){}
 Render::~Render(){}
 
+}
