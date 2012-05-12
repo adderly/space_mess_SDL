@@ -14,6 +14,7 @@ Menu::Menu():Drawable(10,10,10,10)
 }
 Menu::Menu(float parentWidth,float parentHeight,float width,float height):Drawable(10,10,width,height)
 {
+
     visible = true;
     gridoptions.spacing = 10.0;
     this->width = width;
@@ -100,9 +101,14 @@ void Menu::setUpItems()
     int item_rows = total_items_width/(this->width-100);
     int item_per_row = total_items_width/(this->width-100);
     it = options.begin();
-
+    int h_spaccing_tmp = (**it).height;
     for( int n_items = item_rows;it!=options.end();it++,n_items--)
     {
+        for(int row_no = 0; row_no < item_rows;row_no++)
+        {
+
+        }
+
 
     }
 

@@ -4,9 +4,16 @@
 Editor::Editor():Render()
 {
     init();
+
+}
+void Editor::closes()
+{
+  saveLog("from signal");
 }
 void Editor::loop()
 {
+
+
     while(Running)
     {
         check();
@@ -35,12 +42,13 @@ void Editor::init()
 
 
     mainmenu =  new Menu(width,height,450,350);
+    mainmenu->detected.connect(sigc::mem_fun(this, &Editor::closes));
     mainmenu->setBackground(getScreen());
     mainmenu->setGrid(grid);
     mainmenu->setColor(0.0,0.5,0.5,0.5);
     mainmenu->setVisible(true);
     menuH->setMainMenu(mainmenu);
-
+    mainmenu->detected.emit();
     float posx = mainmenu->x+mainmenu->width;
     float posy = mainmenu->y+mainmenu->height;
     MenuOption* op_exit = new MenuOption(posx-120,posy-60,120,60);

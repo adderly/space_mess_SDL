@@ -8,6 +8,7 @@
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/space_mess_SDL" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -52,6 +53,7 @@
 		<Unit filename="lib/MenuHandler.h" />
 		<Unit filename="lib/MenuOption.h" />
 		<Unit filename="lib/ObjectFactory.h" />
+		<Unit filename="lib/Panel.h" />
 		<Unit filename="lib/Particle.cpp" />
 		<Unit filename="lib/Particle.h" />
 		<Unit filename="lib/ParticleGenerator.cpp" />

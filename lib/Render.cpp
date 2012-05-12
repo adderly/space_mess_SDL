@@ -5,16 +5,19 @@ namespace Graphics
 
 Render::Render():Environment()
 {
+
     camera.h  = 660;
     camera.w = 460;
     camera.x = 0;
     camera.y = 0;
     x = 1;
     prepare();
+
     generator = new ParticleGenerator();
     generator->createParticles(500);
     player = new Player(generator);
     texture = loadTexture("resources/images/brick.bmp");
+
     music = new Audio();
     /*  MENU */
     menuH = new MenuHandler();
@@ -56,7 +59,8 @@ void Render::prepare()
         saveLog("Could Not load resource/images/back.bmp");
         exit(-1);
     }
-   bt = loadTexture("resources/images/b.bmp");
+
+   bt = loadTexture("resources/images/back.bmp");
    // SDL_SetColorKey(background,SDL_SRCCOLORKEY,SDL_MapRGB(background->format,0x00,0xff,0xff));
 
     init();

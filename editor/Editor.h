@@ -18,6 +18,7 @@ class Editor:public Render
     public:
         Editor();
         void loop();
+        void closes();
         void check();
         void init();
         ~Editor();

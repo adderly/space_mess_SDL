@@ -1,3 +1,4 @@
+#include"../utils/TextRender.h"
 #include<SDL/SDL.h>
 #include<SDL/SDL_image.h>
 #include<SDL/SDL_opengl.h>
@@ -10,13 +11,15 @@
 #include"videoutil.h"
 #include"../utils/Log.h"
 #include"../utils/keys.h"
-#include"../utils/TextRender.h"
 #include"../utils/ImageManager.h"
 #include"../utils/stringfunctions.h"
+#include"../utils/sigc++/sigc++.h"
+
 
 
 
 namespace Graphics{
+
 /*
  This would be an specifier for the way or ordering items in a menu
 */
@@ -25,6 +28,7 @@ namespace Graphics{
 typedef struct
 {
     enum layout:bool{};//FlowLayout,GridLayout,freeLayout
+
     float spacing;
     int columns ;
 }GridOptions;
@@ -39,7 +43,8 @@ typedef struct
 #ifndef MENU
 #define MENU
 
-class Menu:public Drawable,public EInterface
+
+class Menu:public Drawable,public EInterface, public sigc::trackable
 {
     bool dragging;
     bool someOptionEnabled;//enhance event checking
@@ -49,10 +54,11 @@ class Menu:public Drawable,public EInterface
     std::list<MenuOption*> options;
     std::list<MenuOption*>::iterator it;
     GridOptions gridoptions;
-    ImageManager imgr;
-    Text txt;
+    Images::ImageManager imgr;
+    Images::Text txt;
 
     public:
+    sigc::signal<void> detected;
     bool visible;
     Menu();
     Menu(float parentWidth,float parentHeight,float,float);

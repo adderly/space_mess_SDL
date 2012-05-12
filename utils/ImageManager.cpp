@@ -1,6 +1,7 @@
 #include"ImageManager.h"
 
-
+namespace Images
+{
 
     ImageManager::ImageManager()
     {
@@ -91,3 +92,4 @@
         add(name,actual);
         return actual;
     }
+}

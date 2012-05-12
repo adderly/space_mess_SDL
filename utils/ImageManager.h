@@ -6,6 +6,8 @@
 #include"Log.h"
 //generating images and textures
 
+namespace Images
+{
 #ifndef IMAGE
 #define IMAGE
 class ImageManager
@@ -26,5 +28,5 @@ class ImageManager
 
 };
 #endif
-
+}
 

@@ -1,3 +1,5 @@
+
+#include"../utils/TextRender.h"
 #include<SDL/SDL.h>
 #include<SDL/SDL_opengl.h>
 #include<SDL/SDL_thread.h>
@@ -8,7 +10,6 @@
 #include"ParticleGenerator.h"
 #include"Player.h"
 #include"Environment.h"
-#include"../utils/TextRender.h"
 #include"../utils/TextureLoader.h"
 #include"Audio/AudioPlayback.h"
 #include"../utils/Log.h"
