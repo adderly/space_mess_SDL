@@ -967,7 +967,7 @@
 1335318920 source:k:\home\moisex\desktop\space_mess_sdl\utils\textrender.cpp
 	"TextRender.h"
 
-1336712178 source:/home/moisex/Desktop/space_mess_SDL/editor/Editor.cpp
+1336716027 source:/home/moisex/Desktop/space_mess_SDL/editor/Editor.cpp
 	"Editor.h"
 
 1336715766 /home/moisex/Desktop/space_mess_SDL/editor/Editor.h
@@ -1060,7 +1060,7 @@
 1334543346 /home/moisex/Desktop/space_mess_SDL/lib/MenuHandler.h
 	"Menu.h"
 
-1336715243 /home/moisex/Desktop/space_mess_SDL/lib/Menu.h
+1337129061 /home/moisex/Desktop/space_mess_SDL/lib/Menu.h
 	"../utils/TextRender.h"
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
@@ -1076,17 +1076,19 @@
 	"../utils/keys.h"
 	"../utils/ImageManager.h"
 	"../utils/stringfunctions.h"
-	"../utils/sigc++/sigc++.h"
+	"sigc++/sigc++.h"
 
-1332395097 /home/moisex/Desktop/space_mess_SDL/lib/Drawable.h
+1337146376 /home/moisex/Desktop/space_mess_SDL/lib/Drawable.h
 	"Draw.h"
-	"../utils/Log.h"
+	"Log.h"
+	<SDL/SDL.h>
 
 1332364195 /home/moisex/Desktop/space_mess_SDL/lib/Draw.h
 
 1332391950 /home/moisex/Desktop/space_mess_SDL/lib/MenuOption.h
 
-1332383970 /home/moisex/Desktop/space_mess_SDL/lib/EventInterface.h
+1337146425 /home/moisex/Desktop/space_mess_SDL/lib/EventInterface.h
+	"sigc++/sigc++.h"
 
 1335490790 /home/moisex/Desktop/space_mess_SDL/utils/ImageManager.h
 	<map>
@@ -1302,4 +1304,162 @@
 	"slot.h"
 	"ptr_fun.h"
 	"mem_fun.h"
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/sigc++.h
+	<sigc++/signal.h>
+	<sigc++/connection.h>
+	<sigc++/trackable.h>
+	<sigc++/adaptors/adaptors.h>
+	<sigc++/functors/functors.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/signal.h
+	<list>
+	<sigc++/signal_base.h>
+	<sigc++/type_traits.h>
+	<sigc++/trackable.h>
+	<sigc++/functors/slot.h>
+	<sigc++/functors/mem_fun.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/signal_base.h
+	<cstddef>
+	<list>
+	<sigc++config.h>
+	<sigc++/type_traits.h>
+	<sigc++/trackable.h>
+	<sigc++/functors/slot.h>
+	<sigc++/functors/mem_fun.h>
+
+1336704634 /usr/local/lib/sigc++-2.0/include/sigc++config.h
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/type_traits.h
+	<sigc++config.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/trackable.h
+	<list>
+	<sigc++config.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/slot.h
+	<sigc++/trackable.h>
+	<sigc++/visit_each.h>
+	<sigc++/adaptors/adaptor_trait.h>
+	<sigc++/functors/slot_base.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/visit_each.h
+	<sigc++/type_traits.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/adaptor_trait.h
+	<sigc++config.h>
+	<sigc++/visit_each.h>
+	<sigc++/functors/functor_trait.h>
+	<sigc++/functors/ptr_fun.h>
+	<sigc++/functors/mem_fun.h>
+	<sigc++/adaptors/deduce_result_type.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/functor_trait.h
+	<sigc++/type_traits.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/ptr_fun.h
+	<sigc++/type_traits.h>
+	<sigc++/functors/functor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/mem_fun.h
+	<sigc++/type_traits.h>
+	<sigc++/functors/functor_trait.h>
+	<sigc++/limit_reference.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/limit_reference.h
+	<sigc++/type_traits.h>
+	<sigc++/trackable.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/deduce_result_type.h
+	<sigc++/functors/functor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/slot_base.h
+	<sigc++config.h>
+	<sigc++/trackable.h>
+	<sigc++/functors/functor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/connection.h
+	<sigc++config.h>
+	<sigc++/signal.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/adaptors.h
+	<sigc++/adaptors/bind.h>
+	<sigc++/adaptors/bind_return.h>
+	<sigc++/adaptors/hide.h>
+	<sigc++/adaptors/retype_return.h>
+	<sigc++/adaptors/retype.h>
+	<sigc++/adaptors/compose.h>
+	<sigc++/adaptors/exception_catch.h>
+	<sigc++/adaptors/lambda/lambda.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/bind.h
+	<sigc++/adaptors/adaptor_trait.h>
+	<sigc++/adaptors/bound_argument.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/bound_argument.h
+	<sigc++/limit_reference.h>
+	<sigc++/reference_wrapper.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/reference_wrapper.h
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/bind_return.h
+	<sigc++/adaptors/adaptor_trait.h>
+	<sigc++/adaptors/bound_argument.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/hide.h
+	<sigc++/adaptors/adaptor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/retype_return.h
+	<sigc++/adaptors/adaptor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/retype.h
+	<sigc++/adaptors/adaptor_trait.h>
+	<sigc++/functors/ptr_fun.h>
+	<sigc++/functors/mem_fun.h>
+	<sigc++/functors/slot.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/compose.h
+	<sigc++/adaptors/adaptor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/exception_catch.h
+	<sigc++/adaptors/adaptor_trait.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/lambda/lambda.h
+	<sigc++/adaptors/lambda/base.h>
+	<sigc++/adaptors/lambda/select.h>
+	<sigc++/adaptors/lambda/operator.h>
+	<sigc++/adaptors/lambda/group.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/lambda/base.h
+	<sigc++/adaptors/adaptor_trait.h>
+	<sigc++/reference_wrapper.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/lambda/select.h
+	<sigc++/adaptors/lambda/base.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/lambda/operator.h
+	<sigc++/adaptors/lambda/base.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/adaptors/lambda/group.h
+	<sigc++/adaptors/lambda/base.h>
+
+1336704632 /usr/local/include/sigc++-2.0/sigc++/functors/functors.h
+	<sigc++/functors/slot.h>
+	<sigc++/functors/ptr_fun.h>
+	<sigc++/functors/mem_fun.h>
+
+1337136054 source:/home/moisex/Desktop/space_mess_SDL/lib/Core.cpp
+	"Core.h"
+
+1337139609 /home/moisex/Desktop/space_mess_SDL/lib/Core.h
+	"Drawer.h"
+
+1337139798 /home/moisex/Desktop/space_mess_SDL/lib/Drawer.h
+	<vector>
+	<map>
+	"Drawable.h"
+
+1337140525 source:/home/moisex/Desktop/space_mess_SDL/lib/Drawer.cpp
+	"Drawer.h"
 

@@ -1,5 +1,7 @@
 #include"Draw.h"
-#include"../utils/Log.h"
+#include"Log.h"
+#include<SDL/SDL.h>
+
 
 #ifndef DRAWABLE
 #define DRAWABLE
@@ -7,6 +9,7 @@
 class Drawable:Draw
 {
     public:
+    bool isContainer;
     float x,y,width,height;
     float color[4];
     SDL_Surface* ParentBackground,*background;

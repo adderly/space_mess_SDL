@@ -13,7 +13,7 @@
 #include"../utils/keys.h"
 #include"../utils/ImageManager.h"
 #include"../utils/stringfunctions.h"
-#include"../utils/sigc++/sigc++.h"
+#include"sigc++/sigc++.h"
 
 
 
