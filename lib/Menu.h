@@ -58,6 +58,7 @@ class Menu:public Drawable,public EInterface, public sigc::trackable
     Images::Text txt;
 
     public:
+    friend class Drawable;
     sigc::signal<void> detected;
     bool visible;
     Menu();

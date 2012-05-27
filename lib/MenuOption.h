@@ -7,7 +7,7 @@
 /*  OPtion to be contained Inside A menu*/
 #ifndef MENUOPTION
 #define MENUOPTION
-typedef class MenuOption:public Drawable
+typedef class MenuOption: public Drawable
 {
     public:
     unsigned int texture_id;
@@ -20,7 +20,7 @@ typedef class MenuOption:public Drawable
     bool isTextBox,isCheckBox;
     bool isSelected;
     /******TExtBox and CheckBOX**********/
-     bool VOIDFUNC,INTVOIDFUNCT,KEYUPFUNC,KEYDOWNFUNC,MOUSEOVERFUNC;
+    bool VOIDFUNC,INTVOIDFUNCT,KEYUPFUNC,KEYDOWNFUNC,MOUSEOVERFUNC;
 
     //callbacks
     void (*vfunc)();
@@ -59,12 +59,12 @@ typedef class MenuOption:public Drawable
     {
         this->enable = false;
     }
-    MenuOption(float x,float y,float w,float h):Drawable(x,y,w,h)
+    MenuOption(float X,float Y,float W,float H):Drawable(X,Y,W,H)
     {
-        this->x=x;
-        this->y=y;
-        this->width=w;
-        this->height=h;
+        this->x=X;
+        this->y=Y;
+        this->width=W;
+        this->height=H;
         this->enable = false;
     }
     //Not Doing Anything

@@ -1,19 +1,26 @@
 #include"Draw.h"
+#include"Interfaces/GeometricElement.h"
 #include"Log.h"
+#include"EventInterface.h"
 #include<SDL/SDL.h>
 
 
 #ifndef DRAWABLE
 #define DRAWABLE
 
-class Drawable:Draw
+/*
+
+    This class should countain the necesary stuff, for drawing a element
+    and handle it in the 'drawing space'
+*/
+
+class Drawable:Draw, public eventSignals,public GeometricElement
 {
-    public:
+    public:;
     bool isContainer;
-    float x,y,width,height;
-    float color[4];
+
     SDL_Surface* ParentBackground,*background;
-    Drawable(float X,float Y,float WIDTH,float HEIGHT)
+    Drawable(float X,float Y,float WIDTH,float HEIGHT):eventSignals(),GeometricElement()
     {
         this->x = X;
         this->y = Y;
@@ -24,14 +31,14 @@ class Drawable:Draw
         color[2] = 0.0;
         color[3] = 0.0;
     }
-    void setBounds(float x,float y,float w,float h)
+    void setBounds(float x,float y,float w,float h,float z = 0)
     {
         this->x = x;
         this->y = y;
         this->width = w;
         this->height;
     }
-    void setLocation(float x,float y)
+    void setLocation(float x,float y,float z = 0)
     {
         this->x = x;
         this->y = y;
@@ -75,6 +82,18 @@ class Drawable:Draw
     {
         return this->ParentBackground;
     }
+
+    /*Events*/
+
+    virtual void f_clicked();
+    virtual void f_rightclicked();
+    virtual void f_selected();
+    virtual void f_mouseover();
+    virtual void f_drag();
+    virtual void f_drop();
+    virtual void check();
+
+
     virtual void draw()=0;
 };
 #endif
