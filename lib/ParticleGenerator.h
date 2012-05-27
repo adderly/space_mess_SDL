@@ -6,7 +6,7 @@
 //typedef Particle Particle;
 
 #ifndef Particle
-    #include"Particle.h"
+#include"Particle.h"
 #endif
 
 #ifndef GEN
@@ -16,7 +16,7 @@ class ParticleGenerator
 
     int particleCount;
 
-    public:
+public:
     friend class render;
     std::vector<Particle*> particles;
     ParticleGenerator();

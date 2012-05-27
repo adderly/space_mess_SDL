@@ -28,20 +28,20 @@ Particle::Particle(int x,int y, int z,float speedx,
 
 void Particle::autoEvolve()
 {
-   if(x_max == 0)
-   {
-    pos_x+= speed_x;
-    pos_y+= speed_y;
-    pos_z+= speed_z;
+    if(x_max == 0)
+    {
+        pos_x+= speed_x;
+        pos_y+= speed_y;
+        pos_z+= speed_z;
 
-   }
-   else
-   {
+    }
+    else
+    {
 
-      if(pos_x+pos_y < x_max) pos_x += speed_x;
-       if(pos_x+pos_y > x_max) pos_x -= speed_x;
-      if(pos_x+pos_y > y_max) pos_y -= speed_y;
-       if(pos_x+pos_y < y_max) pos_y += speed_y;
+        if(pos_x+pos_y < x_max) pos_x += speed_x;
+        if(pos_x+pos_y > x_max) pos_x -= speed_x;
+        if(pos_x+pos_y > y_max) pos_y -= speed_y;
+        if(pos_x+pos_y < y_max) pos_y += speed_y;
 
 
 
@@ -52,16 +52,16 @@ void Particle::autoEvolve()
 //            pos_y+= speed_y;
 //            pos_z+= speed_z;
 //       }
-   }
+    }
 
 }
 
 void Particle::VariateSpeed(int x,int y,int z)
 {
-     speed_x = x;
-     speed_y = y;
-     speed_z = z;
+    speed_x = x;
+    speed_y = y;
+    speed_z = z;
 }
-Particle::~Particle(){}
+Particle::~Particle() {}
 
 

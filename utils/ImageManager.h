@@ -15,7 +15,7 @@ class ImageManager
     std::map<std::string,unsigned int> textures;//GLTextures name,id
     std::map<std::string,unsigned int>::iterator it;
     unsigned int actual;
-    public:
+public:
     ImageManager();
     void add(const std::string name,unsigned int id);
     unsigned int getTextureByName(const std::string name);

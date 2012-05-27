@@ -18,16 +18,16 @@ void Player::shoot()
 {
 
     if(gun->ammoAmount > 0)
-   {
+    {
         float color[] = {0,255,0};
         Particle* particle =  new Particle(x,y/2,-1,2,0.01,0,10.0,color);
         particle->setSize(7,4);
         gun->fire();
         gen->addParticle(particle);
-   }
+    }
 
 }
 //void Player::shoot(Audio& ai,){}
 
-Player::~Player(){}
+Player::~Player() {}
 

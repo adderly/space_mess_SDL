@@ -3,7 +3,8 @@
 
 
 
-namespace Graphics{
+namespace Graphics
+{
 
 MenuHandler::MenuHandler()
 {
@@ -11,7 +12,7 @@ MenuHandler::MenuHandler()
 }
 void MenuHandler::loadDefaults()
 {
-   // mainmenu =  new Menu(width,height,450,270);
+    // mainmenu =  new Menu(width,height,450,270);
 
 }
 void MenuHandler::check(SDL_Event* e)
@@ -33,7 +34,7 @@ void MenuHandler::check(SDL_Event* e)
     }
     else
     {
-        for(it= menus.begin(); it != menus.end();it++)
+        for(it= menus.begin(); it != menus.end(); it++)
         {
             (*it)->check(*e);
             current = (*it);
@@ -53,6 +54,6 @@ void MenuHandler::switchTo()
 {
 
 }
-MenuHandler::~MenuHandler(){}
+MenuHandler::~MenuHandler() {}
 
 }

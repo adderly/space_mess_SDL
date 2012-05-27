@@ -3,7 +3,7 @@
 namespace Graphics
 {
 
-Render::Render():Environment()
+Render::Render():RenderArea(),Drawer()
 {
 
     camera.h  = 660;
@@ -21,15 +21,8 @@ Render::Render():Environment()
     music = new Audio();
     /*  MENU */
     menuH = new MenuHandler();
-   // menu->setVisible(false);
+    // menu->setVisible(false);
     //menu->setBackground(SDL_DisplayFormat(IMG_Load("resources/images/brick.bmp")));
-}
-void Render::shut()
-{
-    float color[] = {255,222,225};
-    Particle* p = new Particle(player->x+player->width,-1*player->y+(player->width/2),0,2,gravity,0,10,color);
-    p->setSize(20,20);
-    generator->addParticle(p);
 }
 void Render::prepare()
 {
@@ -40,7 +33,7 @@ void Render::prepare()
         exit(-1);
     }
 
-      putenv("SDL_VIDEO_WINDOW_POS=center");
+    putenv("SDL_VIDEO_WINDOW_POS=center");
     //putenv("SDL_VIDEO_CENTERED=1");
 
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
@@ -54,14 +47,15 @@ void Render::prepare()
 
     screen = SDL_SetVideoMode(width,height,bpp,SDL_HWSURFACE|SDL_OPENGLBLIT);
     background = SDL_DisplayFormatAlpha(IMG_Load("resources/images/back.bmp"));
-    if( background == NULL) {
+    if( background == NULL)
+    {
         std::cout<<"Unable to load back.bmp" <<std::endl;
         saveLog("Could Not load resource/images/back.bmp");
         exit(-1);
     }
 
-   bt = loadTexture("resources/images/back.bmp");
-   // SDL_SetColorKey(background,SDL_SRCCOLORKEY,SDL_MapRGB(background->format,0x00,0xff,0xff));
+    bt = loadTexture("resources/images/back.bmp");
+    // SDL_SetColorKey(background,SDL_SRCCOLORKEY,SDL_MapRGB(background->format,0x00,0xff,0xff));
 
     init();
 }
@@ -97,102 +91,90 @@ int Render::setFullScreen()
 }
 void Render::draw()
 {
-    glClear(GL_COLOR_BUFFER_BIT);
-   // glColor3f(0,1,0);
 
-   /***************BLITExample********************
-   *    UpdateRect IS The KEY HERE!
-   *
-   */
+
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    // glColor3f(0,1,0);
+
+
+    for(d_tator = drawables.begin(); d_tator != drawables.end(); d_tator++)
+    {
+
+// TODO (moisex#1#): Enhance the Drawing, evaluating the states of the drawables, in this case when selected,clicked.\
+
+        if((**d_tator).getIsDefaulColor())
+        {
+                       glColor4f((**d_tator).color[0],(**d_tator).color[1], (**d_tator).color[2],(**d_tator).color[3]);
+        }
+        else glColor4f(1.0,0.0,0.0,0.0);
+
+        /*Draws Dipending on the type of object*/
+
+        if((**d_tator).isQuad)
+        {
+            glBegin(GL_QUADS);
+            glVertex3f((**d_tator).x ,(**d_tator).y,(**d_tator).z);
+            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
+            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+            glEnd();
+        }
+        else
+        {
+            glBegin(GL_TRIANGLES);
+            glVertex3f((**d_tator).x,(**d_tator).y,(**d_tator).z);
+            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
+            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+            glEnd();
+        }
+        /***************BLITExample********************
+        *    UpdateRect IS The KEY HERE!
+        *
+        */
 
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D,bt);
         glBegin(GL_QUADS);
-            glVertex2f(player->x+this->x,player->y+this->y); glTexCoord2f(0.0,0.0);
-            glVertex2f(player->x+player->width+this->x,player->y+this->y);  glTexCoord2f(1.0,0.0);
-            glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);   glTexCoord2f(1.0,1.0);
-            glVertex2f(player->x+this->x,player->y+player->height+this->y); glTexCoord2f(0.0,1.0);
+        glVertex2f(player->x+this->x,player->y+this->y);
+        glTexCoord2f(0.0,0.0);
+        glVertex2f(player->x+player->width+this->x,player->y+this->y);
+        glTexCoord2f(1.0,0.0);
+        glVertex2f(player->x+player->width+this->x,player->y+player->height+this->y);
+        glTexCoord2f(1.0,1.0);
+        glVertex2f(player->x+this->x,player->y+player->height+this->y);
+        glTexCoord2f(0.0,1.0);
         glEnd();
 
         glDisable(GL_TEXTURE_2D);
 
         glBegin(GL_QUADS);
         glColor4f(1.0,0.0,0.0,0.5);
-            glVertex2f(10,10);
-            glVertex2f(100,10);
-            glVertex2f(100,100);
-            glVertex2f(10,100);
+        glVertex2f(10,10);
+        glVertex2f(100,10);
+        glVertex2f(100,100);
+        glVertex2f(10,100);
         glEnd();
-		glColor4f(1.0,0.0,0.0,0.5);
+        glColor4f(1.0,0.0,0.0,0.5);
         glBegin(GL_QUADS);
-                for(int n = 0; n < generator->particles.size();n++)
-                {
-                        glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y);
-                        glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y);
-                        glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y+generator->particles[n]->height);
-                        glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y+generator->particles[n]->height);
-                }
-		glEnd();
-
-		checkCollition();
-        generator->evolveParticles();
-       // if(menu->visible)drawMainMenu();
-
-
-}
-void Render::checkCollition()
-{
-    for(int f = 0;f < generator->particles.size();f++)
-    {
-        if( generator->particles[f]->alive == true)
+        for(int n = 0; n < generator->particles.size(); n++)
         {
-            if(generator->particles[f]->pos_x < 2)
-            {
-                generator->particles[f]->speed_x = -1 * generator->particles[f]->speed_x;
-                if(generator->particles[f]->speed_x > generator->particles[f]->speed_y) generator->particles[f]->speed_y *= 1.01;
-                //generator->particles[f]->alive = false;
-            }
-            if(generator->particles[f]->pos_y < 2)
-            {
-                generator->particles[f]->speed_y = -1 * generator->particles[f]->speed_y;
-                if(generator->particles[f]->speed_y > generator->particles[f]->speed_x) generator->particles[f]->speed_x *=1.01;
-                // generator->particles[f]->alive = false;
-            }
-            if(generator->particles[f]->pos_x+generator->particles[f]->width >= width)
-            {
-                generator->particles[f]->speed_x = - generator->particles[f]->speed_x;
-               if(generator->particles[f]-> width > 10) generator->createParticles(60);
-                // generator->particles[f]->alive = false;
-            }
-            if(generator->particles[f]->pos_y+generator->particles[f]->height >= height-5)
-            {
-                generator->particles[f]->speed_y = - generator->particles[f]->speed_y;
-                // generator->particles[f]->alive = false;
-            }
-        }else
-        {
-           // delete generator->particles[f];
+            glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y);
+            glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y);
+            glVertex2f(generator->particles[n]->pos_x+generator->particles[n]->width,generator->particles[n]->pos_y+generator->particles[n]->height);
+            glVertex2f(generator->particles[n]->pos_x,generator->particles[n]->pos_y+generator->particles[n]->height);
         }
-    }
-}
-void Render::drawMainMenu()
-{
+        glEnd();
 
-}
-void Render::drawPauseMenu()
-{
-}
-void Render::releaseResources()
-{
-}
-void Render::fallowMouse(int mouse_x,int mouse_y)
-{
-    for(int n = 0;n< generator->particles.size();n++)
-    {
+
+        generator->evolveParticles();
+        // if(menu->visible)drawMainMenu();
+
 
     }
 }
-void Render::clean(){}
-Render::~Render(){}
+    Render::~Render()
+    {}
 
 }

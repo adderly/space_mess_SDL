@@ -7,7 +7,7 @@
 class Container:public Drawable
 {
     vector<Drawable*> items;
-    public:
+public:
     Container();
     Container(vector<Drawable*>);
     void addItem(Drawable*);

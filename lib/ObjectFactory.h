@@ -7,7 +7,7 @@
 class ObjectFactory
 {
 
-    public:
+public:
     ObjectFactory();
     ~ObjectFactory();
 

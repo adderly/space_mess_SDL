@@ -1,9 +1,9 @@
-
 #include"Render.h"
 
 #include<sstream>
 
 using namespace Graphics;
+
 class Game:public Render
 {
 
@@ -12,7 +12,7 @@ class Game:public Render
     Uint32 start;
     //SDL_Event event; it is in Keys now Static ;)/
     friend class Render;
-    public:
+public:
     Game();
     void movePlayers();
     void MainLoop();

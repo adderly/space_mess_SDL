@@ -6,4 +6,4 @@ Environment::Environment()
     this->gravity = 0.13;
     this->wind = 0.15;
 }
-Environment::~Environment(){}
+Environment::~Environment() {}

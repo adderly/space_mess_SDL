@@ -5,7 +5,7 @@
 
 class Reader
 {
-    public:
+public:
     virtual read(const std::string filename)= 0;
 
 };

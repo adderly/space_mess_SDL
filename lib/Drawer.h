@@ -1,27 +1,15 @@
-#include<vector>
-#include<map>
-#include"Drawable.h"
+#include"Draw.h"
 
 #ifndef DRAWER
 #define DRAWER
 
-/*
-    class for drawing all the element,added to panels and etc
-*/
-class Drawer
+class Drawer: public Draw
 {
-    /*
-        this map will have all the drawables for rendering map<zindex,vectorofelementsinthezindex>
-    */
-    std::map<float,std::vector<Drawable*> > _toRender;
-    std::map<float,std::vector<Drawable*> >::iterator _toRenderIterator;
-
-    public:
+public:
     Drawer();
-    virtual ~Drawer();
-    virtual void draw();
-
-
+    ~Drawer();
+    virtual void draw() = 0;
 };
 
 #endif
+

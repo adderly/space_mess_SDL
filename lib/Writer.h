@@ -7,7 +7,7 @@
 class Writer:public Write
 {
     char buffer[256];//in case its needed
-    public:
+public:
     Writer();
     ~Writer();
 };

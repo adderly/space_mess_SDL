@@ -1,4 +1,3 @@
-
 #include"Log.h"
 
 Log::Log()
@@ -26,8 +25,8 @@ bool Log::checkFolderExistance()
     else
     {
         std::cout<<"Did not existed!";
-       std::cout<<"ummmm-->>"<< system(("mkdir "+defaultDir).c_str());
-       //std::cout<<"eeehhmmm-->>"<< system("ls");
+        std::cout<<"ummmm-->>"<< system(("mkdir "+defaultDir).c_str());
+        //std::cout<<"eeehhmmm-->>"<< system("ls");
         check.open(command.c_str());
     }
     check.close();
@@ -38,7 +37,7 @@ void Log::closef()
     ofile.close();
 
 }
-void Log::openf(){}
+void Log::openf() {}
 void Log::write_to_f(const std::string whichone,const std::string data)
 {
     ofile.open((defaultDir+whichone+".log").c_str(),std::ios_base::out|std::ios_base::app);
@@ -47,8 +46,11 @@ void Log::write_to_f(const std::string whichone,const std::string data)
     {
         ofile<<data<<std::endl;
     }
-   else{std::cout<<"DAmn";}
-   ofile.close();
+    else
+    {
+        std::cout<<"DAmn";
+    }
+    ofile.close();
 
 }
 

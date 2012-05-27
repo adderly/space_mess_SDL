@@ -1,5 +1,4 @@
 
-
 #ifndef DRAW
 #define DRAW
 
@@ -8,7 +7,7 @@
 */
 class Draw
 {
-    public:
+public:
     virtual void draw()= 0;
 };
 #endif

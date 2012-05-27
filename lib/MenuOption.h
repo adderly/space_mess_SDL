@@ -1,4 +1,3 @@
-
 /*
     A menu have options, and this options have attributes.
     To make it clear an option of a menu may contain a pointer
@@ -9,7 +8,7 @@
 #define MENUOPTION
 typedef class MenuOption: public Drawable
 {
-    public:
+public:
     unsigned int texture_id;
     static const float defaultwidth = 120;
     static const float defaultheight = 60;
@@ -37,12 +36,12 @@ typedef class MenuOption: public Drawable
     void setKeyDownCallBack(void (*k)())
     {
         this->keyDown = k;
-         KEYDOWNFUNC = true;
+        KEYDOWNFUNC = true;
     }
     void setKeyUpCallBack(void (*k)())
     {
         this->keyUp = k;
-       KEYUPFUNC = true;
+        KEYUPFUNC = true;
     }
     void setVoidCallBack(void (*f)(int))
     {
@@ -68,7 +67,7 @@ typedef class MenuOption: public Drawable
         this->enable = false;
     }
     //Not Doing Anything
-    virtual void draw(){}
+    virtual void draw() {}
 };
 #endif
 

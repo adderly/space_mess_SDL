@@ -1,18 +1,23 @@
 
-#include"../utils/TextRender.h"
+
+/*New*/
+#include"RenderArea.h"
+#include"Drawer.h"
+/*****/
+#include"TextRender.h"
 #include<SDL/SDL.h>
 #include<SDL/SDL_opengl.h>
 #include<SDL/SDL_thread.h>
 #include<GL/glu.h>
 #include<iostream>
-#include"../utils/keys.h"
+#include"keys.h"
 #include"videoutil.h"
 #include"ParticleGenerator.h"
 #include"Player.h"
 #include"Environment.h"
-#include"../utils/TextureLoader.h"
+#include"TextureLoader.h"
 #include"Audio/AudioPlayback.h"
-#include"../utils/Log.h"
+#include"Log.h"
 #include"MenuHandler.h"
 
 namespace Graphics{
@@ -21,8 +26,13 @@ namespace Graphics{
 
 using namespace AudioPlayback;
 
-class Render:public Environment
+class Render: public RenderArea, public Drawer
 {
+
+    /*New Stuff*/
+    std::vector<Drawable*> drawables;
+    std::vector<Drawable*>::iterator d_tator;//Drawble Iterator
+    /***********/
 
        SDL_Surface *screen,*background;
        SDL_Rect camera;
@@ -44,14 +54,7 @@ class Render:public Environment
       void init();
       void reshape(int width,int height);
       static int setFullScreen();
-      void checkCollition();
       void draw();
-      void drawMainMenu();
-      void drawPauseMenu();
-      void releaseResources();
-      void fallowMouse(int x,int y);
-      void shut();
-      void clean();
       SDL_Surface* getScreen(){return this->screen;}
 };
 #endif

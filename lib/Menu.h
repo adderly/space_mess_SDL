@@ -18,7 +18,8 @@
 
 
 
-namespace Graphics{
+namespace Graphics
+{
 
 /*
  This would be an specifier for the way or ordering items in a menu
@@ -27,11 +28,12 @@ namespace Graphics{
 #define GRIDO
 typedef struct
 {
-    enum layout:bool{};//FlowLayout,GridLayout,freeLayout
+enum layout:
+    bool {}; //FlowLayout,GridLayout,freeLayout
 
     float spacing;
     int columns ;
-}GridOptions;
+} GridOptions;
 #endif
 //#ifndef Panel
 //#define Panel
@@ -57,7 +59,7 @@ class Menu:public Drawable,public EInterface, public sigc::trackable
     Images::ImageManager imgr;
     Images::Text txt;
 
-    public:
+public:
     friend class Drawable;
     sigc::signal<void> detected;
     bool visible;
@@ -89,16 +91,37 @@ class Menu:public Drawable,public EInterface, public sigc::trackable
     inline void drag();
     void setUpOption(MenuOption* opt);
     void addOption(MenuOption* opt);
-    void setBackground(SDL_Surface* surface){this->background = surface;}
-    void setEvent(SDL_Event &e){this->event = &e;}
-    void setOptions(std::list<MenuOption*> optns){ this->options = optns;}
-    void setGrid(GridOptions grid){ this->gridoptions = grid;}
+    void setBackground(SDL_Surface* surface)
+    {
+        this->background = surface;
+    }
+    void setEvent(SDL_Event &e)
+    {
+        this->event = &e;
+    }
+    void setOptions(std::list<MenuOption*> optns)
+    {
+        this->options = optns;
+    }
+    void setGrid(GridOptions grid)
+    {
+        this->gridoptions = grid;
+    }
     void setVisible(bool value);
     void setExitOption(MenuOption*);
     void setBackOption(MenuOption*);
-    SDL_Surface* getBackground(){return this->background;}
-    std::list<MenuOption*> getOptions(){return this->options;}
-    GridOptions getGrid(){return this->gridoptions;}
+    SDL_Surface* getBackground()
+    {
+        return this->background;
+    }
+    std::list<MenuOption*> getOptions()
+    {
+        return this->options;
+    }
+    GridOptions getGrid()
+    {
+        return this->gridoptions;
+    }
 
 
     ~Menu();

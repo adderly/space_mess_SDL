@@ -8,7 +8,7 @@ static unsigned int loadTexture(const char* filename)
 {
     unsigned  id(0);
     SDL_Surface* img = IMG_Load(filename);
-     img = SDL_DisplayFormatAlpha(img);
+    img = SDL_DisplayFormatAlpha(img);
     glGenTextures(1,&id);
     glBindTexture(GL_TEXTURE_2D,id);
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);

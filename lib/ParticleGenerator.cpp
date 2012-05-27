@@ -10,9 +10,9 @@ void ParticleGenerator::addParticle(Particle* newone)
 }
 void ParticleGenerator::addParticle(int x,int y, int z,float speedx,float speedy,float speedz,float life,float *color)
 {
-        Particle* p = new Particle(x,y,z,speedx,speedy,speedz,10.0,color);
-        p->setSize(6,2);
-        particles.push_back(p);
+    Particle* p = new Particle(x,y,z,speedx,speedy,speedz,10.0,color);
+    p->setSize(6,2);
+    particles.push_back(p);
 }
 void ParticleGenerator::genParticlesAt(int x, int y,int z,int amount)
 {
@@ -22,12 +22,12 @@ void ParticleGenerator::genParticlesAt(int x, int y,int z,int amount)
 
 
     float colorv[] = {255.0,255.0,0.0};
-    for(int n = 0; n< amount;n++)
+    for(int n = 0; n< amount; n++)
     {
         if(rand()/rand() > 45000)
         {
-        XNumber= 0.0005-(rand()%100/22.5);
-        YNumber= 0.0005-(rand()%100/9);
+            XNumber= 0.0005-(rand()%100/22.5);
+            YNumber= 0.0005-(rand()%100/9);
         }
         else
         {
@@ -54,12 +54,12 @@ void ParticleGenerator::createParticles(int amount)
 
 
     float colorv[] = {255.0,255.0,0.0};
-    for(int n = 0; n< amount;n++)
+    for(int n = 0; n< amount; n++)
     {
         if(rand()/rand() > 45000)
         {
-        XNumber= 0.0005-(rand()%100/22.5);
-        YNumber= 0.0005-(rand()%100/9);
+            XNumber= 0.0005-(rand()%100/22.5);
+            YNumber= 0.0005-(rand()%100/9);
         }
         else
         {
@@ -78,17 +78,17 @@ void ParticleGenerator::createParticles(int amount)
 void ParticleGenerator::evolveParticles()
 {
 
-    for(int amount = 0; amount < particles.size();amount++)
+    for(int amount = 0; amount < particles.size(); amount++)
     {
 
         particles[amount]->autoEvolve();
-       // std::cout<<particles[amount]->pos_x;
+        // std::cout<<particles[amount]->pos_x;
     }
 }
 std::vector<Particle*> &ParticleGenerator::getParticles()
 {
     return particles;
 }
-ParticleGenerator::~ParticleGenerator(){}
+ParticleGenerator::~ParticleGenerator() {}
 
 

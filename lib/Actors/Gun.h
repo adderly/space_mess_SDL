@@ -1,4 +1,3 @@
-
 #ifndef GUN
 #define GUN
 
@@ -11,11 +10,17 @@ class Gun:public Weapon
     int ammoAmount;
     std::string name;
     float maxHeat;
-    public:
+public:
     Gun();
-        void fire();
-        void setName(std::string name){this->name = name;}
-        std::string getName(){return this->name;}
+    void fire();
+    void setName(std::string name)
+    {
+        this->name = name;
+    }
+    std::string getName()
+    {
+        return this->name;
+    }
     ~Gun();
 };
 

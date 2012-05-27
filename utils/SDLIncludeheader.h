@@ -1,4 +1,3 @@
-
 #ifndef _SDL_
 #define _SDL_
 

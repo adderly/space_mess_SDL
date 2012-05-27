@@ -5,12 +5,12 @@ namespace Graphics
 #ifndef PANEL
 #define PANEL
 
-    class Panel:public Drawable
-    {
+class Panel:public Drawable
+{
 
-        public:
-        void draw();
+public:
+    void draw();
 
-    };
+};
 #endif
 }

@@ -3,7 +3,8 @@
 
 #ifndef EINTERFACE
 #define EINTERFACE
-class EInterface{
+class EInterface
+{
 
     virtual void check()=0;
     virtual void check(SDL_Event&)=0;
@@ -24,7 +25,7 @@ class EInterface{
 */
 class eventSignals : public sigc::trackable
 {
-    public:
+public:
     bool clicked;
     bool rightclicked;
     bool selected;
@@ -40,7 +41,7 @@ class eventSignals : public sigc::trackable
     sigc::signal<void> s_drag;
     sigc::signal<void> s_drop;
 
-    eventSignals(){}
+    eventSignals() {}
     virtual void check() = 0;
 
     virtual void f_clicked() = 0;

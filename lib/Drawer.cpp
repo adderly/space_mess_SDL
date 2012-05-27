@@ -1,5 +1,8 @@
+#include"Drawer.h"
 
-#include "Drawer.h"
-void Drawer::draw(){}
+
+Drawer::Drawer() {}
+Drawer::~Drawer() {}
+
 
 

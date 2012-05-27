@@ -5,7 +5,8 @@
 #include"../../utils/Log.h"
 
 
-namespace AudioPlayback{
+namespace AudioPlayback
+{
 
 /*
 
@@ -45,23 +46,23 @@ class Audio
     int size;
 
 
-    public:
-        Audio();
-        Audio(const std::string name,const std::string location); //default song
-        void addMusic(const std::string name,const std::string location);
-        void loadSound(const std::string location,const std::string filename);
-        void play();
-        void playSpecific(const std::string name); //inside the map
-        void playEffect(Mix_Chunk* effect);
-        void playEffect(const std::string name);
-        void pause();
-        void resume();
-        void nextMusic();
-        void previousMusic();
-        void volumeUp();
-        void volumeDown();
-        void specificVolume(int desireVolume);
-        ~Audio();
+public:
+    Audio();
+    Audio(const std::string name,const std::string location); //default song
+    void addMusic(const std::string name,const std::string location);
+    void loadSound(const std::string location,const std::string filename);
+    void play();
+    void playSpecific(const std::string name); //inside the map
+    void playEffect(Mix_Chunk* effect);
+    void playEffect(const std::string name);
+    void pause();
+    void resume();
+    void nextMusic();
+    void previousMusic();
+    void volumeUp();
+    void volumeDown();
+    void specificVolume(int desireVolume);
+    ~Audio();
 };
 
 #endif

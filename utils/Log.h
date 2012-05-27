@@ -1,7 +1,6 @@
 
 
 
-
 #ifndef LOG
 #define LOG
 
@@ -13,18 +12,18 @@
 using namespace std;
 class Log
 {
-     std::ofstream ofile;
-     std::ifstream check;
-     std::string defaultDir;
+    std::ofstream ofile;
+    std::ifstream check;
+    std::string defaultDir;
 
-     public:
-     Log();
-     Log(const string defaultLocation);
-     void openf();
-     void write_to_f(const string which,const string data);
-     void closef();
-     bool checkFolderExistance();
-     ~Log();
+public:
+    Log();
+    Log(const string defaultLocation);
+    void openf();
+    void write_to_f(const string which,const string data);
+    void closef();
+    bool checkFolderExistance();
+    ~Log();
 };
 
 

@@ -8,7 +8,7 @@ Editor::Editor():Render()
 }
 void Editor::closes()
 {
-  saveLog("from signal");
+    saveLog("from signal");
 }
 void Editor::loop()
 {
@@ -58,4 +58,4 @@ void Editor::init()
     mainmenu->addOption(op_exit);
 
 }
-Editor::~Editor(){}
+Editor::~Editor() {}

@@ -2,11 +2,14 @@
 
 #ifndef RENDERAREA
 #define RENDERAREA
+/*
 
+*/
 class RenderArea: public GeometricElement
 {
     bool blocked;//you can't change it properties width,height
-    public:
+public:
+    RenderArea() {}
 
     bool getIsBlocked()
     {

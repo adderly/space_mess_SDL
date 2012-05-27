@@ -8,7 +8,7 @@ class World
 {
     std::string name;
 
-    public:
+public:
     World();
     ~World();
 };

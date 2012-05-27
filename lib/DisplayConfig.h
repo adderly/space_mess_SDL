@@ -25,7 +25,7 @@ class DisplayConfig
     map<string, int> settings;
     map<string, int>::iterator it;
 
-    public:
+public:
     DisplayConfig();
     map<string, int> &getsettings();
     void addToMap(const string ,const int);

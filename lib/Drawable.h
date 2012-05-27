@@ -16,7 +16,7 @@
 
 class Drawable:Draw, public eventSignals,public GeometricElement
 {
-    public:;
+public:
     bool isContainer;
 
     SDL_Surface* ParentBackground,*background;
@@ -35,6 +35,7 @@ class Drawable:Draw, public eventSignals,public GeometricElement
     {
         this->x = x;
         this->y = y;
+        this->z = z;
         this->width = w;
         this->height;
     }
@@ -42,6 +43,7 @@ class Drawable:Draw, public eventSignals,public GeometricElement
     {
         this->x = x;
         this->y = y;
+        this->z = z;
     }
     void setSize(float w,float h)
     {
@@ -52,11 +54,11 @@ class Drawable:Draw, public eventSignals,public GeometricElement
     {
         if(sizeof(color)/sizeof(float) == sizeof(float)*4)
         {
-        this->color[0] = *(color);
-        this->color[1] = *(color++);
-        this->color[2] = *(color++);
-        this->color[3] = *(color++);
-        saveLog("ont");
+            this->color[0] = *(color);
+            this->color[1] = *(color++);
+            this->color[2] = *(color++);
+            this->color[3] = *(color++);
+            saveLog("ont");
         }
     }
     void setColor(float r,float g,float b,float a)
@@ -72,7 +74,7 @@ class Drawable:Draw, public eventSignals,public GeometricElement
     }
     void setParentBackground(SDL_Surface*  bck)
     {
-         this->ParentBackground = bck;
+        this->ParentBackground = bck;
     }
     SDL_Surface* getBackgroung()
     {

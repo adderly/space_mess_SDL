@@ -9,14 +9,26 @@
 
 class Environment
 {
-    public:
+public:
     float gravity;
     float delay;
     float wind;
     Environment();
-    float getGravity(){return gravity;}
-    float getDelay(){return delay;}
-    void setGravity(float g){gravity = g;}
-    void setDelay(float d){ delay = d;}
+    float getGravity()
+    {
+        return gravity;
+    }
+    float getDelay()
+    {
+        return delay;
+    }
+    void setGravity(float g)
+    {
+        gravity = g;
+    }
+    void setDelay(float d)
+    {
+        delay = d;
+    }
     ~Environment();
 };

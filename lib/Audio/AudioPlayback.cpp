@@ -1,6 +1,7 @@
 #include"AudioPlayback.h"
 
-namespace AudioPlayback{
+namespace AudioPlayback
+{
 
 Audio::Audio()
 {
@@ -26,7 +27,8 @@ void Audio::addMusic(const std::string name,const std::string location)
         try
         {
             songs.insert(std::pair<std::string,Mix_Music*>(name,ms));
-        }catch(...)
+        }
+        catch(...)
         {
             saveLog("Could Not Load"+name+" at "+location);
         }
@@ -42,14 +44,15 @@ void Audio::loadSound(const std::string name,const std::string location)
         try
         {
             effects.insert(std::pair<std::string,Mix_Chunk*>(name,snd));
-        }catch(...)
+        }
+        catch(...)
         {
             saveLog("Could Not Load"+name+" at "+location);
         }
     }
 
 }
- void Audio::play()
+void Audio::play()
 {
     Mix_PlayMusic(music,-1);
 }
@@ -73,11 +76,11 @@ void Audio::resume()
 {
     Mix_RewindMusic();
 }
-void Audio::nextMusic(){}
-void Audio::previousMusic(){}
-void Audio::volumeUp(){}
-void Audio::volumeDown(){}
-void Audio::specificVolume(int desireVolume){}
+void Audio::nextMusic() {}
+void Audio::previousMusic() {}
+void Audio::volumeUp() {}
+void Audio::volumeDown() {}
+void Audio::specificVolume(int desireVolume) {}
 Audio::~Audio()
 {
     delete (&music);

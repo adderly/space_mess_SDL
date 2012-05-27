@@ -1,6 +1,7 @@
 #include"Menu.h"
 
-namespace Graphics{
+namespace Graphics
+{
 #ifndef MHandler
 #define MHandler
 class MenuHandler
@@ -9,9 +10,10 @@ class MenuHandler
     list<Menu*>::iterator it;
 
 
-    public:
+public:
 
-    enum menus:bool
+enum menus:
+    bool
     {
         MAINMENU=false,PAUSEMENU = false,UTILS_MENU = false
     };
@@ -23,8 +25,14 @@ class MenuHandler
     void switchTo();
     void gotoMain();
     void closeActive();
-    void setMainMenu(Menu* menu){mainmenu = menu;}
-    void setPauseMenu(Menu* menu){pausemenu = menu;}
+    void setMainMenu(Menu* menu)
+    {
+        mainmenu = menu;
+    }
+    void setPauseMenu(Menu* menu)
+    {
+        pausemenu = menu;
+    }
     ~MenuHandler();
 };
 #endif

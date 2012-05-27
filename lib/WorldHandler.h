@@ -9,7 +9,7 @@ class WorldHandler
 {
 
     World* current;
-    public:
+public:
 
 };
 

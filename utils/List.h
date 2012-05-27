@@ -1,11 +1,10 @@
-
 template<class Type> class List
 {
     int count;
     Type *first;
     Type *last;
     Type *current;
-    public:
+public:
     List();
     int getCount();
     void add(Type* obj);
