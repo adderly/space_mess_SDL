@@ -1,5 +1,6 @@
 //#include"lib/Game.h"
-#include"editor/Editor.h"
+//#include"editor/Editor.h"
+#include "Application.h"
 #include "utils/sigc++/sigc++.h"
 
 #pragma -lSDL -lGL -lGLU
@@ -29,11 +30,13 @@ void warn_people()
 int main(int argc, char* argv[])
 {
 
+    Application app;
+    app.execute();
     // AlienDetector mydetector;
     // mydetector.signal_detected.connect( sigc::ptr_fun(warn_people) );
     // mydetector.run();
-    Editor* editor = new Editor();
-    editor->loop();
+//    ŔEditor* editor = new Editor();
+ //   editor->loop();
 
 //    Game *game = new Game();
 //    game->MainLoop();

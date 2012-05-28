@@ -32,6 +32,8 @@
 		<Unit filename="lib/Actors/Spaceship.h" />
 		<Unit filename="lib/Actors/Weapon.cpp" />
 		<Unit filename="lib/Actors/Weapon.h" />
+		<Unit filename="lib/Application.cpp" />
+		<Unit filename="lib/Application.h" />
 		<Unit filename="lib/Audio/AudioPlayback.cpp" />
 		<Unit filename="lib/Audio/AudioPlayback.h" />
 		<Unit filename="lib/Button.h" />

@@ -168,7 +168,7 @@ void Render::draw()
         glEnd();
 
 
-        generator->evolveParticles();
+        //generator->evolveParticles();
         // if(menu->visible)drawMainMenu();
 
 

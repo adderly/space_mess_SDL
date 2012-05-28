@@ -1,184 +1,193 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="editor/Editable.h" open="1" top="0" tabpos="16">
+	<File name="editor/Editable.h" open="0" top="0" tabpos="16">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="editor/Editor.cpp" open="1" top="0" tabpos="2">
+	<File name="editor/Editor.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="772" topLine="24" />
 	</File>
-	<File name="editor/Editor.h" open="1" top="0" tabpos="17">
+	<File name="editor/Editor.h" open="0" top="0" tabpos="17">
 		<Cursor position="128" topLine="0" />
 	</File>
-	<File name="lib/Actors/Gun.h" open="1" top="0" tabpos="18">
+	<File name="lib/Actors/Gun.h" open="0" top="0" tabpos="18">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Actors/Spaceship.h" open="1" top="0" tabpos="19">
+	<File name="lib/Actors/Spaceship.h" open="0" top="0" tabpos="19">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Actors/Weapon.h" open="1" top="0" tabpos="20">
+	<File name="lib/Actors/Weapon.h" open="0" top="0" tabpos="20">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Audio/AudioPlayback.cpp" open="1" top="0" tabpos="21">
+	<File name="lib/Application.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="174" topLine="0" />
+	</File>
+	<File name="lib/Application.h" open="1" top="0" tabpos="3">
+		<Cursor position="192" topLine="0" />
+	</File>
+	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="21">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Audio/AudioPlayback.h" open="1" top="0" tabpos="22">
+	<File name="lib/Audio/AudioPlayback.h" open="0" top="0" tabpos="22">
 		<Cursor position="24" topLine="0" />
 	</File>
-	<File name="lib/Container.h" open="1" top="0" tabpos="23">
+	<File name="lib/Container.h" open="0" top="0" tabpos="23">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Core.h" open="1" top="0" tabpos="6">
-		<Cursor position="287" topLine="0" />
+	<File name="lib/Core.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="202" topLine="0" />
 	</File>
-	<File name="lib/DisplayConfig.cpp" open="1" top="0" tabpos="24">
+	<File name="lib/Core.h" open="1" top="0" tabpos="7">
+		<Cursor position="384" topLine="12" />
+	</File>
+	<File name="lib/DisplayConfig.cpp" open="0" top="0" tabpos="24">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/DisplayConfig.h" open="1" top="0" tabpos="25">
+	<File name="lib/DisplayConfig.h" open="0" top="0" tabpos="25">
 		<Cursor position="720" topLine="12" />
 	</File>
-	<File name="lib/Draw.h" open="1" top="0" tabpos="26">
+	<File name="lib/Draw.h" open="0" top="0" tabpos="26">
 		<Cursor position="117" topLine="0" />
 	</File>
-	<File name="lib/Drawable.cpp" open="1" top="0" tabpos="11">
+	<File name="lib/Drawable.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="234" topLine="0" />
 	</File>
-	<File name="lib/Drawable.h" open="1" top="0" tabpos="10">
+	<File name="lib/Drawable.h" open="0" top="0" tabpos="10">
 		<Cursor position="588" topLine="15" />
 	</File>
-	<File name="lib/Drawer.cpp" open="1" top="0" tabpos="7">
+	<File name="lib/Drawer.cpp" open="0" top="0" tabpos="7">
 		<Cursor position="20" topLine="0" />
 	</File>
-	<File name="lib/Drawer.h" open="1" top="0" tabpos="8">
+	<File name="lib/Drawer.h" open="0" top="0" tabpos="8">
 		<Cursor position="115" topLine="0" />
 	</File>
-	<File name="lib/Environment.cpp" open="1" top="0" tabpos="27">
+	<File name="lib/Environment.cpp" open="0" top="0" tabpos="27">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Environment.h" open="1" top="0" tabpos="28">
+	<File name="lib/Environment.h" open="0" top="0" tabpos="28">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/EventHandler.cpp" open="1" top="0" tabpos="29">
+	<File name="lib/EventHandler.cpp" open="0" top="0" tabpos="29">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/EventInterface.h" open="1" top="0" tabpos="1">
+	<File name="lib/EventInterface.h" open="0" top="0" tabpos="1">
 		<Cursor position="1109" topLine="20" />
 	</File>
-	<File name="lib/EventTriggerer.cpp" open="1" top="1" tabpos="14">
-		<Cursor position="252" topLine="0" />
+	<File name="lib/EventTriggerer.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="402" topLine="17" />
 	</File>
-	<File name="lib/EventTriggerer.h" open="1" top="0" tabpos="13">
-		<Cursor position="170" topLine="0" />
+	<File name="lib/EventTriggerer.h" open="1" top="0" tabpos="1">
+		<Cursor position="36" topLine="0" />
 	</File>
 	<File name="lib/Game.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3205" topLine="127" />
+		<Cursor position="858" topLine="45" />
 	</File>
-	<File name="lib/Game.h" open="1" top="0" tabpos="30">
+	<File name="lib/Game.h" open="0" top="0" tabpos="30">
 		<Cursor position="167" topLine="0" />
 	</File>
-	<File name="lib/Interfaces/GeometricElement.h" open="1" top="0" tabpos="9">
+	<File name="lib/Interfaces/GeometricElement.h" open="0" top="0" tabpos="9">
 		<Cursor position="312" topLine="0" />
 	</File>
-	<File name="lib/Menu.cpp" open="1" top="0" tabpos="4">
+	<File name="lib/Menu.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="154" topLine="0" />
 	</File>
-	<File name="lib/Menu.h" open="1" top="0" tabpos="3">
+	<File name="lib/Menu.h" open="0" top="0" tabpos="3">
 		<Cursor position="685" topLine="10" />
 	</File>
-	<File name="lib/MenuHandler.cpp" open="1" top="0" tabpos="31">
+	<File name="lib/MenuHandler.cpp" open="0" top="0" tabpos="31">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/MenuHandler.h" open="1" top="0" tabpos="32">
+	<File name="lib/MenuHandler.h" open="0" top="0" tabpos="32">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/MenuOption.h" open="1" top="0" tabpos="33">
+	<File name="lib/MenuOption.h" open="0" top="0" tabpos="33">
 		<Cursor position="312" topLine="0" />
 	</File>
-	<File name="lib/ObjectFactory.h" open="1" top="0" tabpos="34">
+	<File name="lib/ObjectFactory.h" open="0" top="0" tabpos="34">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Panel.h" open="1" top="0" tabpos="35">
+	<File name="lib/Panel.h" open="0" top="0" tabpos="35">
 		<Cursor position="114" topLine="0" />
 	</File>
-	<File name="lib/Particle.cpp" open="1" top="0" tabpos="36">
+	<File name="lib/Particle.cpp" open="0" top="0" tabpos="36">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Particle.h" open="1" top="0" tabpos="37">
+	<File name="lib/Particle.h" open="0" top="0" tabpos="37">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/ParticleGenerator.cpp" open="1" top="0" tabpos="38">
+	<File name="lib/ParticleGenerator.cpp" open="0" top="0" tabpos="38">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/ParticleGenerator.h" open="1" top="0" tabpos="39">
+	<File name="lib/ParticleGenerator.h" open="0" top="0" tabpos="39">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Player.cpp" open="1" top="0" tabpos="40">
+	<File name="lib/Player.cpp" open="0" top="0" tabpos="40">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Player.h" open="1" top="0" tabpos="41">
+	<File name="lib/Player.h" open="0" top="0" tabpos="41">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Read.h" open="1" top="0" tabpos="42">
+	<File name="lib/Read.h" open="0" top="0" tabpos="42">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Reader.h" open="1" top="0" tabpos="43">
+	<File name="lib/Reader.h" open="0" top="0" tabpos="43">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Render.cpp" open="1" top="0" tabpos="15">
-		<Cursor position="551" topLine="18" />
+	<File name="lib/Render.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="5609" topLine="164" />
 	</File>
-	<File name="lib/Render.h" open="1" top="0" tabpos="12">
-		<Cursor position="917" topLine="39" />
+	<File name="lib/Render.h" open="0" top="0" tabpos="12">
+		<Cursor position="917" topLine="38" />
 	</File>
-	<File name="lib/RenderArea.h" open="1" top="0" tabpos="5">
+	<File name="lib/RenderArea.h" open="0" top="0" tabpos="5">
 		<Cursor position="81" topLine="0" />
 	</File>
-	<File name="lib/World.h" open="1" top="0" tabpos="44">
+	<File name="lib/World.h" open="0" top="0" tabpos="44">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/WorldHandler.h" open="1" top="0" tabpos="45">
+	<File name="lib/WorldHandler.h" open="0" top="0" tabpos="45">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Write.h" open="1" top="0" tabpos="46">
+	<File name="lib/Write.h" open="0" top="0" tabpos="46">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Writer.h" open="1" top="0" tabpos="47">
+	<File name="lib/Writer.h" open="0" top="0" tabpos="47">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="48">
-		<Cursor position="430" topLine="7" />
+	<File name="main.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="492" topLine="25" />
 	</File>
-	<File name="utils/ArrayList.h" open="1" top="0" tabpos="49">
+	<File name="utils/ArrayList.h" open="0" top="0" tabpos="49">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/ImageManager.cpp" open="1" top="0" tabpos="50">
+	<File name="utils/ImageManager.cpp" open="0" top="0" tabpos="50">
 		<Cursor position="1398" topLine="22" />
 	</File>
-	<File name="utils/ImageManager.h" open="1" top="0" tabpos="51">
+	<File name="utils/ImageManager.h" open="0" top="0" tabpos="51">
 		<Cursor position="828" topLine="8" />
 	</File>
-	<File name="utils/List.cpp" open="1" top="0" tabpos="52">
+	<File name="utils/List.cpp" open="0" top="0" tabpos="52">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/List.h" open="1" top="0" tabpos="53">
+	<File name="utils/List.h" open="0" top="0" tabpos="53">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/Log.cpp" open="1" top="0" tabpos="54">
+	<File name="utils/Log.cpp" open="0" top="0" tabpos="54">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/Log.h" open="1" top="0" tabpos="55">
+	<File name="utils/Log.h" open="0" top="0" tabpos="55">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/SDLIncludeheader.h" open="1" top="0" tabpos="56">
+	<File name="utils/SDLIncludeheader.h" open="0" top="0" tabpos="56">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="utils/TextRender.cpp" open="1" top="0" tabpos="57">
+	<File name="utils/TextRender.cpp" open="0" top="0" tabpos="57">
 		<Cursor position="121" topLine="0" />
 	</File>
-	<File name="utils/TextRender.h" open="1" top="0" tabpos="58">
+	<File name="utils/TextRender.h" open="0" top="0" tabpos="58">
 		<Cursor position="457" topLine="3" />
 	</File>
-	<File name="utils/TextureLoader.h" open="1" top="0" tabpos="59">
+	<File name="utils/TextureLoader.h" open="0" top="0" tabpos="59">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="utils/keys.h" open="0" top="0" tabpos="0">
