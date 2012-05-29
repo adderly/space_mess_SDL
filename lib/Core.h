@@ -1,5 +1,6 @@
 #include"Render.h"
 #include"EventTriggerer.h"
+#include"keys.h"
 
 #ifndef CORE
 #define CORE
@@ -9,17 +10,18 @@
     and handle the flow
 */
 
-class Core
+class Core: public Graphics::Render
 {
 // TODO (moisex#1#): Link The Event,Drawing with the core.
-    SDL_Event event;
-    EventTriggerer *eventTrigger;
-    Graphics::Render *render;//draws
 
 public://drawing,events
+
     Core();
     ~Core();
+
     int run();
+    void test();
+
 };
 
 #endif

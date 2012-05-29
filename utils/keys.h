@@ -18,6 +18,7 @@ static bool GRABBED =  false;
 
 /*    KEYBOARD      */
 static SDL_Event event;
+//static SDL_Surface *screen;
 static bool p_left = false;
 static bool p_right = false;
 static bool p_up = false;

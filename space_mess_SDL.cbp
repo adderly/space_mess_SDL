@@ -53,7 +53,6 @@
 		<Unit filename="lib/Environment.h" />
 		<Unit filename="lib/EventHandler.cpp" />
 		<Unit filename="lib/EventInterface.h" />
-		<Unit filename="lib/EventTriggerer.cpp" />
 		<Unit filename="lib/EventTriggerer.h" />
 		<Unit filename="lib/Game.cpp" />
 		<Unit filename="lib/Game.h" />

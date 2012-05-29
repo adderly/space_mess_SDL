@@ -1,14 +1,19 @@
 #include "Core.h"
 
-Core::Core()
+Core::Core():Render()
 {
-    this->eventTrigger =  new EventTriggerer();
-    this->render = new Graphics::Render();
+    Drawable* first = new Drawable(0,0,500,200);
+    first->setClickCallBack(sigc::mem_fun(this,&Core::test));
+    addDrawable(first);
 }
 int Core::run()
 {
-    eventTrigger->check(this->event);
-    render->draw();
+
 }
+void Core::test()
+{
+       exit(-1);
+}
+
 Core::~Core(){}
 

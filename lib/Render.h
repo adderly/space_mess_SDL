@@ -30,8 +30,8 @@ class Render: public RenderArea, public Drawer
 {
 
     /*New Stuff*/
-    std::vector<Drawable*> drawables;
-    std::vector<Drawable*>::iterator d_tator;//Drawble Iterator
+// TODO (moisex#1#): Change the vector for a binary tree, the drawing will be done from the lower Z axis to the nearest.\
+Each node in the binary tree will be capable of having its own childs.
     /***********/
 
        SDL_Surface *screen,*background;
@@ -43,6 +43,8 @@ class Render: public RenderArea, public Drawer
 
 
   public:
+        std::vector<Drawable*> drawables;
+        std::vector<Drawable*>::iterator d_tator;//Drawble Iterator
       Audio* music;
       //Menu* menu;
       Player* player;
@@ -52,6 +54,7 @@ class Render: public RenderArea, public Drawer
       ~Render();
       void prepare();
       void init();
+      void addDrawable(Drawable*);
       void reshape(int width,int height);
       static int setFullScreen();
       void draw();

@@ -16,7 +16,7 @@ public:
         this->y = y;
         this->z = z;
         this->width = w;
-        this->height;
+        this->height = h;
     }
     void setIsDefaultColor(bool what)
     {

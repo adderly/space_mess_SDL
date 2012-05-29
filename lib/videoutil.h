@@ -3,9 +3,9 @@
 #ifndef VUTIL
 #define VUTIL
 
-static unsigned int fullscreen = 0;
-static unsigned int width = 680;
-static unsigned int height = 460;
+static unsigned int settings_fullscreen = 0;
+static unsigned int settings_width = 680;
+static unsigned int settings_height = 460;
 static unsigned int bpp = 32;
 static unsigned int sound = 0;
 
@@ -16,9 +16,9 @@ static void loadSettings()
     DisplayConfig* config = new DisplayConfig();
     config->readConfig();
     set = config->getsettings();
-    fullscreen = set.find("fullscreen")->second;
-    width = set.find("width")->second;
-    height = set.find("height")->second;
+    settings_fullscreen = set.find("fullscreen")->second;
+    settings_width = set.find("width")->second;
+    settings_height = set.find("height")->second;
 }
 
 

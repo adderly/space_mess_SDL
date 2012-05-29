@@ -19,11 +19,11 @@
 	<File name="lib/Actors/Weapon.h" open="0" top="0" tabpos="20">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Application.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="174" topLine="0" />
+	<File name="lib/Application.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="850" topLine="58" />
 	</File>
-	<File name="lib/Application.h" open="1" top="0" tabpos="3">
-		<Cursor position="192" topLine="0" />
+	<File name="lib/Application.h" open="1" top="0" tabpos="2">
+		<Cursor position="353" topLine="0" />
 	</File>
 	<File name="lib/Audio/AudioPlayback.cpp" open="0" top="0" tabpos="21">
 		<Cursor position="0" topLine="0" />
@@ -34,11 +34,11 @@
 	<File name="lib/Container.h" open="0" top="0" tabpos="23">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Core.cpp" open="1" top="0" tabpos="8">
+	<File name="lib/Core.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="202" topLine="0" />
 	</File>
-	<File name="lib/Core.h" open="1" top="0" tabpos="7">
-		<Cursor position="384" topLine="12" />
+	<File name="lib/Core.h" open="1" top="0" tabpos="6">
+		<Cursor position="327" topLine="0" />
 	</File>
 	<File name="lib/DisplayConfig.cpp" open="0" top="0" tabpos="24">
 		<Cursor position="0" topLine="0" />
@@ -73,11 +73,8 @@
 	<File name="lib/EventInterface.h" open="0" top="0" tabpos="1">
 		<Cursor position="1109" topLine="20" />
 	</File>
-	<File name="lib/EventTriggerer.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="402" topLine="17" />
-	</File>
 	<File name="lib/EventTriggerer.h" open="1" top="0" tabpos="1">
-		<Cursor position="36" topLine="0" />
+		<Cursor position="632" topLine="0" />
 	</File>
 	<File name="lib/Game.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="858" topLine="45" />
@@ -85,8 +82,8 @@
 	<File name="lib/Game.h" open="0" top="0" tabpos="30">
 		<Cursor position="167" topLine="0" />
 	</File>
-	<File name="lib/Interfaces/GeometricElement.h" open="0" top="0" tabpos="9">
-		<Cursor position="312" topLine="0" />
+	<File name="lib/Interfaces/GeometricElement.h" open="1" top="0" tabpos="8">
+		<Cursor position="174" topLine="3" />
 	</File>
 	<File name="lib/Menu.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="154" topLine="0" />
@@ -133,8 +130,8 @@
 	<File name="lib/Reader.h" open="0" top="0" tabpos="43">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="lib/Render.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="5609" topLine="164" />
+	<File name="lib/Render.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="5609" topLine="143" />
 	</File>
 	<File name="lib/Render.h" open="0" top="0" tabpos="12">
 		<Cursor position="917" topLine="38" />
@@ -154,8 +151,8 @@
 	<File name="lib/Writer.h" open="0" top="0" tabpos="47">
 		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="492" topLine="25" />
+	<File name="main.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="492" topLine="3" />
 	</File>
 	<File name="utils/ArrayList.h" open="0" top="0" tabpos="49">
 		<Cursor position="0" topLine="0" />

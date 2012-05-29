@@ -26,6 +26,10 @@ class EInterface
 class eventSignals : public sigc::trackable
 {
 public:
+    bool clickable;
+
+    bool mouse_down;
+    bool mouse_up;
     bool clicked;
     bool rightclicked;
     bool selected;
@@ -40,8 +44,23 @@ public:
     sigc::signal<void> s_mouseover;
     sigc::signal<void> s_drag;
     sigc::signal<void> s_drop;
+    sigc::signal<void> s_mouse_down;
+    sigc::signal<void> s_mouse_up;
 
-    eventSignals() {}
+    eventSignals()
+     {
+         setClicked(sigc::mem_fun(this,&eventSignals::hi));
+     }
+
+     template<class T,class K>  T setClickCallBack(sigc::bound_mem_functor0<T,K> toconnet)
+     {
+            s_clicked.connect(toconnet);
+            this->clickable = true;
+     }
+    virtual void setClicked(sigc::bound_mem_functor0<void,eventSignals>)
+    {
+    }
+    void hi(){}
     virtual void check() = 0;
 
     virtual void f_clicked() = 0;
@@ -50,6 +69,11 @@ public:
     virtual void f_mouseover() = 0;
     virtual void f_drag() = 0;
     virtual void f_drop() = 0;
+
+       /******************GENERIC EVENT CHECK*****************/
+    /*check is the mouse is over the drawable taking mouse pos as parameter */
+   virtual inline bool isOver(int,int) = 0;
+   /******************************************************/
 
 };
 

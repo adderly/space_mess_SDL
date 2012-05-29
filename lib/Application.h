@@ -1,17 +1,28 @@
-
 #include"Core.h"
+#include"keys.h"
 
 
 #ifndef APPLICATION
 #define APPLICATION
 
-class Application : public Core
+class Application : public EventTriggerer
 {
+    friend class Core;
+    Core *core;
 
     public:
     void setUp();
+    void cleanUp();
+    void draw();
     void loadPreviousConf();
     int execute();
+    inline void check();
+    void trigger();
+    inline void check(SDL_Event&);
+    inline void checkMouseDown(SDL_Event&);
+    inline void checkMouseUp(SDL_Event&);
+    inline void checkKeyUp(SDL_Event&);
+    inline void checkKeyDown(SDL_Event&);
     Application();
     ~Application();
 

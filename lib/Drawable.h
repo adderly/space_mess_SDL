@@ -17,13 +17,16 @@
 class Drawable:Draw, public eventSignals,public GeometricElement
 {
 public:
+    int id;
+    std::string name;
     bool isContainer;
 
     SDL_Surface* ParentBackground,*background;
-    Drawable(float X,float Y,float WIDTH,float HEIGHT):eventSignals(),GeometricElement()
+    Drawable(float X,float Y,float WIDTH,float HEIGHT,float Z = 0):eventSignals(),GeometricElement()
     {
         this->x = X;
         this->y = Y;
+        this->z = Z;
         this->width = WIDTH;
         this->height = HEIGHT;
         color[0] = 1.0;
@@ -95,8 +98,13 @@ public:
     virtual void f_drop();
     virtual void check();
 
+    /******************GENERIC EVENT CHECK*****************/
 
-    virtual void draw()=0;
+   inline bool isOver(int,int);
+   /******************************************************/
+
+
+    virtual void draw(){};
 };
 #endif
 
