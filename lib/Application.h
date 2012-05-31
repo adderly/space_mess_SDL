@@ -4,6 +4,7 @@
 
 #ifndef APPLICATION
 #define APPLICATION
+using namespace Graphics;
 
 class Application : public EventTriggerer
 {
@@ -19,6 +20,7 @@ class Application : public EventTriggerer
     inline void check();
     void trigger();
     inline void check(SDL_Event&);
+    void checkDrawable(Drawable*);
     inline void checkMouseDown(SDL_Event&);
     inline void checkMouseUp(SDL_Event&);
     inline void checkKeyUp(SDL_Event&);

@@ -26,17 +26,18 @@ class EInterface
 class eventSignals : public sigc::trackable
 {
 public:
-    bool clickable;
+    bool IS_CLICKABLE;
 
-    bool mouse_down;
-    bool mouse_up;
-    bool clicked;
-    bool rightclicked;
-    bool selected;
-    bool mouseover;
-    bool drag;
-    bool drop;// Guess it would never be used, cause you are never dropping things
-    bool active; //the idea for this is
+    bool MOUSE_DOWN;
+    bool MOUSE_UP;
+    bool CLICKED;
+    bool RIGHT_CLICKED;
+    bool SELECTED;
+    bool MOUSE_OVER;
+    bool DRAG;
+    bool DROP;// Guess it would never be used, cause you are never dropping things
+    bool ACTIVE; //the idea for this is
+    bool FOCUSED;
 
     sigc::signal<void> s_clicked;
     sigc::signal<void> s_rightclicked;
@@ -51,11 +52,11 @@ public:
      {
          setClicked(sigc::mem_fun(this,&eventSignals::hi));
      }
-
+        bool getIsSelected(){ return this->SELECTED;}
      template<class T,class K>  T setClickCallBack(sigc::bound_mem_functor0<T,K> toconnet)
      {
             s_clicked.connect(toconnet);
-            this->clickable = true;
+            this->IS_CLICKABLE = true;
      }
     virtual void setClicked(sigc::bound_mem_functor0<void,eventSignals>)
     {

@@ -100,6 +100,7 @@ int Render::setFullScreen()
     glLoadIdentity();
     SDL_SetVideoMode(680,460,32,SDL_FULLSCREEN|SDL_OPENGL|SDL_HWSURFACE);
 }
+
 void Render::draw()
 {
       glClear(GL_COLOR_BUFFER_BIT);
@@ -111,32 +112,32 @@ void Render::draw()
 
 // TODO (moisex#1#): Enhance the Drawing, evaluating the states of the drawables, in this case when selected,clicked.\
 
-        if((**d_tator).getIsDefaulColor())
-        {
-                       glColor4f((**d_tator).color[0],(**d_tator).color[1], (**d_tator).color[2],(**d_tator).color[3]);
-        }
-        else glColor4f(1.0,0.0,0.0,0.0);
-
-        /*Draws Dipending on the type of object*/
-
-        if((**d_tator).isQuad)
-        {
-            glBegin(GL_QUADS);
-            glVertex3f((**d_tator).x ,(**d_tator).y,(**d_tator).z);
-            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
-            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
-            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
-            glEnd();
-        }
-        else
-        {
-            glBegin(GL_TRIANGLES);
-            glVertex3f((**d_tator).x,(**d_tator).y,(**d_tator).z);
-            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
-            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
-            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
-            glEnd();
-        }
+            (**d_tator).draw();
+//        if((**d_tator).mouseover )
+//                glColor4f((**d_tator).selectedColor[0],(**d_tator).selectedColor[1], (**d_tator).selectedColor[2],(**d_tator).selectedColor[3]);
+//        else glColor4f((**d_tator).color[0],(**d_tator).color[1], (**d_tator).color[2],(**d_tator).color[3]);
+//
+//
+//        /*Draws Dipending on the type of object*/
+//
+//        if((**d_tator).isQuad)
+//        {
+//            glBegin(GL_QUADS);
+//            glVertex3f((**d_tator).x ,(**d_tator).y,(**d_tator).z);
+//            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
+//            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+//            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+//            glEnd();
+//        }
+//        else
+//        {
+//            glBegin(GL_TRIANGLES);
+//            glVertex3f((**d_tator).x,(**d_tator).y,(**d_tator).z);
+//            glVertex3f((**d_tator).x + (**d_tator).width,(**d_tator).y,(**d_tator).z);
+//            glVertex3f((**d_tator).x+ (**d_tator).width,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+//            glVertex3f((**d_tator).x,(**d_tator).y+ (**d_tator).height,(**d_tator).z);
+//            glEnd();
+//        }
     }
 //        /***************BLITExample********************
 //        *    UpdateRect IS The KEY HERE!
@@ -157,14 +158,7 @@ void Render::draw()
 //        glEnd();
 //
 //        glDisable(GL_TEXTURE_2D);
-        glColor4f(1.0,0.0,0.0,0.5);
-        glBegin(GL_QUADS);
 
-        glVertex2f(10,10);
-        glVertex2f(100,10);
-        glVertex2f(100,100);
-        glVertex2f(10,100);
-        glEnd();
 //        glColor4f(1.0,0.0,0.0,0.5);
 //        glBegin(GL_QUADS);
 //        for(int n = 0; n < generator->particles.size(); n++)
@@ -183,10 +177,65 @@ void Render::draw()
 
   //  }
 }
+void Render::drawContainer(Drawable* container)
+{
+    if(container->SELECTED)  glColor4f(1,container->selectedColor[1],container->selectedColor[2],container->selectedColor[3]);
+            else if( container->MOUSE_OVER)  glColor4f(container->selectedColor[0],container->selectedColor[1],container->selectedColor[2],container->selectedColor[3]);
+            else    glColor4f(container->color[0],container->color[1],container->color[2],container->color[3]);
+
+            if(container->isQuad)
+            {
+                    glBegin(GL_QUADS);
+                    glVertex3f(container->x,container->y,container->z);
+                    glVertex3f(container->x+container->width,container->y,container->z);
+                    glVertex3f(container->x+container->width,container->y+container->height,container->z);
+                    glVertex3f(container->x,container->y+container->height,container->z);
+                    glEnd();
+            }
+            else
+            {
+                    glBegin(GL_TRIANGLES);
+                    glVertex3f(container->x+(container->width/2),container->y,container->z);
+                    glVertex3f(container->x+container->width,container->y+container->height,container->z);
+                    glVertex3f(container->x,container->y+container->height,container->z);
+                    glEnd();
+            }
+
+             Container *tmp = static_cast<Container*> (container);
+
+            for(int n = 0;n < tmp->items.size();n++)
+            {
+                 if(tmp->items[n]->SELECTED)  glColor4f(1,tmp->items[n]->selectedColor[1],tmp->items[n]->selectedColor[2],tmp->items[n]->selectedColor[3]);
+                else if( tmp->items[n]->MOUSE_OVER)  glColor4f(tmp->items[n]->selectedColor[0],tmp->items[n]->selectedColor[1],tmp->items[n]->selectedColor[2],tmp->items[n]->selectedColor[3]);
+                else    glColor4f(tmp->items[n]->color[0],tmp->items[n]->color[1],tmp->items[n]->color[2],tmp->items[n]->color[3]);
+
+                if(tmp->items[n]->isQuad)
+                {
+                        glBegin(GL_QUADS);
+                        glVertex3f(tmp->items[n]->x,tmp->items[n]->y,tmp->items[n]->z);
+                        glVertex3f(tmp->items[n]->x+tmp->items[n]->width,tmp->items[n]->y,tmp->items[n]->z);
+                        glVertex3f(tmp->items[n]->x+tmp->items[n]->width,tmp->items[n]->y+tmp->items[n]->height,tmp->items[n]->z);
+                        glVertex3f(tmp->items[n]->x,tmp->items[n]->y+tmp->items[n]->height,tmp->items[n]->z);
+                        glEnd();
+                }
+                else
+                {
+                        glBegin(GL_TRIANGLES);
+                        glVertex3f(tmp->items[n]->x+(tmp->items[n]->width/2),tmp->items[n]->y,tmp->items[n]->z);
+                        glVertex3f(tmp->items[n]->x+tmp->items[n]->width,tmp->items[n]->y+tmp->items[n]->height,tmp->items[n]->z);
+                        glVertex3f(tmp->items[n]->x,tmp->items[n]->y+tmp->items[n]->height,tmp->items[n]->z);
+                        glEnd();
+                }
+// TODO (moisex#1#): Draw Container Items, is segmenting...            //    if(tmp->items[n]->isContainer)   Render::drawContainer(tmp->items[n]);
+
+            }
+
+}
 void Render::addDrawable(Drawable* element)
 {
     drawables.push_back(element);
 }
+
 Render::~Render()
 {
 

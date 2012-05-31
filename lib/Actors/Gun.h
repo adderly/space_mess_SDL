@@ -3,25 +3,26 @@
 
 #include<string>
 #include"Weapon.h"
-
-class Gun:public Weapon
+namespace Actors
 {
-    friend class Player;
-    int ammoAmount;
-    std::string name;
-    float maxHeat;
-public:
-    Gun();
-    void fire();
-    void setName(std::string name)
+    class Gun:public Weapon
     {
-        this->name = name;
-    }
-    std::string getName()
-    {
-        return this->name;
-    }
-    ~Gun();
+        friend class Player;
+        int ammoAmount;
+        std::string name;
+        float maxHeat;
+    public:
+        Gun();
+        void fire();
+        void setName(std::string name)
+        {
+            this->name = name;
+        }
+        std::string getName()
+        {
+            return this->name;
+        }
+        ~Gun();
+    };
 };
-
 #endif

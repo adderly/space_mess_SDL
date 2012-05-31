@@ -1,18 +1,36 @@
-#include <vector>
-#include "Drawable.h"
+
 
 #ifndef CONTAINER
 #define CONTAINER
 
-class Container:public Drawable
+#include <vector>
+#include "Drawable.h"
+#include"Render.h"
+namespace Graphics
 {
-    vector<Drawable*> items;
-public:
-    Container();
-    Container(vector<Drawable*>);
-    void addItem(Drawable*);
-    void removeItem(Drawable*);
-    virtual void draw();
-    ~Container();
-};
+
+    class Container:public Drawable
+    {
+
+    public:
+       vector<Drawable*> items;
+        Container();
+        Container(vector<Drawable*>);
+        virtual void addItem(Drawable*);
+        virtual void removeItem(Drawable*);
+        virtual void draw();
+          /*Events*/
+
+        virtual void f_clicked(){}
+        virtual void f_rightclicked(){}
+        virtual void f_selected(){}
+        virtual void f_mouseover(){}
+        virtual void f_drag(){}
+        virtual void f_drop(){}
+        virtual void check(){}
+
+        ~Container();
+    };
+}
+
 #endif

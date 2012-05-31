@@ -1,6 +1,7 @@
 #include"Render.h"
 #include"EventTriggerer.h"
 #include"keys.h"
+#include"Container.h"
 
 #ifndef CORE
 #define CORE
@@ -9,6 +10,7 @@
     Theorically this would control interactions Drawing,
     and handle the flow
 */
+using namespace Graphics;
 
 class Core: public Graphics::Render
 {

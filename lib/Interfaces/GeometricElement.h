@@ -7,6 +7,7 @@ public:
     bool isQuad;
     bool defaultColor;
     float color[4];
+    float selectedColor[4];
     float x,y,z,width,height;
     GeometricElement() {}
 

@@ -84,6 +84,7 @@
 			<Option compiler="gcc" use="0" buildCommand="g++ -o testing main.cpp" />
 		</Unit>
 		<Unit filename="utils/ArrayList.h" />
+		<Unit filename="utils/Color.h" />
 		<Unit filename="utils/ImageManager.cpp" />
 		<Unit filename="utils/ImageManager.h" />
 		<Unit filename="utils/List.cpp" />

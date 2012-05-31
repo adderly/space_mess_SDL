@@ -33,18 +33,15 @@ int Application::execute()
 
        while(SDL_PollEvent(&event))
         {
-             //   if(event.type == SDL_QUIT) Running = false;
-               // if(event.type == SDL_MOUSEBUTTONDOWN) glClearColor(1,0,0,0);
                 check(event);
         }
         glColor3f(1.0,0.0,0.0);
         glClear(GL_COLOR_BUFFER_BIT);
-
         glBegin(GL_QUADS);
-        glVertex2f(10,10);
-        glVertex2f(100,10);
-        glVertex2f(100,100);
-        glVertex2f(10,100);
+            glVertex2f(10,10);
+            glVertex2f(100,10);
+            glVertex2f(100,100);
+            glVertex2f(10,100);
         glEnd();
         core->draw();
         SDL_GL_SwapBuffers();
@@ -73,17 +70,65 @@ void Application::check()
 {
     for(core->d_tator = core->drawables.begin(); core->d_tator != core->drawables.end();core->d_tator++)
     {
-        if((**core->d_tator).clickable)
-        {
+
+            /*Ensure the mouse is over the element*/
             if((**core->d_tator).isOver(getMouseX(),getMouseY()))
             {
-                (**core->d_tator).setIsDefaultColor(false);
-                (**core->d_tator).color[0] = 0;
-                (**core->d_tator).color[1] = 0;
-            }
-        }
+                    (**core->d_tator).MOUSE_OVER = true;
 
+                    if(MOUSE_LCLICK) (**core->d_tator).SELECTED = true;
+                    else (**core->d_tator).SELECTED = false;
+
+                    if(MOUSE_RCLICK) (**core->d_tator).RIGHT_CLICKED = true;
+                    else (**core->d_tator).RIGHT_CLICKED = false;
+            }
+            else
+            {
+                    (**core->d_tator).MOUSE_OVER = false;
+            }
     }
+}
+void Application::checkDrawable(Drawable* item)
+{
+
+        if((*item).isOver(getMouseX(),getMouseY()))
+        {
+                    (*item).MOUSE_OVER = true;
+
+                    if(MOUSE_LCLICK) (*item).SELECTED = true;
+                    else (*item).SELECTED = false;
+
+                    if(MOUSE_RCLICK) (*item).RIGHT_CLICKED = true;
+                    else (*item).RIGHT_CLICKED = false;
+        }
+        else
+        {
+                    (*item).MOUSE_OVER = false;
+        }
+        if((*item).isContainer)
+        {
+            Graphics::Container *tmp = static_cast<Graphics::Container*> (item);
+
+            for(int n = 0;n > (*tmp).items.size();n++)
+            {
+                    if((*tmp).items[n]->isOver(getMouseX(),getMouseY()))
+                    {
+                                (*tmp).items[n]->MOUSE_OVER = true;
+
+                                if(MOUSE_LCLICK) (*tmp).items[n]->SELECTED = true;
+                                else (*tmp).items[n]->SELECTED = false;
+
+                                if(MOUSE_RCLICK) (*tmp).items[n]->RIGHT_CLICKED = true;
+                                else (*tmp).items[n]->RIGHT_CLICKED = false;
+                    }
+                    else
+                    {
+                                (*tmp).items[n]->MOUSE_OVER = false;
+                    }
+              checkDrawable((*tmp).items[n]);
+            }
+
+        }
 }
 void Application::check(SDL_Event& e)
 {
@@ -100,20 +145,19 @@ void Application::check(SDL_Event& e)
                         checkMouseUp(e);
                     break;
                 case SDL_KEYDOWN:
+                        checkKeyDown(e);
                     break;
                 case SDL_KEYUP:
+                        checkKeyUp(e);
                     break;
                 default:
                     break;
             }
+            setMousePosition(e.button.x,e.button.y);
         check();
-
-
-
 }
 void Application::checkMouseDown(SDL_Event& e)
    {
-       setMousePosition(e.button.x,e.button.y);
        switch(e.button.button)
        {
            case SDL_BUTTON_LEFT:
@@ -129,7 +173,7 @@ void Application::checkMouseDown(SDL_Event& e)
    }
 void Application::checkMouseUp(SDL_Event& e)
    {
-    setMousePosition(e.button.x,e.button.y);
+
 
        switch(e.button.button)
        {

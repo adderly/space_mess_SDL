@@ -1,18 +1,21 @@
 #include"Gun.h"
 
-
-Gun::Gun():Weapon()
+namespace Actors
 {
-    ammoAmount= 100;
-}
 
-void Gun::fire()
-{
-    ammoAmount--;
+    Gun::Gun():Weapon()
+    {
+        ammoAmount= 100;
+    }
 
-}
-Gun::~Gun()
-{
-    delete &name;
-    delete &maxHeat;
-}
+    void Gun::fire()
+    {
+        ammoAmount--;
+
+    }
+    Gun::~Gun()
+    {
+        delete &name;
+        delete &maxHeat;
+    }
+};

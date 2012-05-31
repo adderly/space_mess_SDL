@@ -5,7 +5,8 @@
 *
 */
 
-
+#ifndef ENV
+#define ENV
 
 class Environment
 {
@@ -32,3 +33,4 @@ public:
     }
     ~Environment();
 };
+#endif

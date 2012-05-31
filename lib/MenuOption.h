@@ -6,68 +6,72 @@
 /*  OPtion to be contained Inside A menu*/
 #ifndef MENUOPTION
 #define MENUOPTION
-typedef class MenuOption: public Drawable
+namespace Graphics
 {
-public:
-    unsigned int texture_id;
-    static const float defaultwidth = 120;
-    static const float defaultheight = 60;
-    std::string text;
-    bool enable, hasText;
 
-    /******TExtBox and CheckBOX**********/
-    bool isTextBox,isCheckBox;
-    bool isSelected;
-    /******TExtBox and CheckBOX**********/
-    bool VOIDFUNC,INTVOIDFUNCT,KEYUPFUNC,KEYDOWNFUNC,MOUSEOVERFUNC;
+    typedef class MenuOption: public Drawable
+    {
+    public:
+        unsigned int texture_id;
+        static const float defaultwidth = 120;
+        static const float defaultheight = 60;
+        std::string text;
+        bool enable, hasText;
 
-    //callbacks
-    void (*vfunc)();
-    void (*func)(int);
-    void (*keyDown)();
-    void (*keyUp)();
-    void (*mouseOver)();
+        /******TExtBox and CheckBOX**********/
+        bool isTextBox,isCheckBox;
+        bool isSelected;
+        /******TExtBox and CheckBOX**********/
+        bool VOIDFUNC,INTVOIDFUNCT,KEYUPFUNC,KEYDOWNFUNC,MOUSEOVERFUNC;
 
-    void setMouseOverCallBack(void (*m)())
-    {
-        mouseOver = m;
-        MOUSEOVERFUNC = true;
-    }
-    void setKeyDownCallBack(void (*k)())
-    {
-        this->keyDown = k;
-        KEYDOWNFUNC = true;
-    }
-    void setKeyUpCallBack(void (*k)())
-    {
-        this->keyUp = k;
-        KEYUPFUNC = true;
-    }
-    void setVoidCallBack(void (*f)(int))
-    {
-        this->func = f;
-        INTVOIDFUNCT =true;
-    }
-    void setVoidCallBack(void (*f)())
-    {
-        this->vfunc = f;
-        VOIDFUNC = true;
-    }
+        //callbacks
+        void (*vfunc)();
+        void (*func)(int);
+        void (*keyDown)();
+        void (*keyUp)();
+        void (*mouseOver)();
 
-    MenuOption():Drawable(10,10,10,10)
-    {
-        this->enable = false;
-    }
-    MenuOption(float X,float Y,float W,float H):Drawable(X,Y,W,H)
-    {
-        this->x=X;
-        this->y=Y;
-        this->width=W;
-        this->height=H;
-        this->enable = false;
-    }
-    //Not Doing Anything
-    virtual void draw() {}
+        void setMouseOverCallBack(void (*m)())
+        {
+            mouseOver = m;
+            MOUSEOVERFUNC = true;
+        }
+        void setKeyDownCallBack(void (*k)())
+        {
+            this->keyDown = k;
+            KEYDOWNFUNC = true;
+        }
+        void setKeyUpCallBack(void (*k)())
+        {
+            this->keyUp = k;
+            KEYUPFUNC = true;
+        }
+        void setVoidCallBack(void (*f)(int))
+        {
+            this->func = f;
+            INTVOIDFUNCT =true;
+        }
+        void setVoidCallBack(void (*f)())
+        {
+            this->vfunc = f;
+            VOIDFUNC = true;
+        }
+
+        MenuOption():Drawable(10,10,10,10)
+        {
+            this->enable = false;
+        }
+        MenuOption(float X,float Y,float W,float H):Drawable(X,Y,W,H)
+        {
+            this->x=X;
+            this->y=Y;
+            this->width=W;
+            this->height=H;
+            this->enable = false;
+        }
+        //Not Doing Anything
+        virtual void draw() {}
+    };
 };
 #endif
 
