@@ -40,10 +40,7 @@ namespace Graphics{
            const SDL_VideoInfo *info;
            ParticleGenerator* generator;
            unsigned int texture,bt;
-
-
-
-      public:
+        public:
             std::vector<Drawable*> drawables;
             std::vector<Drawable*>::iterator d_tator;//Drawble Iterator
           Audio* music;

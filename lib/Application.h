@@ -27,8 +27,6 @@ class Application : public EventTriggerer
     inline void checkKeyDown(SDL_Event&);
     Application();
     ~Application();
-
-
 };
 
 #endif

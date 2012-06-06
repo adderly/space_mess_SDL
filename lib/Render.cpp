@@ -112,7 +112,7 @@ void Render::draw()
 
 // TODO (moisex#1#): Enhance the Drawing, evaluating the states of the drawables, in this case when selected,clicked.\
 
-            (**d_tator).draw();
+           (**d_tator).draw();
 //        if((**d_tator).mouseover )
 //                glColor4f((**d_tator).selectedColor[0],(**d_tator).selectedColor[1], (**d_tator).selectedColor[2],(**d_tator).selectedColor[3]);
 //        else glColor4f((**d_tator).color[0],(**d_tator).color[1], (**d_tator).color[2],(**d_tator).color[3]);
@@ -179,9 +179,9 @@ void Render::draw()
 }
 void Render::drawContainer(Drawable* container)
 {
-    if(container->SELECTED)  glColor4f(1,container->selectedColor[1],container->selectedColor[2],container->selectedColor[3]);
+            if(container->SELECTED)  glColor4f(1,container->selectedColor[1],container->selectedColor[2],container->selectedColor[3]);
             else if( container->MOUSE_OVER)  glColor4f(container->selectedColor[0],container->selectedColor[1],container->selectedColor[2],container->selectedColor[3]);
-            else    glColor4f(container->color[0],container->color[1],container->color[2],container->color[3]);
+            else glColor4f(container->color[0],container->color[1],container->color[2],container->color[3]);
 
             if(container->isQuad)
             {
@@ -201,7 +201,8 @@ void Render::drawContainer(Drawable* container)
                     glEnd();
             }
 
-             Container *tmp = static_cast<Container*> (container);
+            saveLog("before casting...");
+             Container *tmp = dynamic_cast<Container*> (container);
 
             for(int n = 0;n < tmp->items.size();n++)
             {
@@ -226,7 +227,7 @@ void Render::drawContainer(Drawable* container)
                         glVertex3f(tmp->items[n]->x,tmp->items[n]->y+tmp->items[n]->height,tmp->items[n]->z);
                         glEnd();
                 }
-// TODO (moisex#1#): Draw Container Items, is segmenting...            //    if(tmp->items[n]->isContainer)   Render::drawContainer(tmp->items[n]);
+// TODO (moisex#1#): Draw Container Items, is segmenting...               if(tmp->items[n]->isContainer)   Render::drawContainer(tmp->items[n]);
 
             }
 

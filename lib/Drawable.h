@@ -27,9 +27,11 @@ namespace Graphics
         SDL_Surface* ParentBackground,*background;
         Drawable():eventSignals(),GeometricElement()
         {
+            isContainer = false;
         }
         Drawable(float X,float Y,float WIDTH,float HEIGHT,float Z = 0):eventSignals(),GeometricElement()
         {
+            isContainer = false;
             this->x = X;
             this->y = Y;
             this->z = Z;

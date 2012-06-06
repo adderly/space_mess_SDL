@@ -32,7 +32,6 @@ namespace Graphics
                     glVertex3f(this->x+this->width,this->y+this->height,this->z);
                     glVertex3f(this->x,this->y+this->height,this->z);
                     glEnd();
-
             }
             else
             {

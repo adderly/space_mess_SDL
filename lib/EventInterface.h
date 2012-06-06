@@ -26,8 +26,12 @@ class EInterface
 class eventSignals : public sigc::trackable
 {
 public:
-    bool IS_CLICKABLE;
+    //Available events
+    bool isClickable;
+    bool isRightClickable;
+    bool isSelectable;
 
+    //States
     bool MOUSE_DOWN;
     bool MOUSE_UP;
     bool CLICKED;
@@ -50,17 +54,26 @@ public:
 
     eventSignals()
      {
-         setClicked(sigc::mem_fun(this,&eventSignals::hi));
+         setClickCallBack(sigc::mem_fun(this,&eventSignals::hi));
      }
-        bool getIsSelected(){ return this->SELECTED;}
      template<class T,class K>  T setClickCallBack(sigc::bound_mem_functor0<T,K> toconnet)
      {
             s_clicked.connect(toconnet);
-            this->IS_CLICKABLE = true;
+            this->isClickable = true;
      }
-    virtual void setClicked(sigc::bound_mem_functor0<void,eventSignals>)
-    {
-    }
+
+    template<class T,class K>  T setRightClickCallBack(sigc::bound_mem_functor0<T,K> toconnet)
+     {
+            s_rightclicked.connect(toconnet);
+            this->isRightClickable = true;
+     }
+    template<class T,class K>  T setSelectCallBack(sigc::bound_mem_functor0<T,K> toconnet)
+     {
+            s_selected.connect(toconnet);
+            this->isSelectable = true;
+     }
+
+    bool getIsSelected(){ return this->SELECTED;}
     void hi(){}
     virtual void check() = 0;
 

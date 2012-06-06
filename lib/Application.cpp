@@ -43,7 +43,9 @@ int Application::execute()
             glVertex2f(100,100);
             glVertex2f(10,100);
         glEnd();
+
         core->draw();
+
         SDL_GL_SwapBuffers();
    //  SDL_Delay(3000);
     }

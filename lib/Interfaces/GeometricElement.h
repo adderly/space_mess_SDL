@@ -19,6 +19,14 @@ public:
         this->width = w;
         this->height = h;
     }
+    float* getVertexPointer()
+    {
+        float coords[] = {x,y,
+                          x+width,y,
+                          x+width,y+height,
+                          x,y+height};
+        return coords;
+    }
     void setIsDefaultColor(bool what)
     {
         this->defaultColor = what;
